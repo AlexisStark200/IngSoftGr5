@@ -7,7 +7,7 @@
 </p>
  
 
-Nuestra propuesta es una aplicación que busca transformar la forma en que los estudiantes de la Universidad Nacional de Colombia se relacionan con su vida universitaria.  
+Nuestra propuesta es un Aplicativo web que busca transformar la forma en que los estudiantes de la Universidad Nacional de Colombia se relacionan con su vida universitaria.  
 
 El sistema permitirá informar, organizar y seguir clubes y actividades universitarias, ofreciendo un espacio digital donde cada estudiante pueda:  
 - Enterarse fácilmente de lo que ocurre en el campus.  
