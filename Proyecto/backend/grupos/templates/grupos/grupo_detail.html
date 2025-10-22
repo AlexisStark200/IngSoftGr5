@@ -1,1 +1,16 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Hola Mundo - Grupo</title>
+</head>
+<body>
+  <h1>Hola Mundo — Grupo</h1>
+  <h2>{{ grupo.nombre_grupo }}</h2>
+  <p><strong>Descripción:</strong> {{ grupo.descripcion|linebreaks }}</p>
+  <p><strong>Correo:</strong> {{ grupo.correo_grupo }}</p>
 
+  <hr>
+  <p>Para ver otro grupo: <a href="{% url 'grupo-detail' pk=2 %}">Grupo 2 (ejemplo)</a></p>
+</body>
+</html>
