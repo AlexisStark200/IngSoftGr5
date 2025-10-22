@@ -1,10 +1,21 @@
 #!/usr/bin/env bash
 set -e
-echo "Construyendo y levantando servicios (docker-compose)..."
+
+echo "=== PREPARACIÓN INICIAL DEL PROYECTO ==="
+
+echo "1. Levantando repositorio con Docker Compose..."
 docker-compose up --build -d
-echo "Esperando 10 segundos para que MySQL arranque..."
+
+echo "2. Esperando que MySQL esté listo..."
 sleep 10
-echo "Ejecutando migraciones Django..."
+
+echo "3. Instalando dependencias y configurando..."
 docker-compose exec web python manage.py makemigrations --noinput || true
 docker-compose exec web python manage.py migrate --noinput
-echo "Listo. Abre http://localhost:8000/ para ver el Hola Mundo."
+
+echo "4. Ejecutando pruebas básicas..."
+# Placeholder para pruebas futuras - actualmente no hay tests implementados
+echo "   (Pruebas no implementadas aún - se ejecutarán aquí en el futuro)"
+
+echo "=== CONFIGURACIÓN COMPLETADA ==="
+echo "Aplicación disponible en: http://localhost:8000"
