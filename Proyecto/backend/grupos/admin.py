@@ -1,6 +1,12 @@
 from django.contrib import admin
-from .models import Grupo
+from .models import *
 
-@admin.register(Grupo)
-class GrupoAdmin(admin.ModelAdmin):
-    list_display = ('id_grupo', 'nombre_grupo', 'correo_grupo')
+
+models_list = [
+    Grupo, Evento, Usuario, Comentario, Notificacion,
+    Participacion, Rol, UsuarioGrupo, UsuarioComentario,
+    UsuarioNotificacion, UsuarioRol, ParticipacionUsuario
+]
+
+for model in models_list:
+    admin.site.register(model)

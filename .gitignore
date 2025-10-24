@@ -1,1 +1,45 @@
+# Entorno virtual
+env/
 
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Archivos de IDE
+.vscode/
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Archivos de Django
+*.log
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Otros
+Personal/

@@ -52,10 +52,10 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_NAME', 'holamundo_db'),
-        'USER': os.environ.get('DB_USER', 'hmuser'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'hmpass'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
+        'NAME': 'agora',
+        'USER': 'root',
+        'PASSWORD': 'hola1234',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
