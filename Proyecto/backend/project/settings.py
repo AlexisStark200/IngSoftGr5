@@ -1,14 +1,15 @@
 import os
 from pathlib import Path
 
+# Build paths inside the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Security settings
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'dev-secret-key')
-
 DEBUG = True
-
 ALLOWED_HOSTS = ['*']
 
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -49,13 +50,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
+# Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'agora',
-        'USER': 'root',
-        'PASSWORD': 'hola1234',
-        'HOST': '127.0.0.1',
+        'NAME': os.environ.get('DB_NAME', 'holamundo_db'),
+        'USER': os.environ.get('DB_USER', 'hmuser'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'hmpass'),
+        'HOST': os.environ.get('DB_HOST', 'db'),
         'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
@@ -63,14 +65,18 @@ DATABASES = {
     }
 }
 
+# Password validation
 AUTH_PASSWORD_VALIDATORS = []
 
+# Internationalization
 LANGUAGE_CODE = 'es-co'
-
-TIME_ZONE = 'UTC'
-
+TIME_ZONE = 'America/Bogota'
 USE_I18N = True
-
 USE_TZ = True
 
-STATIC_URL = 'static/'
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Default primary key field type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

@@ -1,40 +1,40 @@
-version: '3.8'
 services:
   db:
     image: mysql:8.0
     container_name: hm_mysql
     environment:
-      MYSQL_ROOT_PASSWORD: rootpass
-      MYSQL_DATABASE: holamundo_db
-      MYSQL_USER: hmuser
-      MYSQL_PASSWORD: hmpass
-    ports:
-      - "3306:3306"
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - db_data:/var/lib/mysql
       - ./ScriptProyecto.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3306:3306"
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
       timeout: 5s
       retries: 5
+    env_file:
+      - .env
 
   web:
     build: ./backend
     container_name: hm_web
-    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    command: bash -c "python manage.py migrate --fake-initial && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./backend:/code
     ports:
       - "8000:8000"
-    environment:
-      - DB_HOST=db
-      - DB_NAME=holamundo_db
-      - DB_USER=hmuser
-      - DB_PASSWORD=hmpass
     depends_on:
       db:
         condition: service_healthy
+    env_file:
+      - .env
 
 volumes:
   db_data:
+
+
