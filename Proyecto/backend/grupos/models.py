@@ -1,7 +1,7 @@
 from django.db import models
 
 class Grupo(models.Model):
-    id_grupo = models.IntegerField(primary_key=True, db_column='ID_GRUPO')
+    id_grupo = models.AutoField(primary_key=True, db_column='ID_GRUPO')
     nombre_grupo = models.CharField(max_length=60, db_column='NOMBRE_GRUPO')
     area_interes = models.CharField(max_length=40, db_column='AREA_INTERES', default='Cultura')
     fecha_creacion = models.DateField(db_column='FECHA_CREACION', auto_now_add=True)
