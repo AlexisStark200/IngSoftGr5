@@ -16,7 +16,7 @@ class ConfigManager:
             cls._instance = super().__new__(cls)
             # Inicializar configuración
             cls._instance._load_initial_config()
-            logger.info("✅ ConfigManager Singleton creado")
+            logger.info(" ConfigManager Singleton creado")
         return cls._instance
     
     def _load_initial_config(self):
