@@ -1,0 +1,138 @@
+************* Module .pylintrc
+.pylintrc:1:0: R0022: Useless option value for '--disable', 'no-self-use' was moved to an optional extension, see https://pylint.readthedocs.io/en/latest/whatsnew/2/2.14/summary.html#removed-checkers. (useless-option-value)
+************* Module pylint_django
+pylint_django:1:0: F5101: Django is not available on the PYTHONPATH (django-not-available)
+************* Module project
+project\__init__.py:2:0: C0327: Mixed line endings LF and CRLF (mixed-line-endings)
+************* Module project.singleton
+project\singleton.py:13:0: C0303: Trailing whitespace (trailing-whitespace)
+project\singleton.py:21:0: C0303: Trailing whitespace (trailing-whitespace)
+project\singleton.py:31:0: C0303: Trailing whitespace (trailing-whitespace)
+project\singleton.py:39:0: C0303: Trailing whitespace (trailing-whitespace)
+project\singleton.py:44:0: C0303: Trailing whitespace (trailing-whitespace)
+project\singleton.py:52:0: C0303: Trailing whitespace (trailing-whitespace)
+project\singleton.py:56:0: C0303: Trailing whitespace (trailing-whitespace)
+project\singleton.py:66:0: C0304: Final newline missing (missing-final-newline)
+project\singleton.py:51:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+project\singleton.py:61:19: C0201: Consider iterating the dictionary directly instead of calling .keys() (consider-iterating-dictionary)
+
+
+Report
+======
+63 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |5      |13         |-8.00      |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |1      |30         |-29.00     |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|method   |6      |14         |-8.00      |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|function |0      |1          |-1.00      |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+External dependencies
+---------------------
+::
+
+    grupos 
+      \-views (project.urls)
+
+
+
+170 lines have been analyzed
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |84     |49.41 |290      |-206.00    |
++----------+-------+------+---------+-----------+
+|docstring |46     |27.06 |67       |-21.00     |
++----------+-------+------+---------+-----------+
+|comment   |6      |3.53  |17       |-11.00     |
++----------+-------+------+---------+-----------+
+|empty     |34     |20.00 |99       |-65.00     |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |0        |0          |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |0.000    |=          |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |10     |32       |32         |
++-----------+-------+---------+-----------+
+|refactor   |0      |0        |0          |
++-----------+-------+---------+-----------+
+|warning    |1      |5        |5          |
++-----------+-------+---------+-----------+
+|error      |0      |4        |4          |
++-----------+-------+---------+-----------+
+
+
+
+% errors / warnings by module
+-----------------------------
+
++------------------+------+--------+---------+-----------+
+|module            |error |warning |refactor |convention |
++==================+======+========+=========+===========+
+|project.singleton |0.00  |100.00  |0.00     |90.00      |
++------------------+------+--------+---------+-----------+
+|project           |0.00  |0.00    |0.00     |10.00      |
++------------------+------+--------+---------+-----------+
+
+
+
+Messages
+--------
+
++------------------------------+------------+
+|message id                    |occurrences |
++==============================+============+
+|trailing-whitespace           |7           |
++------------------------------+------------+
+|useless-option-value          |1           |
++------------------------------+------------+
+|mixed-line-endings            |1           |
++------------------------------+------------+
+|missing-final-newline         |1           |
++------------------------------+------------+
+|logging-fstring-interpolation |1           |
++------------------------------+------------+
+|django-not-available          |1           |
++------------------------------+------------+
+|consider-iterating-dictionary |1           |
++------------------------------+------------+
+
+
+
+
+------------------------------------------------------------------
+Your code has been rated at 0.00/10 (previous run: 0.00/10, +0.00)
+
