@@ -9,7 +9,6 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - db_data:/var/lib/mysql
-      - ./ScriptProyecto.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "3306:3306"
     healthcheck:
@@ -23,7 +22,7 @@ services:
   web:
     build: ./backend
     container_name: hm_web
-    command: bash -c "python manage.py migrate --fake-initial && python manage.py runserver 0.0.0.0:8000"
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./backend:/code
     ports:
@@ -33,8 +32,8 @@ services:
         condition: service_healthy
     env_file:
       - .env
+    environment:
+      DJANGO_SETTINGS_MODULE: project.settings
 
 volumes:
   db_data:
-
-
