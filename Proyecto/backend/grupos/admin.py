@@ -25,7 +25,7 @@ from .models import (
 @admin.register(Usuario)
 class UsuarioAdmin(admin.ModelAdmin):
     """Admin para Usuario"""
-    
+
     list_display = [
         'id_usuario',
         'nombre_usuario',
@@ -38,7 +38,7 @@ class UsuarioAdmin(admin.ModelAdmin):
     search_fields = ['nombre_usuario', 'apellido', 'correo_usuario']
     ordering = ['-fecha_registro']
     readonly_fields = ['id_usuario', 'fecha_registro']
-    
+
     fieldsets = (
         ('Información Personal', {
             'fields': ('nombre_usuario', 'apellido', 'correo_usuario')
@@ -56,7 +56,7 @@ class UsuarioAdmin(admin.ModelAdmin):
 @admin.register(Grupo)
 class GrupoAdmin(admin.ModelAdmin):
     """Admin para Grupo"""
-    
+
     list_display = [
         'id_grupo',
         'nombre_grupo',
@@ -70,7 +70,7 @@ class GrupoAdmin(admin.ModelAdmin):
     search_fields = ['nombre_grupo', 'correo_grupo', 'descripcion']
     ordering = ['-fecha_creacion']
     readonly_fields = ['id_grupo', 'fecha_creacion', 'total_miembros']
-    
+
     fieldsets = (
         ('Información General', {
             'fields': ('nombre_grupo', 'tipo_grupo', 'area_interes', 'descripcion')
@@ -86,7 +86,7 @@ class GrupoAdmin(admin.ModelAdmin):
             'classes': ('collapse',)
         }),
     )
-    
+
     def total_miembros(self, obj):
         """Mostrar total de miembros"""
         return obj.miembros.count()
@@ -96,7 +96,7 @@ class GrupoAdmin(admin.ModelAdmin):
 @admin.register(Evento)
 class EventoAdmin(admin.ModelAdmin):
     """Admin para Evento"""
-    
+
     list_display = [
         'id_evento',
         'nombre_evento',
@@ -110,7 +110,7 @@ class EventoAdmin(admin.ModelAdmin):
     search_fields = ['nombre_evento', 'descripcion_evento', 'lugar']
     ordering = ['-fecha_inicio']
     readonly_fields = ['id_evento']
-    
+
     fieldsets = (
         ('Información General', {
             'fields': ('grupo', 'nombre_evento', 'descripcion_evento', 'tipo_evento')
@@ -130,7 +130,7 @@ class EventoAdmin(admin.ModelAdmin):
 @admin.register(Participacion)
 class ParticipacionAdmin(admin.ModelAdmin):
     """Admin para Participación"""
-    
+
     list_display = [
         'id_participaciones',
         'fecha_registro',
@@ -146,7 +146,7 @@ class ParticipacionAdmin(admin.ModelAdmin):
 @admin.register(Comentario)
 class ComentarioAdmin(admin.ModelAdmin):
     """Admin para Comentario"""
-    
+
     list_display = [
         'id_comentario',
         'mensaje_comentario',
@@ -162,7 +162,7 @@ class ComentarioAdmin(admin.ModelAdmin):
 @admin.register(Notificacion)
 class NotificacionAdmin(admin.ModelAdmin):
     """Admin para Notificación"""
-    
+
     list_display = [
         'id_notificacion',
         'tipo_notificacion',
@@ -178,7 +178,7 @@ class NotificacionAdmin(admin.ModelAdmin):
 @admin.register(Rol)
 class RolAdmin(admin.ModelAdmin):
     """Admin para Rol"""
-    
+
     list_display = ['id_rol', 'nombre_rol']
     readonly_fields = ['id_rol']
 
@@ -190,7 +190,7 @@ class RolAdmin(admin.ModelAdmin):
 @admin.register(UsuarioGrupo)
 class UsuarioGrupoAdmin(admin.ModelAdmin):
     """Admin para relación Usuario-Grupo"""
-    
+
     list_display = [
         'usuario',
         'grupo',
@@ -206,7 +206,7 @@ class UsuarioGrupoAdmin(admin.ModelAdmin):
 @admin.register(ParticipacionUsuario)
 class ParticipacionUsuarioAdmin(admin.ModelAdmin):
     """Admin para relación Participación-Usuario"""
-    
+
     list_display = ['usuario', 'participacion']
     list_filter = ['participacion__estado_participacion']
     search_fields = ['usuario__nombre_usuario']
@@ -215,7 +215,7 @@ class ParticipacionUsuarioAdmin(admin.ModelAdmin):
 @admin.register(UsuarioComentario)
 class UsuarioComentarioAdmin(admin.ModelAdmin):
     """Admin para relación Usuario-Comentario"""
-    
+
     list_display = ['usuario', 'comentario']
     search_fields = ['usuario__nombre_usuario', 'comentario__mensaje_comentario']
 
@@ -223,7 +223,7 @@ class UsuarioComentarioAdmin(admin.ModelAdmin):
 @admin.register(UsuarioNotificacion)
 class UsuarioNotificacionAdmin(admin.ModelAdmin):
     """Admin para relación Usuario-Notificación"""
-    
+
     list_display = ['usuario', 'notificacion', 'leida']
     list_filter = ['leida', 'notificacion__fecha_envio']
     search_fields = ['usuario__nombre_usuario', 'notificacion__mensaje']
@@ -232,6 +232,6 @@ class UsuarioNotificacionAdmin(admin.ModelAdmin):
 @admin.register(UsuarioRol)
 class UsuarioRolAdmin(admin.ModelAdmin):
     """Admin para relación Usuario-Rol"""
-    
+
     list_display = ['usuario', 'rol']
     search_fields = ['usuario__nombre_usuario', 'rol__nombre_rol']
