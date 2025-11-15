@@ -1,6 +1,5 @@
 [MASTER]
 ignore = migrations,__pycache__,staticfiles,media,venv,.venv,env,.env
-init-hook = 'import sys; sys.path.extend([".", "./grupos", "./project"])'
 
 [MESSAGES CONTROL]
 disable =
@@ -8,16 +7,16 @@ disable =
     too-few-public-methods,
     import-error,
     invalid-name,
-    no-self-use,
     duplicate-code,
     C0301,
     R0903,
     W0613,
-    C0114,    # missing-module-docstring
-    C0115,    # missing-class-docstring  
-    C0116,    # missing-function-docstring
-    W0719,    # broad-exception-raised
-    R1732,    # consider-using-with
+    C0114,
+    C0115,
+    C0116,
+    W1203,
+    C0411,
+    F5101
 
 [REPORTS]
 output-format = colorized
@@ -30,7 +29,8 @@ good-names =
     i,j,k,ex,Run,_,
     db,id,url,app,
     pk,qs,request,user,obj,
-    f,archivo,timestamp,carpeta
+    f,archivo,timestamp,carpeta,
+    key,my_dict
 
 [TYPECHECK]
 generated-members = 
@@ -38,7 +38,8 @@ generated-members =
     DoesNotExist,
     MultipleObjectsReturned,
     pk,
-    id
+    id,
+    _cache_prefix
 
 [DESIGN]
 max-args=6

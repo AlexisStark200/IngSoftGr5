@@ -8,7 +8,7 @@ class SingletonTest(TestCase):
         cache1 = grupo_cache
         cache2 = grupo_cache
         self.assertIs(cache1, cache2)  # Mismo objeto en memoria
-        
+
         config1 = config_manager
         config2 = config_manager
         self.assertIs(config1, config2)
