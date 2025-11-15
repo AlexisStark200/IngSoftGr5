@@ -38,5 +38,6 @@ router.register(r'notificaciones', NotificacionViewSet, basename='notificacion')
 
 # Incluir rutas del router
 urlpatterns = [
-    path('', include(router.urls)),
+    path('grupo/<int:grupo_id>/', views.GrupoDetailView.as_view(), name='grupo_detail'),
+    path('config/', views.ConfigView.as_view(), name='config'),
 ]

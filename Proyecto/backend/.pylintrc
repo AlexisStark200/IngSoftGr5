@@ -1,0 +1,47 @@
+[MASTER]
+ignore = migrations,__pycache__,staticfiles,media,venv,.venv,env,.env
+
+[MESSAGES CONTROL]
+disable =
+    missing-docstring,
+    too-few-public-methods,
+    import-error,
+    invalid-name,
+    duplicate-code,
+    C0301,
+    R0903,
+    W0613,
+    C0114,
+    C0115,
+    C0116,
+    W1203,
+    C0411,
+    F5101
+
+[REPORTS]
+output-format = colorized
+
+[FORMAT]
+max-line-length = 120
+
+[BASIC]
+good-names = 
+    i,j,k,ex,Run,_,
+    db,id,url,app,
+    pk,qs,request,user,obj,
+    f,archivo,timestamp,carpeta,
+    key,my_dict
+
+[TYPECHECK]
+generated-members = 
+    objects,
+    DoesNotExist,
+    MultipleObjectsReturned,
+    pk,
+    id,
+    _cache_prefix
+
+[DESIGN]
+max-args=6
+max-locals=12
+min-public-methods=0
