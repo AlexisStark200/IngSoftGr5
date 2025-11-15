@@ -5,8 +5,6 @@ Basado en Django 4.2 + DRF
 """
 
 from pathlib import Path
-import os
-from datetime import timedelta
 
 # Build paths inside the project
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,13 +28,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     # Third-party apps
     'rest_framework',                    # Django REST Framework
     'rest_framework.authtoken',          # Tokens de autenticación
     'corsheaders',                       # CORS para comunicación frontend-backend
     'drf_spectacular',                   # Documentación Swagger/OpenAPI
-    
+
     # Nuestras apps
     'grupos',
 ]
@@ -149,24 +147,24 @@ REST_FRAMEWORK = {
     # Paginación
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
-    
+
     # Autenticación
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ],
-    
+
     # Permisos
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ],
-    
+
     # Filtrado y búsqueda
     'DEFAULT_FILTER_BACKENDS': [
         'rest_framework.filters.SearchFilter',
         'rest_framework.filters.OrderingFilter',
     ],
-    
+
     # Documentación
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
@@ -242,4 +240,3 @@ LOGGING = {
 # ===========================================================================
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
