@@ -1,3 +1,12 @@
+"""
+Tests Unitarios - ÁgoraUN
+Módulo de Testing - Entrega 06
+
+12 Pruebas Unitarias (3 por integrante)
+Herramienta: unittest (Django TestCase)
+Validación: Funcionalidades esenciales del sistema
+"""
+
 from django.test import TestCase
 from .singletons import grupo_cache
 from project.singleton import config_manager

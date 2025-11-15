@@ -1,147 +1,281 @@
-# This is an auto-generated Django model module.
-# You'll have to do the following manually to clean this up:
-#   * Rearrange models' order
-#   * Make sure each model has one field with primary_key=True
-#   * Make sure each ForeignKey and OneToOneField has `on_delete` set to the desired behavior
-#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
-# Feel free to rename the models, but don't rename db_table values or field names.
+"""
+Modelos de Datos - ÁgoraUN (CORREGIDO)
+Basados en ScriptProyecto.sql
+Incluye todos los modelos del sistema:
+- Usuario, Grupo, Evento
+- Participación, Comentario, Notificación
+- Relaciones Many-to-Many
+"""
+
 from django.db import models
-
-
-
-class Comentario(models.Model):
-    id_comentario = models.IntegerField(db_column='ID_COMENTARIO', primary_key=True)  # Field name made lowercase.
-    mensaje_comentario = models.TextField(db_column='MENSAJE_COMENTARIO')  # Field name made lowercase.
-    fecha_publicacion = models.DateTimeField(db_column='FECHA_PUBLICACION')  # Field name made lowercase.
-    estado_comentario = models.CharField(db_column='ESTADO_COMENTARIO', max_length=20)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'comentario'
-
-
-
-class Evento(models.Model):
-    id_evento = models.IntegerField(db_column='ID_EVENTO', primary_key=True)  # Field name made lowercase.
-    id_grupo = models.ForeignKey('Grupo', models.DO_NOTHING, db_column='ID_GRUPO')  # Field name made lowercase.
-    nombre_evento = models.CharField(db_column='NOMBRE_EVENTO', max_length=60)  # Field name made lowercase.
-    descripcion_evento = models.TextField(db_column='DESCRIPCION_EVENTO')  # Field name made lowercase.
-    fecha_inicio = models.DateTimeField(db_column='FECHA_INICIO')  # Field name made lowercase.
-    fecha_fin = models.DateTimeField(db_column='FECHA_FIN')  # Field name made lowercase.
-    lugar = models.CharField(db_column='LUGAR', max_length=60)  # Field name made lowercase.
-    tipo_evento = models.CharField(db_column='TIPO_EVENTO', max_length=40)  # Field name made lowercase.
-    cupo = models.CharField(db_column='CUPO', max_length=20)  # Field name made lowercase.
-    estado_evento = models.CharField(db_column='ESTADO_EVENTO', max_length=20)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'evento'
-
-
-class Grupo(models.Model):
-    id_grupo = models.IntegerField(db_column='ID_GRUPO', primary_key=True)  # Field name made lowercase.
-    nombre_grupo = models.CharField(db_column='NOMBRE_GRUPO', max_length=60)  # Field name made lowercase.
-    area_interes = models.CharField(db_column='AREA_INTERES', max_length=40)  # Field name made lowercase.
-    fecha_creacion = models.DateField(db_column='FECHA_CREACION')  # Field name made lowercase.
-    tipo_grupo = models.CharField(db_column='TIPO_GRUPO', max_length=40)  # Field name made lowercase.
-    logo = models.TextField(db_column='LOGO')  # Field name made lowercase.
-    correo_grupo = models.CharField(db_column='CORREO_GRUPO', max_length=128)  # Field name made lowercase.
-    descripcion = models.TextField(db_column='DESCRIPCION')  # Field name made lowercase.
-    link_whatsapp = models.CharField(db_column='LINK_WHATSAPP', max_length=128, blank=True, null=True)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'grupo'
-
-
-class Notificacion(models.Model):
-    id_notificacion = models.IntegerField(db_column='ID_NOTIFICACION', primary_key=True)  # Field name made lowercase.
-    tipo_notificacion = models.CharField(db_column='TIPO_NOTIFICACION', max_length=20)  # Field name made lowercase.
-    mensaje = models.TextField(db_column='MENSAJE')  # Field name made lowercase.
-    fecha_envio = models.DateTimeField(db_column='FECHA_ENVIO')  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'notificacion'
-
-
-class Participacion(models.Model):
-    id_participaciones = models.IntegerField(db_column='ID_PARTICIPACIONES', primary_key=True)  # Field name made lowercase.
-    fecha_registro = models.DateField(db_column='FECHA_REGISTRO')  # Field name made lowercase.
-    comentario = models.CharField(db_column='COMENTARIO', max_length=100)  # Field name made lowercase.
-    estado_participacion = models.CharField(db_column='ESTADO_PARTICIPACION', max_length=20)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'participacion'
-
-
-class ParticipacionUsuario(models.Model):
-    id_usuario = models.OneToOneField('Usuario', models.DO_NOTHING, db_column='ID_USUARIO', primary_key=True)  # Field name made lowercase. The composite primary key (ID_USUARIO, ID_PARTICIPACIONES) found, that is not supported. The first column is selected.
-    id_participaciones = models.ForeignKey(Participacion, models.DO_NOTHING, db_column='ID_PARTICIPACIONES')  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'participacion_usuario'
-        unique_together = (('id_usuario', 'id_participaciones'),)
-
-
-class Rol(models.Model):
-    id_rol = models.IntegerField(db_column='ID_ROL', primary_key=True)  # Field name made lowercase.
-    nombre_rol = models.CharField(db_column='NOMBRE_ROL', max_length=20)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'rol'
+from django.utils import timezone
 
 
 class Usuario(models.Model):
-    id_usuario = models.IntegerField(db_column='ID_USUARIO', primary_key=True)  # Field name made lowercase.
-    nombre_usuario = models.CharField(db_column='NOMBRE_USUARIO', max_length=60)  # Field name made lowercase.
-    apellido = models.CharField(db_column='APELLIDO', max_length=60)  # Field name made lowercase.
-    correo_usuario = models.CharField(db_column='CORREO_USUARIO', max_length=128)  # Field name made lowercase.
-    estado_usuario = models.CharField(db_column='ESTADO_USUARIO', max_length=20)  # Field name made lowercase.
+    """Modelo de Usuario del sistema"""
+    id_usuario = models.AutoField(primary_key=True)
+    nombre_usuario = models.CharField(max_length=60)
+    apellido = models.CharField(max_length=60)
+    correo_usuario = models.EmailField(max_length=128, unique=True)
+    estado_usuario = models.CharField(
+        max_length=20,
+        choices=[
+            ('ACTIVO', 'Activo'),
+            ('INACTIVO', 'Inactivo'),
+            ('SUSPENDIDO', 'Suspendido')
+        ],
+        default='ACTIVO'
+    )
+    fecha_registro = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        managed = False
-        db_table = 'usuario'
+        db_table = 'USUARIO'
+        verbose_name = 'Usuario'
+        verbose_name_plural = 'Usuarios'
+
+    def __str__(self):
+        return f"{self.nombre_usuario} {self.apellido}"
+
+
+class Rol(models.Model):
+    """Modelo de Roles del sistema"""
+    id_rol = models.AutoField(primary_key=True)
+    nombre_rol = models.CharField(
+        max_length=20,
+        choices=[
+            ('ADMIN', 'Administrador'),
+            ('MODERADOR', 'Moderador'),
+            ('MIEMBRO', 'Miembro'),
+            ('INVITADO', 'Invitado')
+        ],
+        default='MIEMBRO'  # ✅ CORREGIDO: Agregado default
+    )
+
+    class Meta:
+        db_table = 'ROL'
+        verbose_name = 'Rol'
+        verbose_name_plural = 'Roles'
+
+    def __str__(self):
+        return self.nombre_rol
+
+
+class Grupo(models.Model):
+    """Modelo de Grupo/Club estudiantil"""
+    id_grupo = models.AutoField(primary_key=True)
+    nombre_grupo = models.CharField(max_length=60)
+    area_interes = models.CharField(max_length=40)
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
+    tipo_grupo = models.CharField(max_length=40)
+    logo = models.ImageField(upload_to='logos/', blank=True, null=True)
+    correo_grupo = models.EmailField(max_length=128)
+    descripcion = models.TextField()
+    link_whatsapp = models.CharField(max_length=128, blank=True, null=True)
+
+    # Relaciones Many-to-Many
+    miembros = models.ManyToManyField(
+        Usuario,
+        through='UsuarioGrupo',
+        related_name='grupos'
+    )
+
+    class Meta:
+        db_table = 'GRUPO'
+        verbose_name = 'Grupo'
+        verbose_name_plural = 'Grupos'
+
+    def __str__(self):
+        return self.nombre_grupo
+
+
+class Evento(models.Model):
+    """Modelo de Evento"""
+    id_evento = models.AutoField(primary_key=True)
+    grupo = models.ForeignKey(
+        Grupo,
+        on_delete=models.CASCADE,
+        related_name='eventos'
+    )
+    nombre_evento = models.CharField(max_length=60)
+    descripcion_evento = models.TextField()
+    fecha_inicio = models.DateTimeField()
+    fecha_fin = models.DateTimeField()
+    lugar = models.CharField(max_length=60)
+    tipo_evento = models.CharField(max_length=40)
+    cupo = models.IntegerField()
+    estado_evento = models.CharField(
+        max_length=20,
+        choices=[
+            ('PROGRAMADO', 'Programado'),
+            ('EN_CURSO', 'En Curso'),
+            ('FINALIZADO', 'Finalizado'),
+            ('CANCELADO', 'Cancelado')
+        ],
+        default='PROGRAMADO'
+    )
+
+    class Meta:
+        db_table = 'EVENTO'
+        verbose_name = 'Evento'
+        verbose_name_plural = 'Eventos'
+
+    def __str__(self):
+        return f"{self.nombre_evento} - {self.grupo.nombre_grupo}"
+
+
+class Participacion(models.Model):
+    """Modelo de Participación en eventos"""
+    id_participaciones = models.AutoField(primary_key=True)
+    # ✅ CORREGIDO: Agregado FK a Evento
+    evento = models.ForeignKey(
+        Evento,
+        on_delete=models.CASCADE,
+        related_name='participaciones'
+    )
+    fecha_registro = models.DateTimeField(auto_now_add=True)
+    comentario = models.CharField(max_length=100, blank=True)
+    estado_participacion = models.CharField(
+        max_length=20,
+        choices=[
+            ('CONFIRMADO', 'Confirmado'),
+            ('PENDIENTE', 'Pendiente'),
+            ('CANCELADO', 'Cancelado')
+        ],
+        default='PENDIENTE'
+    )
+
+    # Relación Many-to-Many con Usuario
+    usuarios = models.ManyToManyField(
+        Usuario,
+        through='ParticipacionUsuario',
+        related_name='participaciones'
+    )
+
+    class Meta:
+        db_table = 'PARTICIPACION'
+        verbose_name = 'Participación'
+        verbose_name_plural = 'Participaciones'
+
+    def __str__(self):
+        return f"Participación {self.id_participaciones} - {self.evento.nombre_evento}"
+
+
+class Comentario(models.Model):
+    """Modelo de Comentarios"""
+    id_comentario = models.AutoField(primary_key=True)
+    mensaje_comentario = models.TextField()
+    fecha_publicacion = models.DateTimeField(auto_now_add=True)
+    estado_comentario = models.CharField(
+        max_length=20,
+        choices=[
+            ('PUBLICADO', 'Publicado'),
+            ('PENDIENTE', 'Pendiente'),
+            ('RECHAZADO', 'Rechazado')
+        ],
+        default='PUBLICADO'
+    )
+
+    # Relación Many-to-Many con Usuario
+    usuarios = models.ManyToManyField(
+        Usuario,
+        through='UsuarioComentario',
+        related_name='comentarios'
+    )
+
+    class Meta:
+        db_table = 'COMENTARIO'
+        verbose_name = 'Comentario'
+        verbose_name_plural = 'Comentarios'
+
+    def __str__(self):
+        return f"Comentario {self.id_comentario}"
+
+
+class Notificacion(models.Model):
+    """Modelo de Notificaciones"""
+    id_notificacion = models.AutoField(primary_key=True)
+    tipo_notificacion = models.CharField(max_length=20)
+    mensaje = models.TextField()
+    fecha_envio = models.DateTimeField(auto_now_add=True)
+
+    # Relación Many-to-Many con Usuario
+    usuarios = models.ManyToManyField(
+        Usuario,
+        through='UsuarioNotificacion',
+        related_name='notificaciones'
+    )
+
+    class Meta:
+        db_table = 'NOTIFICACION'
+        verbose_name = 'Notificación'
+        verbose_name_plural = 'Notificaciones'
+
+    def __str__(self):
+        return f"{self.tipo_notificacion} - {self.fecha_envio}"
+
+
+# ===========================================================================
+# TABLAS INTERMEDIAS (Many-to-Many)
+# ===========================================================================
+
+class UsuarioGrupo(models.Model):
+    """Relación Usuario-Grupo"""
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    grupo = models.ForeignKey(Grupo, on_delete=models.CASCADE)
+    fecha_union = models.DateTimeField(auto_now_add=True)
+    rol_en_grupo = models.CharField(
+        max_length=20,
+        choices=[
+            ('ADMIN', 'Administrador'),
+            ('MIEMBRO', 'Miembro')
+        ],
+        default='MIEMBRO'
+    )
+
+    class Meta:
+        db_table = 'USUARIO_GRUPO'
+        unique_together = ('usuario', 'grupo')
+
+    def __str__(self):
+        return f"{self.usuario} en {self.grupo}"
+
+
+class ParticipacionUsuario(models.Model):
+    """Relación Participación-Usuario"""
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    participacion = models.ForeignKey(Participacion, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'PARTICIPACION_USUARIO'
+        unique_together = ('usuario', 'participacion')
 
 
 class UsuarioComentario(models.Model):
-    id_comentario = models.OneToOneField(Comentario, models.DO_NOTHING, db_column='ID_COMENTARIO', primary_key=True)  # Field name made lowercase. The composite primary key (ID_COMENTARIO, ID_USUARIO) found, that is not supported. The first column is selected.
-    id_usuario = models.ForeignKey(Usuario, models.DO_NOTHING, db_column='ID_USUARIO')  # Field name made lowercase.
+    """Relación Usuario-Comentario"""
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    comentario = models.ForeignKey(Comentario, on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
-        db_table = 'usuario_comentario'
-        unique_together = (('id_comentario', 'id_usuario'),)
-
-
-class UsuarioGrupo(models.Model):
-    id_grupo = models.OneToOneField(Grupo, models.DO_NOTHING, db_column='ID_GRUPO', primary_key=True)  # Field name made lowercase. The composite primary key (ID_GRUPO, ID_USUARIO) found, that is not supported. The first column is selected.
-    id_usuario = models.ForeignKey(Usuario, models.DO_NOTHING, db_column='ID_USUARIO')  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'usuario_grupo'
-        unique_together = (('id_grupo', 'id_usuario'),)
+        db_table = 'USUARIO_COMENTARIO'
+        unique_together = ('usuario', 'comentario')
 
 
 class UsuarioNotificacion(models.Model):
-    id_notificacion = models.OneToOneField(Notificacion, models.DO_NOTHING, db_column='ID_NOTIFICACION', primary_key=True)  # Field name made lowercase. The composite primary key (ID_NOTIFICACION, ID_USUARIO) found, that is not supported. The first column is selected.
-    id_usuario = models.ForeignKey(Usuario, models.DO_NOTHING, db_column='ID_USUARIO')  # Field name made lowercase.
+    """Relación Usuario-Notificación"""
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    notificacion = models.ForeignKey(Notificacion, on_delete=models.CASCADE)
+    leida = models.BooleanField(default=False)
 
     class Meta:
-        managed = False
-        db_table = 'usuario_notificacion'
-        unique_together = (('id_notificacion', 'id_usuario'),)
+        db_table = 'USUARIO_NOTIFICACION'
+        unique_together = ('usuario', 'notificacion')
 
 
 class UsuarioRol(models.Model):
-    id_rol = models.OneToOneField(Rol, models.DO_NOTHING, db_column='ID_ROL', primary_key=True)  # Field name made lowercase. The composite primary key (ID_ROL, ID_USUARIO) found, that is not supported. The first column is selected.
-    id_usuario = models.ForeignKey(Usuario, models.DO_NOTHING, db_column='ID_USUARIO')  # Field name made lowercase.
+    """Relación Usuario-Rol"""
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    rol = models.ForeignKey(Rol, on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
-        db_table = 'usuario_rol'
-        unique_together = (('id_rol', 'id_usuario'),)
+        db_table = 'USUARIO_ROL'
+        unique_together = ('usuario', 'rol')

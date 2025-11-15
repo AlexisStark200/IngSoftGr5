@@ -10,4 +10,24 @@ class Migration(migrations.Migration):
     dependencies = [
     ]
 
-   
+    operations = [
+        migrations.CreateModel(
+            name='Grupo',
+            fields=[
+                ('id_grupo', models.IntegerField(db_column='ID_GRUPO', primary_key=True, serialize=False)),
+                ('nombre_grupo', models.CharField(db_column='NOMBRE_GRUPO', max_length=60)),
+                ('area_interes', models.CharField(db_column='AREA_INTERES', default='Cultura', max_length=40)),
+                ('fecha_creacion', models.DateField(auto_now_add=True, db_column='FECHA_CREACION')),
+                ('tipo_grupo', models.CharField(db_column='TIPO_GRUPO', default='Club', max_length=40)),
+                ('logo', models.BinaryField(blank=True, db_column='LOGO', null=True)),
+                ('correo_grupo', models.CharField(db_column='CORREO_GRUPO', max_length=128)),
+                ('descripcion', models.TextField(db_column='DESCRIPCION')),
+                ('link_whatsapp', models.CharField(blank=True, db_column='LINK_WHATSAPP', max_length=128, null=True)),
+            ],
+            options={
+                'verbose_name': 'Grupo',
+                'verbose_name_plural': 'Grupos',
+                'db_table': 'GRUPO',
+            },
+        ),
+    ]
