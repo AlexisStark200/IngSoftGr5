@@ -11,10 +11,18 @@ Permite gestionar datos sin API (interfaz visual)
 
 from django.contrib import admin
 from .models import (
-    Usuario, Grupo, Evento, Participacion,
-    Comentario, Notificacion, Rol,
-    UsuarioGrupo, ParticipacionUsuario,
-    UsuarioComentario, UsuarioNotificacion, UsuarioRol
+    Grupo,
+    Evento,
+    Usuario,
+    Comentario,
+    Notificacion,
+    Participacion,
+    Rol,
+    UsuarioGrupo,
+    UsuarioComentario,
+    UsuarioNotificacion,
+    UsuarioRol,
+    ParticipacionUsuario
 )
 
 
@@ -235,3 +243,21 @@ class UsuarioRolAdmin(admin.ModelAdmin):
 
     list_display = ['usuario', 'rol']
     search_fields = ['usuario__nombre_usuario', 'rol__nombre_rol']
+
+models_list = [
+    Grupo,
+    Evento,
+    Usuario,
+    Comentario,
+    Notificacion,
+    Participacion,
+    Rol,
+    UsuarioGrupo,
+    UsuarioComentario,
+    UsuarioNotificacion,
+    UsuarioRol,
+    ParticipacionUsuario
+]
+
+for model in models_list:
+    admin.site.register(model)

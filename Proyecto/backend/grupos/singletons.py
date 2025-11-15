@@ -1,5 +1,6 @@
-from django.core.cache import cache
 import logging
+from django.core.cache import cache
+
 from .models import Grupo
 
 logger = logging.getLogger(__name__)
