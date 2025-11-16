@@ -5,7 +5,7 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 def home(request):
     return JsonResponse({
-        'message': 'Bienvenido a ÁgoraUN API', 
+        'message': 'Bienvenido a ÁgoraUN API',
         'status': 'active',
         'version': '1.0.0'
     })

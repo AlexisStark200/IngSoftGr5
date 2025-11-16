@@ -9,6 +9,7 @@ Los tests anteriores se mantienen comentados como referencia.
 """
 """
 from django.test import TestCase
+<<<<<<< HEAD
 from grupos.models import Grupo
 """
 
@@ -305,3 +306,18 @@ class TestValidacionIntegralGrupos(TestCase):
         self.assertIsNotNone(grupo_recuperado.tipo_grupo)
         self.assertIsNotNone(grupo_recuperado.area_interes)
 """
+=======
+from .singletons import grupo_cache
+from project.singleton import config_manager
+
+class SingletonTest(TestCase):
+    def test_singleton_instances(self):
+        """Verificar que siempre es la misma instancia"""
+        cache1 = grupo_cache
+        cache2 = grupo_cache
+        self.assertIs(cache1, cache2)  # Mismo objeto en memoria
+
+        config1 = config_manager
+        config2 = config_manager
+        self.assertIs(config1, config2)
+>>>>>>> 9efb33cafdea510868ac1181abeba0dbbbe4c9c1

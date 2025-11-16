@@ -8,7 +8,6 @@ Incluye todos los modelos del sistema:
 """
 
 from django.db import models
-from django.utils import timezone
 
 
 class Usuario(models.Model):
