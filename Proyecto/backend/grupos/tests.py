@@ -1,20 +1,22 @@
 """
-Tests Unitarios - ÁgoraUN
-Módulo de Testing - Entrega 06
+Tests Unitarios - ÁgoraUN (ARCHIVO LEGACY)
 
-12 Pruebas Unitarias (3 por integrante)
-Herramienta: unittest (Django TestCase)
-Validación: Funcionalidades esenciales del sistema
+ESTE ARCHIVO HA SIDO MIGRADO A:
+- grupos/tests/test_services.py (12 pruebas de lógica de negocio)
+- grupos/tests/test_models.py (pruebas de modelos si son necesarias)
+
+Los tests anteriores se mantienen comentados como referencia.
 """
-
+"""
 from django.test import TestCase
 from grupos.models import Grupo
-
+"""
 
 # ============================================================================
 # PERSONA 1 - BACKEND/MODELOS (3 pruebas - RF_1)
 # ============================================================================
 
+"""
 class TestBackendRegistroGrupos(TestCase):
     """Tests implementados por Persona 1 - Gestión de grupos en backend"""
 
@@ -302,3 +304,4 @@ class TestValidacionIntegralGrupos(TestCase):
         self.assertIsNotNone(grupo_recuperado.correo_grupo)
         self.assertIsNotNone(grupo_recuperado.tipo_grupo)
         self.assertIsNotNone(grupo_recuperado.area_interes)
+"""
