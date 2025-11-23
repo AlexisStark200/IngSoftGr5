@@ -200,6 +200,27 @@ class GrupoService:
         return UsuarioGrupo.objects.filter(
             grupo_id=id_grupo
         ).select_related('usuario')
+    
+    @staticmethod
+    @transaction.atomic
+    def eliminar_miembro(id_grupo, id_usuario):
+        """
+        Eliminar un miembro de un grupo.
+
+        Levanta ValidationError si el usuario no pertenece al grupo.
+        """
+        grupo = Grupo.objects.get(id_grupo=id_grupo)
+        usuario = Usuario.objects.get(id_usuario=id_usuario)
+
+        deleted, _ = UsuarioGrupo.objects.filter(
+            usuario=usuario,
+            grupo=grupo
+        ).delete()
+
+        if deleted == 0:
+            raise ValidationError("El usuario no es miembro del grupo")
+
+        return True
 
 
 # ===========================================================================
@@ -386,47 +407,49 @@ class ParticipacionService:
 
     @staticmethod
     @transaction.atomic
-    def registrar_participacion(id_evento, id_usuario, comentario=''):
+    def registrar_participacion(id_evento, id_usuario, comentario=""):
         """
-        Registrar participación de un usuario en un evento
+        Registrar participación de un usuario en un evento.
 
-        Reglas de Negocio:
-        - Verificar cupo disponible
-        - No permitir registros duplicados
+        Reglas de negocio:
+        - Verificar que el evento exista
+        - Verificar que el usuario exista
+        - No permitir registros duplicados (mismo usuario + evento)
+        - Verificar cupo disponible (sobre ese evento)
         - Estado inicial: PENDIENTE
-
-        Args:
-            id_evento (int): ID del evento
-            id_usuario (int): ID del usuario
-            comentario (str): Comentario opcional
-
-        Returns:
-            Participacion: Participación creada
-
-        Raises:
-            ValidationError: Si no hay cupo o ya está registrado
         """
-        evento = Evento.objects.get(id_evento=id_evento)
+        # Bloqueamos la fila del evento para evitar condiciones de carrera de cupo
+        evento = Evento.objects.select_for_update().get(id_evento=id_evento)
         usuario = Usuario.objects.get(id_usuario=id_usuario)
 
-        # Validación: Cupo disponible
+        # 1) Validar que el usuario no esté ya registrado en este evento
+        ya_existe = ParticipacionUsuario.objects.filter(
+            usuario=usuario,
+            participacion__evento=evento,
+        ).exists()
+        if ya_existe:
+            raise ValidationError("El usuario ya está registrado en este evento")
+
+        # 2) Contar participaciones CONFIRMADAS de ESTE evento
         participaciones_confirmadas = ParticipacionUsuario.objects.filter(
-            participacion__estado_participacion='CONFIRMADO'
+            participacion__evento=evento,
+            participacion__estado_participacion="CONFIRMADO",
         ).count()
 
         if participaciones_confirmadas >= evento.cupo:
             raise ValidationError("No hay cupos disponibles para este evento")
 
-        # Crear participación
+        # 3) Crear la Participación (estado inicial: PENDIENTE)
         participacion = Participacion.objects.create(
+            evento=evento,
             comentario=comentario,
-            estado_participacion='PENDIENTE'
+            estado_participacion="PENDIENTE",
         )
 
-        # Relacionar con usuario
+        # 4) Relacionarla con el usuario
         ParticipacionUsuario.objects.create(
             usuario=usuario,
-            participacion=participacion
+            participacion=participacion,
         )
 
         return participacion

@@ -68,7 +68,7 @@ class GrupoSerializer(serializers.ModelSerializer):
             'total_miembros',
             'total_eventos'
         ]
-        read_only_fields = ['id_grupo', 'fecha_creacion']
+    read_only_fields = ['id_grupo', 'fecha_creacion']
 
     def get_total_miembros(self, obj):
         """Contar miembros del grupo"""
@@ -151,14 +151,15 @@ class EventoSerializer(serializers.ModelSerializer):
         read_only_fields = ['id_evento']
 
     def get_cupos_disponibles(self, obj):
-        """Calcular cupos disponibles"""
-        participaciones = ParticipacionUsuario.objects.filter(
+        """Calcular cupos disponibles SOLO para este evento"""
+        participaciones_confirmadas = ParticipacionUsuario.objects.filter(
+            participacion__evento=obj,
             participacion__estado_participacion='CONFIRMADO'
         ).count()
-        return max(0, obj.cupo - participaciones)
+        return max(0, obj.cupo - participaciones_confirmadas)
 
     def validate(self, data):
-        """Validar fechas coherentes"""
+        """Validar fechas coherentes y cupo positivo"""
         if data.get('fecha_fin') and data.get('fecha_inicio'):
             if data['fecha_fin'] <= data['fecha_inicio']:
                 raise serializers.ValidationError(
@@ -174,17 +175,54 @@ class EventoSerializer(serializers.ModelSerializer):
 
 
 class ParticipacionSerializer(serializers.ModelSerializer):
-    """Serializer para Participación"""
+    """Serializer para Participación en evento"""
+
+    evento_info = EventoSerializer(source='evento', read_only=True)
+    usuarios = serializers.SerializerMethodField()
 
     class Meta:
         model = Participacion
         fields = [
             'id_participaciones',
+            'evento',
+            'evento_info',
             'fecha_registro',
             'comentario',
-            'estado_participacion'
+            'estado_participacion',
+            'usuarios',
         ]
         read_only_fields = ['id_participaciones', 'fecha_registro']
+
+    def get_usuarios(self, obj):
+        """Usuarios asociados a esta participación"""
+        return UsuarioSerializer(obj.usuarios.all(), many=True).data
+
+
+# ===========================================================================
+# SERIALIZERS ESPECIALES (para operaciones específicas)
+# ===========================================================================
+
+class RegistroParticipacionSerializer(serializers.Serializer):
+    """Serializer para registrar participación en evento
+
+    El evento viene en la URL (/eventos/{id}/registrar-usuario/),
+    por eso aquí solo pedimos id_usuario y comentario.
+    """
+
+    id_usuario = serializers.IntegerField()
+    comentario = serializers.CharField(
+        max_length=100,
+        required=False,
+        allow_blank=True
+    )
+
+    def validate_id_usuario(self, value):
+        """Verificar que el usuario existe"""
+        try:
+            Usuario.objects.get(id_usuario=value)
+        except ObjectDoesNotExist as exc:
+            raise serializers.ValidationError("El usuario no existe") from exc
+        return value
 
 
 class ComentarioSerializer(serializers.ModelSerializer):
@@ -300,27 +338,8 @@ class ParticipacionUsuarioSerializer(serializers.ModelSerializer):
 
 
 # ===========================================================================
-# SERIALIZERS ESPECIALES (para operaciones específicas)
+# OTROS SERIALIZERS ESPECIALES
 # ===========================================================================
-
-class RegistroParticipacionSerializer(serializers.Serializer):
-    """Serializer para registrar participación en evento"""
-
-    id_evento = serializers.IntegerField()
-    comentario = serializers.CharField(
-        max_length=100,
-        required=False,
-        allow_blank=True
-    )
-
-    def validate_id_evento(self, value):
-        """Verificar que el evento existe"""
-        try:
-            Evento.objects.get(id_evento=value)
-        except ObjectDoesNotExist as exc:
-            raise serializers.ValidationError("El evento no existe") from exc
-        return value
-
 
 class AgregarMiembroSerializer(serializers.Serializer):
     """Serializer para agregar miembro a grupo"""

@@ -21,9 +21,9 @@ class Usuario(models.Model):
         choices=[
             ('ACTIVO', 'Activo'),
             ('INACTIVO', 'Inactivo'),
-            ('SUSPENDIDO', 'Suspendido')
+            ('SUSPENDIDO', 'Suspendido'),
         ],
-        default='ACTIVO'
+        default='ACTIVO',
     )
     fecha_registro = models.DateTimeField(auto_now_add=True)
 
@@ -45,9 +45,9 @@ class Rol(models.Model):
             ('ADMIN', 'Administrador'),
             ('MODERADOR', 'Moderador'),
             ('MIEMBRO', 'Miembro'),
-            ('INVITADO', 'Invitado')
+            ('INVITADO', 'Invitado'),
         ],
-        default='MIEMBRO'  # ✅ CORREGIDO: Agregado default
+        default='MIEMBRO',  # default necesario por el choices
     )
 
     class Meta:
@@ -64,7 +64,8 @@ class Grupo(models.Model):
     id_grupo = models.AutoField(primary_key=True)
     nombre_grupo = models.CharField(max_length=60)
     area_interes = models.CharField(max_length=40)
-    fecha_creacion = models.DateTimeField(auto_now_add=True)
+    # DateField para evitar problemas de timezone con columnas DATE en MySQL
+    fecha_creacion = models.DateField(auto_now_add=True)
     tipo_grupo = models.CharField(max_length=40)
     logo = models.ImageField(upload_to='logos/', blank=True, null=True)
     correo_grupo = models.EmailField(max_length=128)
@@ -75,7 +76,7 @@ class Grupo(models.Model):
     miembros = models.ManyToManyField(
         Usuario,
         through='UsuarioGrupo',
-        related_name='grupos'
+        related_name='grupos',
     )
 
     class Meta:
@@ -93,7 +94,7 @@ class Evento(models.Model):
     grupo = models.ForeignKey(
         Grupo,
         on_delete=models.CASCADE,
-        related_name='eventos'
+        related_name='eventos',
     )
     nombre_evento = models.CharField(max_length=60)
     descripcion_evento = models.TextField()
@@ -108,9 +109,9 @@ class Evento(models.Model):
             ('PROGRAMADO', 'Programado'),
             ('EN_CURSO', 'En Curso'),
             ('FINALIZADO', 'Finalizado'),
-            ('CANCELADO', 'Cancelado')
+            ('CANCELADO', 'Cancelado'),
         ],
-        default='PROGRAMADO'
+        default='PROGRAMADO',
     )
 
     class Meta:
@@ -125,11 +126,11 @@ class Evento(models.Model):
 class Participacion(models.Model):
     """Modelo de Participación en eventos"""
     id_participaciones = models.AutoField(primary_key=True)
-    # ✅ CORREGIDO: Agregado FK a Evento
+    # FK al evento correspondiente
     evento = models.ForeignKey(
         Evento,
         on_delete=models.CASCADE,
-        related_name='participaciones'
+        related_name='participaciones',
     )
     fecha_registro = models.DateTimeField(auto_now_add=True)
     comentario = models.CharField(max_length=100, blank=True)
@@ -138,16 +139,16 @@ class Participacion(models.Model):
         choices=[
             ('CONFIRMADO', 'Confirmado'),
             ('PENDIENTE', 'Pendiente'),
-            ('CANCELADO', 'Cancelado')
+            ('CANCELADO', 'Cancelado'),
         ],
-        default='PENDIENTE'
+        default='PENDIENTE',
     )
 
     # Relación Many-to-Many con Usuario
     usuarios = models.ManyToManyField(
         Usuario,
         through='ParticipacionUsuario',
-        related_name='participaciones'
+        related_name='participaciones',
     )
 
     class Meta:
@@ -169,16 +170,16 @@ class Comentario(models.Model):
         choices=[
             ('PUBLICADO', 'Publicado'),
             ('PENDIENTE', 'Pendiente'),
-            ('RECHAZADO', 'Rechazado')
+            ('RECHAZADO', 'Rechazado'),
         ],
-        default='PUBLICADO'
+        default='PUBLICADO',
     )
 
     # Relación Many-to-Many con Usuario
     usuarios = models.ManyToManyField(
         Usuario,
         through='UsuarioComentario',
-        related_name='comentarios'
+        related_name='comentarios',
     )
 
     class Meta:
@@ -201,7 +202,7 @@ class Notificacion(models.Model):
     usuarios = models.ManyToManyField(
         Usuario,
         through='UsuarioNotificacion',
-        related_name='notificaciones'
+        related_name='notificaciones',
     )
 
     class Meta:
@@ -226,9 +227,9 @@ class UsuarioGrupo(models.Model):
         max_length=20,
         choices=[
             ('ADMIN', 'Administrador'),
-            ('MIEMBRO', 'Miembro')
+            ('MIEMBRO', 'Miembro'),
         ],
-        default='MIEMBRO'
+        default='MIEMBRO',
     )
 
     class Meta:

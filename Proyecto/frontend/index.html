@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ÁgoraUN — Catálogo de Grupos (MVP)</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header>
+    <h1>ÁgoraUN — Catálogo de Grupos</h1>
+    <div class="env">
+      <label>API base:</label>
+      <input id="apiBase" value="http://localhost:8000/api" />
+      <button id="saveBase">Usar</button>
+    </div>
+    <div class="auth">
+      <label>Token (opcional):</label>
+      <input id="apiToken" placeholder="Token DRF (si lo tienes)" />
+      <button id="saveToken">Guardar</button>
+    </div>
+  </header>
+
+  <section class="filters">
+    <input id="q" placeholder="Buscar por nombre" />
+    <select id="area">
+      <option value="">Área (todas)</option>
+      <option value="arte">Arte</option>
+      <option value="deportes">Deportes</option>
+      <option value="ciencia">Ciencia</option>
+      <option value="tecnologia">Tecnología</option>
+    </select>
+    <button id="searchBtn">Buscar</button>
+  </section>
+
+  <main>
+    <div id="groups" class="grid"></div>
+    <template id="cardTpl">
+      <article class="card">
+        <h3 class="g-name"></h3>
+        <p class="g-area"></p>
+        <div class="actions">
+          <button class="btn-view">Ver detalles</button>
+          <button class="btn-join">Unirme</button>
+          <button class="btn-leave secondary">Salir</button>
+        </div>
+        <div class="detail hidden">
+          <h4>Eventos</h4>
+          <ul class="events"></ul>
+        </div>
+      </article>
+    </template>
+  </main>
+
+  <footer>
+    <small>MVP de referencia — Conecta con tu API de Django/DRF</small>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
