@@ -10,8 +10,10 @@ from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.exceptions import ValidationError as DRFValidationError
 from rest_framework.filters import SearchFilter, OrderingFilter
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny, IsAuthenticated
 from rest_framework.response import Response
+from rest_framework.parsers import JSONParser
+from rest_framework.serializers import Serializer, CharField, EmailField
 
 from project.singleton import config_manager
 from .singletons import grupo_cache
@@ -467,3 +469,111 @@ class NotificacionViewSet(viewsets.ReadOnlyModelViewSet):
             return Response(NotificacionSerializer(notif).data, status=status.HTTP_201_CREATED)
         except (ValidationError, DRFValidationError) as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+
+# -------------------------------------------------------------------
+# AUTH (Register / Login / Logout)
+# -------------------------------------------------------------------
+
+from .auth import UsuarioAuthToken  # import del nuevo módulo de auth
+
+
+class RegisterSerializer(Serializer):
+    nombre_usuario = CharField(max_length=60)
+    apellido = CharField(max_length=60)
+    correo = EmailField()
+    password = CharField(min_length=8)
+
+
+class LoginSerializer(Serializer):
+    correo = EmailField()
+    password = CharField()
+
+
+class AuthView(viewsets.ViewSet):
+    """
+    ViewSet mínimo para manejo de registro/login con validación de dominio @unal.edu.co
+    Endpoints:
+      POST /grupos/auth/register/  -> register
+      POST /grupos/auth/login/     -> login
+      POST /grupos/auth/logout/    -> logout
+    """
+    permission_classes = [AllowAny]
+    parser_classes = [JSONParser]
+
+    @action(detail=False, methods=['post'], permission_classes=[AllowAny])
+    def register(self, request):
+        ser = RegisterSerializer(data=request.data)
+        ser.is_valid(raise_exception=True)
+        data = ser.validated_data
+        correo = data['correo'].lower().strip()
+
+        # Validar dominio UNAL
+        if not correo.endswith('@unal.edu.co'):
+            return Response({'error': 'Registro permitido solo con correo @unal.edu.co'}, status=status.HTTP_400_BAD_REQUEST)
+
+        if Usuario.objects.filter(correo_usuario__iexact=correo).exists():
+            return Response({'error': 'Ya existe una cuenta con ese correo'}, status=status.HTTP_400_BAD_REQUEST)
+
+        usuario = Usuario(
+            nombre_usuario=data['nombre_usuario'].strip(),
+            apellido=data['apellido'].strip(),
+            correo_usuario=correo
+        )
+        usuario.set_password(data['password'])
+        usuario.save()
+
+        token = UsuarioAuthToken.create(usuario)
+
+        return Response({
+            'message': 'Registrado correctamente',
+            'usuario': {
+                'id_usuario': usuario.id_usuario,
+                'nombre': usuario.nombre_usuario,
+                'apellido': usuario.apellido,
+                'correo': usuario.correo_usuario
+            },
+            'token': token.key
+        }, status=status.HTTP_201_CREATED)
+
+    @action(detail=False, methods=['post'], permission_classes=[AllowAny])
+    def login(self, request):
+        ser = LoginSerializer(data=request.data)
+        ser.is_valid(raise_exception=True)
+        data = ser.validated_data
+        correo = data['correo'].lower().strip()
+
+        try:
+            usuario = Usuario.objects.get(correo_usuario__iexact=correo)
+        except Usuario.DoesNotExist:
+            return Response({'error': 'Credenciales inválidas'}, status=status.HTTP_401_UNAUTHORIZED)
+
+        if not usuario.check_password(data['password']):
+            return Response({'error': 'Credenciales inválidas'}, status=status.HTTP_401_UNAUTHORIZED)
+
+        # crear token nuevo cada login (o reutilizar si prefieres)
+        token = UsuarioAuthToken.create(usuario)
+        return Response({
+            'message': 'Login correcto',
+            'usuario': {
+                'id_usuario': usuario.id_usuario,
+                'nombre': usuario.nombre_usuario,
+                'apellido': usuario.apellido,
+                'correo': usuario.correo_usuario
+            },
+            'token': token.key
+        }, status=status.HTTP_200_OK)
+
+    @action(detail=False, methods=['post'], permission_classes=[IsAuthenticated])
+    def logout(self, request):
+        """
+        Borra el token que fue usado en la petición (logout).
+        request.auth será la instancia UsuarioAuthToken (gracias a nuestra auth class).
+        """
+        token = request.auth
+        if token:
+            try:
+                token.delete()
+            except Exception:
+                pass
+        return Response({'message': 'Logged out'}, status=status.HTTP_200_OK)
