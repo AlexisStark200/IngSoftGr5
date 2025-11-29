@@ -23,6 +23,8 @@ transition:transform 0.2s ease,box-shadow 0.2s ease}
 .logout-btn{background:#dc3545;color:white;border:none;padding:0.5rem 1rem;border-radius:6px;
 cursor:pointer;font-weight:500;transition:background 0.3s ease}
 .logout-btn:hover{background:#c82333}
+/* Tamaño utilitario para botones que deben coincidir con el botón Cerrar Sesión */
+.btn-size-logout{padding:0.35rem 0.75rem;border-radius:6px;font-weight:500;font-size:0.875rem;line-height:1;min-height:32px;border:none}
 .message{padding:0.75rem;margin-top:1rem;border-radius:8px;font-weight:500}
 .message.error{background:#fee2e2;color:#dc2626;border:1px solid #fecaca}
 .message.success{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0}
@@ -64,3 +66,12 @@ footer{padding:1.5rem;text-align:center;color:#64748b;background:#f8fafc;border-
 @media(max-width:768px){header{padding:1rem}.filters{flex-direction:column;align-items:stretch}
 .filters input,.filters select{min-width:auto}.grid{grid-template-columns:1fr;padding:1rem}
 .auth-tabs{flex-direction:column}.env{flex-direction:column;align-items:stretch}.env input{min-width:auto}}
+
+/* Modal crear grupo */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);z-index:60}
+.modal.hidden{display:none}
+.modal-content{background:#fff;padding:1.25rem;border-radius:12px;max-width:560px;width:100%;box-shadow:0 10px 30px rgba(2,6,23,0.2)}
+.modal-content h3{margin:0 0 0.75rem 0}
+.modal-content input,.modal-content textarea{width:100%;margin:0.35rem 0;padding:0.6rem;border:1px solid #e2e8f0;border-radius:8px}
+.modal-content button{padding:0.6rem;border-radius:8px;border:none;background:#667eea;color:#fff;cursor:pointer}
+.modal-content button[type="button"]{background:#6b7280}

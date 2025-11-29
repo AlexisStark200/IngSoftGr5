@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const userName = $("#user-name");
     const logoutBtn = $("#logout-btn");
     const authTabs = $$(".auth-tab");
+    // Elementos crear grupo
+    const createGroupBtn = $("#create-group-btn");
+    const createGroupModal = $("#create-group-modal");
+    const createGroupForm = $("#create-group-form");
+    const createGroupCancel = $("#g-cancel");
+    const createGroupMessage = $("#g-message");
     
     // Estado
     let API_BASE = localStorage.getItem("API_BASE") || "http://localhost:8000/api";
@@ -249,6 +255,26 @@ document.addEventListener('DOMContentLoaded', function() {
             authLoggedIn.classList.add("hidden");
             console.log("Usuario no autenticado");
         }
+
+        // Mostrar/ocultar botón de crear grupo
+        try {
+            const btn = document.getElementById('create-group-btn');
+            console.log('DEBUG: createGroupBtn (from DOM):', btn);
+            if (btn) console.log('DEBUG: clases actuales:', btn.className, 'style.display=', btn.style.display);
+
+            if (btn && currentUser && authToken) {
+                btn.classList.remove('hidden');
+                // Forzar estilos visibles
+                btn.style.display = 'inline-block';
+                btn.removeAttribute('aria-hidden');
+                console.log('DEBUG: botón mostrado (forced) — clases ahora:', btn.className, 'display=', getComputedStyle(btn).display);
+            } else if (btn) {
+                btn.classList.add('hidden');
+                console.log('DEBUG: botón ocultado — clases ahora:', btn.className);
+            }
+        } catch (dbgErr) {
+            console.warn('DEBUG: error mostrando/ocultando createGroupBtn', dbgErr);
+        }
     }
     
     function headers() {
@@ -300,6 +326,99 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error("Error fetchGroups:", err);
             groupsDiv.innerHTML = `<p class="error">${err.message}</p>`;
         }
+    }
+
+    // Mostrar u ocultar modal crear grupo
+    function showCreateModal(show) {
+        if (!createGroupModal) return;
+        if (show) {
+            createGroupModal.classList.remove('hidden');
+            createGroupModal.setAttribute('aria-hidden', 'false');
+        } else {
+            createGroupModal.classList.add('hidden');
+            createGroupModal.setAttribute('aria-hidden', 'true');
+            if (createGroupForm) createGroupForm.reset();
+            if (createGroupMessage) createGroupMessage.classList.add('hidden');
+        }
+    }
+
+    // Eventos crear grupo
+    if (createGroupBtn) {
+        createGroupBtn.addEventListener('click', () => showCreateModal(true));
+    }
+
+    if (createGroupCancel) {
+        createGroupCancel.addEventListener('click', () => showCreateModal(false));
+    }
+
+    if (createGroupForm) {
+        createGroupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!currentUser || !authToken) {
+                if (createGroupMessage) {
+                    createGroupMessage.textContent = 'Debes iniciar sesión para crear un grupo.';
+                    createGroupMessage.className = 'message error';
+                    createGroupMessage.classList.remove('hidden');
+                }
+                return;
+            }
+
+            const nombre = (document.getElementById('g-nombre')||{}).value || '';
+            const area = (document.getElementById('g-area')||{}).value || '';
+            const tipo = (document.getElementById('g-tipo')||{}).value || '';
+            const correo = (document.getElementById('g-correo')||{}).value || '';
+            const whatsapp = (document.getElementById('g-whatsapp')||{}).value || '';
+            const descripcion = (document.getElementById('g-descripcion')||{}).value || '';
+
+            // Validaciones básicas
+            if (!nombre.trim() || !area.trim() || !tipo.trim() || !descripcion.trim()) {
+                createGroupMessage.textContent = 'Por favor completa los campos requeridos.';
+                createGroupMessage.className = 'message error';
+                createGroupMessage.classList.remove('hidden');
+                return;
+            }
+
+            if (!correo.toLowerCase().endsWith('@unal.edu.co')) {
+                createGroupMessage.textContent = 'El correo del grupo debe ser institucional (@unal.edu.co).';
+                createGroupMessage.className = 'message error';
+                createGroupMessage.classList.remove('hidden');
+                return;
+            }
+
+            const payload = {
+                nombre_grupo: nombre.trim(),
+                area_interes: area.trim(),
+                tipo_grupo: tipo.trim(),
+                correo_grupo: correo.trim(),
+                descripcion: descripcion.trim(),
+                link_whatsapp: whatsapp.trim() || null
+            };
+
+            try {
+                createGroupMessage.textContent = 'Creando grupo...';
+                createGroupMessage.className = 'message success';
+                createGroupMessage.classList.remove('hidden');
+
+                const res = await fetchJSON(`${API_BASE}/grupos/`, {
+                    method: 'POST',
+                    body: JSON.stringify(payload)
+                });
+
+                console.log('Grupo creado:', res);
+                createGroupMessage.textContent = '✅ Grupo creado correctamente.';
+                createGroupMessage.className = 'message success';
+
+                // refrescar listado y cerrar modal
+                fetchGroups();
+                setTimeout(() => showCreateModal(false), 900);
+            } catch (err) {
+                console.error('Error creando grupo:', err);
+                createGroupMessage.textContent = 'Error: ' + err.message;
+                createGroupMessage.className = 'message error';
+                createGroupMessage.classList.remove('hidden');
+            }
+        });
     }
 
     function renderGroups(items) {

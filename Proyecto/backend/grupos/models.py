@@ -94,7 +94,7 @@ class Grupo(models.Model):
     nombre_grupo = models.CharField(max_length=60)
     area_interes = models.CharField(max_length=40)
     # DateField para evitar problemas de timezone con columnas DATE en MySQL
-    fecha_creacion = models.DateField(auto_now_add=True)
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
     tipo_grupo = models.CharField(max_length=40)
     logo = models.ImageField(upload_to='logos/', blank=True, null=True)
     correo_grupo = models.EmailField(max_length=128)
