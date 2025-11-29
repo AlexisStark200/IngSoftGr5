@@ -50,6 +50,8 @@ class GrupoService:
                 queryset = queryset.filter(
                     nombre_grupo__icontains=filtros['busqueda']
                 )
+            if 'estado_grupo' in filtros:
+                queryset = queryset.filter(estado_grupo=filtros['estado_grupo'])
 
         return queryset.order_by('-fecha_creacion')
 
@@ -105,7 +107,11 @@ class GrupoService:
             )
 
         # Crear grupo
-        grupo = Grupo.objects.create(**datos_grupo)
+        grupo = Grupo.objects.create(
+            **datos_grupo,
+            creado_por=usuario_creador if usuario_creador and usuario_creador.is_authenticated else None,
+            estado_grupo='PENDIENTE',
+        )
 
         # Regla de negocio: Asignar creador como admin
         UsuarioGrupo.objects.create(
@@ -221,6 +227,45 @@ class GrupoService:
             raise ValidationError("El usuario no es miembro del grupo")
 
         return True
+
+    @staticmethod
+    @transaction.atomic
+    def aprobar_grupo(id_grupo):
+        """
+        Aprobar una solicitud de grupo (RF_14).
+        """
+        grupo = Grupo.objects.get(id_grupo=id_grupo)
+        grupo.estado_grupo = 'APROBADO'
+        grupo.motivo_rechazo = ''
+        grupo.save(update_fields=['estado_grupo', 'motivo_rechazo'])
+        # Notificar creador si existe
+        if grupo.creado_por:
+            NotificacionService.enviar_notificacion(
+                [grupo.creado_por.id_usuario],
+                tipo='GRUPO_APROBADO',
+                mensaje=f"Tu grupo '{grupo.nombre_grupo}' ha sido aprobado.",
+            )
+        return grupo
+
+    @staticmethod
+    @transaction.atomic
+    def rechazar_grupo(id_grupo, motivo):
+        """
+        Rechazar una solicitud de grupo con motivo (RF_14).
+        """
+        if not motivo:
+            raise ValidationError("Debes indicar un motivo de rechazo")
+        grupo = Grupo.objects.get(id_grupo=id_grupo)
+        grupo.estado_grupo = 'RECHAZADO'
+        grupo.motivo_rechazo = motivo
+        grupo.save(update_fields=['estado_grupo', 'motivo_rechazo'])
+        if grupo.creado_por:
+            NotificacionService.enviar_notificacion(
+                [grupo.creado_por.id_usuario],
+                tipo='GRUPO_RECHAZADO',
+                mensaje=f"Tu grupo '{grupo.nombre_grupo}' fue rechazado. Motivo: {motivo}",
+            )
+        return grupo
 
 
 # ===========================================================================

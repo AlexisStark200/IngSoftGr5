@@ -30,7 +30,8 @@ from .serializers import (
     NotificacionSerializer,
     UsuarioGrupoSerializer,
     AgregarMiembroSerializer,
-    EnviarNotificacionSerializer
+    EnviarNotificacionSerializer,
+    RechazarGrupoSerializer
 )
 from .services import (
     GrupoService,
@@ -164,8 +165,11 @@ class GrupoViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         qs = super().get_queryset()
         area = self.request.query_params.get("area")
+        estado = self.request.query_params.get("estado")
         if area:
             qs = qs.filter(area_interes__iexact=area)
+        if estado:
+            qs = qs.filter(estado_grupo=estado)
         return qs
 
     # ----------------------- CRUD con services -----------------------------
@@ -257,6 +261,29 @@ class GrupoViewSet(viewsets.ModelViewSet):
             return Response(status=status.HTTP_204_NO_CONTENT)
         except ObjectDoesNotExist:
             return Response({"error": "Relación no encontrada"}, status=status.HTTP_404_NOT_FOUND)
+
+
+    @action(detail=True, methods=["post"])
+    def aprobar(self, request, pk=None):
+        """POST /grupos/{id}/aprobar/ -> cambia estado a APROBADO (RF_14)."""
+        try:
+            grupo = GrupoService.aprobar_grupo(pk)
+            return Response(GrupoSerializer(grupo).data, status=status.HTTP_200_OK)
+        except ObjectDoesNotExist:
+            return Response({"error": "Grupo no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+
+    @action(detail=True, methods=["post"])
+    def rechazar(self, request, pk=None):
+        """POST /grupos/{id}/rechazar/ Body: {"motivo": "Falta correo institucional"} (RF_14)."""
+        try:
+            payload = RechazarGrupoSerializer(data=request.data)
+            payload.is_valid(raise_exception=True)
+            grupo = GrupoService.rechazar_grupo(pk, payload.validated_data["motivo"])
+            return Response(GrupoSerializer(grupo).data, status=status.HTTP_200_OK)
+        except ObjectDoesNotExist:
+            return Response({"error": "Grupo no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+        except (ValidationError, DRFValidationError) as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
     @action(detail=True, methods=["get"])
     def eventos(self, request, pk=None):
@@ -440,18 +467,40 @@ class NotificacionViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = NotificacionSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
+    # NUEVO: filtrar por usuario=? usando tu modelo Usuario
+    def get_queryset(self):
+        qs = super().get_queryset().order_by('-fecha_envio')
+        usuario_id = self.request.query_params.get('usuario')
+        if usuario_id:
+            qs = qs.filter(usuarios__id_usuario=usuario_id)
+        return qs
+
+    # NUEVO: pasar id_usuario al serializer para calcular "leida"
+    def get_serializer_context(self):
+        context = super().get_serializer_context()
+        usuario_id = self.request.query_params.get('usuario')
+        if usuario_id:
+            context['id_usuario'] = usuario_id
+        return context
+
     @action(detail=True, methods=['post'])
     def marcar_leida(self, request, pk=None):
         """POST /notificaciones/{id}/marcar-leida/"""
         try:
             notificacion = self.get_object()
-            NotificacionService.marcar_como_leida(request.user.id, notificacion.id_notificacion)
-            return Response({"message": "Notificación marcada como leída"}, status=status.HTTP_200_OK)
+            NotificacionService.marcar_como_leida(
+                request.user.id,  # esto lo revisamos luego si queremos mapear User→Usuario
+                notificacion.id_notificacion
+            )
+            return Response({"message": "Notificación marcada como leída"},
+                            status=status.HTTP_200_OK)
         except ObjectDoesNotExist:
-            return Response({"error": "Notificación no encontrada"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"error": "Notificación no encontrada"},
+                            status=status.HTTP_404_NOT_FOUND)
 
     @action(detail=False, methods=['post'])
     def enviar_masiva(self, request):
+
         """
         POST /notificaciones/enviar-masiva/
         Body: {"ids_usuarios":[1,2,3], "tipo_notificacion":"EVENTO_CREADO", "mensaje":"Se creó un nuevo evento"}

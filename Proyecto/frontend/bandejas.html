@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgoraUN - Bandejas de entrada</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Bandejas de entrada (roles)</h1>
+      <small>Notificaciones</small>
+    </div>
+    <div class="env">
+      <label>API base:</label>
+      <input id="apiBase" value="http://localhost:8000/api" />
+      <button id="saveBase">Usar</button>
+    </div>
+    <div class="auth">
+      <label>Token (opcional):</label>
+      <input id="apiToken" placeholder="Token DRF (si lo tienes)" />
+      <button id="saveToken">Guardar</button>
+    </div>
+    <div class="auth">
+      <label>Usuario ID:</label>
+      <input id="userId" placeholder="1" style="width:80px" />
+      <label>Rol:</label>
+      <select id="userRole">
+        <option value="ADMIN_GENERAL">Admin General</option>
+        <option value="ADMIN_CLUB">Admin de Club</option>
+        <option value="ESTUDIANTE" selected>Estudiante</option>
+      </select>
+      <button id="saveUser">Aplicar</button>
+    </div>
+    <a href="./index.html" class="secondary" style="color:#fff;">Volver al catálogo</a>
+  </header>
+
+  <main class="two-cols">
+    <section class="panel">
+      <h2>Solicitudes de grupos (Admin General)</h2>
+      <p>Obtiene grupos con estado <code>PENDIENTE</code> y permite aprobar/rechazar.</p>
+      <button id="reloadSolicitudes">Recargar solicitudes</button>
+      <div id="solicitudes"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Bandeja de notificaciones</h2>
+      <p>Lista notificaciones dirigidas al usuario.</p>
+      <button id="reloadNotifs">Recargar notificaciones</button>
+      <div id="notifs"></div>
+
+      <h3>Nuevos eventos (vista estudiante)</h3>
+      <p>Listado rápido de eventos recientes (carga de referencia).</p>
+      <button id="reloadEventos">Recargar eventos</button>
+      <div id="eventos"></div>
+    </section>
+  </main>
+
+  <script src="./bandejas.js"></script>
+</body>
+</html>
