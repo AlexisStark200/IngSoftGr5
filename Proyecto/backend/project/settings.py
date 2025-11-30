@@ -247,3 +247,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Configuración CORS para desarrollo
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
+
+# ===========================================================================
+# CACHE CONFIGURATION
+# ===========================================================================
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}
