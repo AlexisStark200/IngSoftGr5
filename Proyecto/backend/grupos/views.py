@@ -521,7 +521,6 @@ class NotificacionViewSet(viewsets.ReadOnlyModelViewSet):
         except (ValidationError, DRFValidationError) as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
-<<<<<<< HEAD
 def perfil_usuario(request, usuario_id):
     """Página de perfil usando la estructura existente"""
     usuario = get_object_or_404(Usuario, id_usuario=usuario_id)
@@ -627,8 +626,6 @@ def actualizar_intereses(request, usuario_id):
     return render(request, 'perfil/editar_intereses.html', {
         'usuario': usuario
     })
-=======
->>>>>>> 259ca1b565292546379fdc13f10052edbdd02b1b
 
 # -------------------------------------------------------------------
 # AUTH (Register / Login / Logout)
@@ -736,8 +733,6 @@ class AuthView(viewsets.ViewSet):
             except Exception:
                 pass
         return Response({'message': 'Logged out'}, status=status.HTTP_200_OK)
-<<<<<<< HEAD
-=======
 
 
 # -------------------------------------------------------------------
@@ -828,4 +823,3 @@ def actualizar_intereses(request, usuario_id):
         return redirect('perfil_usuario', usuario_id=usuario.id_usuario)
 
     return render(request, 'perfil/editar_intereses.html', {'usuario': usuario})
->>>>>>> 259ca1b565292546379fdc13f10052edbdd02b1b

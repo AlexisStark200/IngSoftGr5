@@ -306,3 +306,6 @@ GrupoCacheManager Singleton creado
 Watching for file changes with StatReloader
 /code/grupos/urls.py changed, reloading.
 Watching for file changes with StatReloader
+/code/grupos/views.py changed, reloading.
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
