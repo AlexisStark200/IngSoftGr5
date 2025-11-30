@@ -20,6 +20,7 @@ from .views import (
     explorar_intereses,
     editar_perfil,
     actualizar_intereses,
+    AuthView,
     # GrupoDetailView,  # si usas vistas de detalle clásicas
     # ConfigView,
 )
@@ -37,5 +38,10 @@ urlpatterns = [
     path('perfil/<int:usuario_id>/intereses/', actualizar_intereses, name='actualizar_intereses'),
     path('intereses/', explorar_intereses, name='explorar_intereses'),
     path("", include(router.urls)),
+    # path("grupo/<int:grupo_id>/", GrupoDetailView.as_view(), name="grupo_detail"),  # opcional
+    # path("config/", ConfigView.as_view(), name="config"),  # opcional
+    # Auth minimal endpoints:
+    path("auth/register/", AuthView.as_view({"post": "register"}), name="auth-register"),
+    path("auth/login/",    AuthView.as_view({"post": "login"}),    name="auth-login"),
+    path("auth/logout/",   AuthView.as_view({"post": "logout"}),   name="auth-logout"),
 ]
-
