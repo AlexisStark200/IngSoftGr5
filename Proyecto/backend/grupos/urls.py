@@ -1,5 +1,5 @@
 """
-URLs - ÁgoraUN
+URLs - AgoraUN
 Enrutamiento de la API REST
 
 Usa Django REST Framework Routers para generar automáticamente
@@ -16,12 +16,12 @@ from .views import (
     UsuarioViewSet,
     ComentarioViewSet,
     NotificacionViewSet,
+    AuthView,
     perfil_usuario,
     explorar_intereses,
     editar_perfil,
     actualizar_intereses,
-    AuthView,
-    # GrupoDetailView,  # si usas vistas de detalle clásicas
+    # GrupoDetailView,
     # ConfigView,
 )
 

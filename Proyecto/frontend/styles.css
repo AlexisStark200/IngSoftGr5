@@ -3,6 +3,9 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue'
 background:#f7f7f7;color:#222;line-height:1.6}
 header{background:linear-gradient(135deg,#1a237e 0%,#283593 100%);color:#fff;padding:1rem 1.5rem}
 h1{font-size:1.5rem;margin:0 0 1rem 0;font-weight:600}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;margin:0;background:#f7f7f7;color:#222;line-height:1.6}
+header{background:linear-gradient(135deg,#1a237e 0%,#283593 100%);color:#fff;padding:1rem 1.5rem;display:flex;flex-direction:column;gap:1rem}
+h1{font-size:1.5rem;margin:0;font-weight:600}
 .auth-panel{background:rgba(255,255,255,0.95);color:#333;padding:1.25rem;border-radius:12px;
 margin-bottom:1rem;box-shadow:0 4px 6px rgba(0,0,0,0.1);border-left:4px solid #667eea}
 .auth-tabs{display:flex;margin-bottom:1.25rem;border-bottom:2px solid #e2e8f0}
@@ -28,11 +31,16 @@ cursor:pointer;font-weight:500;transition:background 0.3s ease}
 .message{padding:0.75rem;margin-top:1rem;border-radius:8px;font-weight:500}
 .message.error{background:#fee2e2;color:#dc2626;border:1px solid #fecaca}
 .message.success{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0}
-.env{background:rgba(255,255,255,0.1);padding:0.75rem;border-radius:8px;margin-top:1rem;
-display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap}
+.env{background:rgba(255,255,255,0.1);padding:0.75rem;border-radius:8px;display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap}
 .env label{font-weight:500;color:#e2e8f0}
 .env input{flex:1;min-width:200px;padding:0.5rem;border:1px solid #cbd5e0;border-radius:6px;background:white}
 .env button{background:#10b981;color:white;border:none;padding:0.5rem 1rem;border-radius:6px;cursor:pointer;font-weight:500}
+.auth{display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap}
+.auth label{font-weight:500;color:#e2e8f0}
+.auth input{flex:1;min-width:200px;padding:0.5rem;border:1px solid #cbd5e0;border-radius:6px;background:white}
+.auth button{background:#10b981;color:white;border:none;padding:0.5rem 1rem;border-radius:6px;cursor:pointer;font-weight:500}
+.secondary{background:#6b7280;color:#fff;text-decoration:none;padding:0.6rem 1rem;border-radius:6px;display:inline-flex;align-items:center;justify-content:center}
+.bandejas-link{align-self:flex-start}
 .filters{display:flex;gap:0.75rem;padding:1.25rem 1.5rem;background:#fff;border-bottom:1px solid #e2e8f0;
 box-shadow:0 1px 3px rgba(0,0,0,0.1);flex-wrap:wrap;align-items:center}
 .filters input,.filters select{padding:0.75rem;border:2px solid #e2e8f0;border-radius:8px;font-size:0.95rem;min-width:200px}
@@ -65,7 +73,7 @@ footer{padding:1.5rem;text-align:center;color:#64748b;background:#f8fafc;border-
 .hidden{display:none!important}
 @media(max-width:768px){header{padding:1rem}.filters{flex-direction:column;align-items:stretch}
 .filters input,.filters select{min-width:auto}.grid{grid-template-columns:1fr;padding:1rem}
-.auth-tabs{flex-direction:column}.env{flex-direction:column;align-items:stretch}.env input{min-width:auto}}
+.auth-tabs{flex-direction:column}.env,.auth{flex-direction:column;align-items:stretch}.env input,.auth input{min-width:auto}}
 
 /* Modal crear grupo */
 .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);z-index:60}
