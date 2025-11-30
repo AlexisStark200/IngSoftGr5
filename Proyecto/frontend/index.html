@@ -131,7 +131,10 @@
       
       <div id="auth-logged-in" class="user-info hidden">
         <span>Bienvenido, <strong id="user-name"></strong></span>
-        <button class="logout-btn" id="logout-btn">Cerrar Sesión</button>
+          <div style="display:flex;gap:0.5rem;align-items:center">
+            <button id="create-group-btn" class="btn-join btn-size-logout">Crear Grupo</button>
+            <button class="logout-btn" id="logout-btn">Cerrar Sesión</button>
+          </div>
       </div>
     </div>
 
@@ -178,5 +181,24 @@
   </footer>
 
   <script src="./app.js"></script>
+  <!-- Modal para crear grupo -->
+  <div id="create-group-modal" class="modal hidden" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <h3>Crear Grupo</h3>
+      <form id="create-group-form">
+        <input type="text" id="g-nombre" placeholder="Nombre del grupo" required />
+        <input type="text" id="g-area" placeholder="Área de interés" required />
+        <input type="text" id="g-tipo" placeholder="Tipo de grupo (ej. Estudiantil)" required />
+        <input type="email" id="g-correo" placeholder="Correo del grupo (ej. grupo@unal.edu.co)" required />
+        <input type="text" id="g-whatsapp" placeholder="Link WhatsApp (opcional)" />
+        <textarea id="g-descripcion" placeholder="Descripción" rows="4" required></textarea>
+        <div style="display:flex;gap:0.5rem;margin-top:0.5rem">
+          <button type="submit" style="flex:1">Crear</button>
+          <button type="button" id="g-cancel" style="flex:1;background:#6b7280;color:#fff">Cancelar</button>
+        </div>
+        <div id="g-message" class="message hidden" style="margin-top:0.5rem"></div>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
