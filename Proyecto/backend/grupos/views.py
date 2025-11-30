@@ -1,5 +1,8 @@
 # backend/grupos/views.py
 
+from django.shortcuts import redirect
+from django.contrib import messages
+from django.db.models import Count
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django.db import transaction
 from django.http import JsonResponse
@@ -19,7 +22,7 @@ from project.singleton import config_manager
 from .singletons import grupo_cache
 
 from .models import (
-    Usuario, Grupo, Evento,
+    Participacion, ParticipacionUsuario, Usuario, Grupo, Evento,
     Comentario, Notificacion,
     UsuarioGrupo
 )
@@ -263,7 +266,6 @@ class GrupoViewSet(viewsets.ModelViewSet):
             return Response(status=status.HTTP_204_NO_CONTENT)
         except ObjectDoesNotExist:
             return Response({"error": "Relación no encontrada"}, status=status.HTTP_404_NOT_FOUND)
-
 
     @action(detail=True, methods=["post"])
     def aprobar(self, request, pk=None):
@@ -626,3 +628,93 @@ class AuthView(viewsets.ViewSet):
             except Exception:
                 pass
         return Response({'message': 'Logged out'}, status=status.HTTP_200_OK)
+
+
+# -------------------------------------------------------------------
+# PERFIL (HTML)
+# -------------------------------------------------------------------
+
+def perfil_usuario(request, usuario_id):
+    """Página de perfil usando la estructura existente."""
+    usuario = get_object_or_404(Usuario, id_usuario=usuario_id)
+
+    grupos_usuario = UsuarioGrupo.objects.filter(usuario=usuario).select_related('grupo')
+    areas_interes = {ug.grupo.area_interes for ug in grupos_usuario if ug.grupo.area_interes}
+
+    participaciones_del_usuario = Participacion.objects.filter(
+        usuarios=usuario
+    ).select_related('evento__grupo')
+
+    stats = {
+        'total_grupos': grupos_usuario.count(),
+        'total_eventos': participaciones_del_usuario.count(),
+        'eventos_confirmados': participaciones_del_usuario.filter(
+            estado_participacion='CONFIRMADO'
+        ).count(),
+    }
+
+    context = {
+        'usuario': usuario,
+        'grupos_usuario': grupos_usuario,
+        'areas_interes': sorted(list(areas_interes)),
+        'participaciones': participaciones_del_usuario,
+        'stats': stats,
+    }
+
+    return render(request, 'perfil/completo.html', context)
+
+
+def explorar_intereses(request):
+    """Página para explorar todas las áreas de interés disponibles."""
+    grupos_por_interes = (
+        Grupo.objects.values('area_interes')
+        .annotate(total_grupos=Count('id_grupo'))
+        .order_by('area_interes')
+    )
+
+    intereses_populares = []
+    for interes in grupos_por_interes:
+        if interes['area_interes']:
+            grupos = Grupo.objects.filter(area_interes=interes['area_interes'])[:5]
+            intereses_populares.append({
+                'area': interes['area_interes'],
+                'total_grupos': interes['total_grupos'],
+                'grupos_destacados': grupos
+            })
+
+    return render(request, 'perfil/explorar_intereses.html', {
+        'intereses_populares': intereses_populares
+    })
+
+
+def editar_perfil(request, usuario_id):
+    """Vista para editar el perfil del usuario."""
+    usuario = get_object_or_404(Usuario, id_usuario=usuario_id)
+
+    if request.method == 'POST':
+        nombre = request.POST.get('nombre_usuario')
+        apellido = request.POST.get('apellido')
+        correo = request.POST.get('correo_usuario')
+
+        if nombre and apellido and correo:
+            usuario.nombre_usuario = nombre
+            usuario.apellido = apellido
+            usuario.correo_usuario = correo
+            usuario.save()
+
+            messages.success(request, 'Perfil actualizado correctamente!')
+            return redirect('perfil_usuario', usuario_id=usuario.id_usuario)
+        messages.error(request, 'Por favor completa todos los campos obligatorios')
+
+    return render(request, 'perfil/editar.html', {'usuario': usuario})
+
+
+def actualizar_intereses(request, usuario_id):
+    """Vista para actualizar intereses del usuario."""
+    usuario = get_object_or_404(Usuario, id_usuario=usuario_id)
+
+    if request.method == 'POST':
+        messages.success(request, 'Intereses actualizados correctamente!')
+        return redirect('perfil_usuario', usuario_id=usuario.id_usuario)
+
+    return render(request, 'perfil/editar_intereses.html', {'usuario': usuario})
