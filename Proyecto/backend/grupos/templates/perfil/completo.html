@@ -1,187 +1,310 @@
-{% block content %}
-<div class="container mt-4">
-    <div class="row">
-        <!-- Columna izquierda - Información personal -->
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-body text-center">
-                    <div class="mb-3">
-                        <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center" 
-                             style="width: 120px; height: 120px;">
-                            <span class="text-white fw-bold fs-4">
-                                {{ usuario.nombre_usuario|first|upper }}{{ usuario.apellido|first|upper }}
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <h4 class="card-title">{{ usuario.nombre_usuario }} {{ usuario.apellido }}</h4>
-                    <p class="text-muted">
-                        <i class="bi bi-envelope"></i> {{ usuario.correo_usuario }}
-                    </p>
-                    
-                    <div class="d-grid gap-2">
-                        <span class="badge bg-success fs-6">
-                            <i class="bi bi-person-check"></i> {{ usuario.get_estado_usuario_display }}
-                        </span>
-                        <small class="text-muted">
-                            Miembro desde {{ usuario.fecha_registro|date:"M Y" }}
-                        </small>
-                    </div>
-                </div>
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de {{ usuario.nombre_usuario }} - ÁgoraUN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            min-height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+        
+        .logo-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo-header img {
+            max-width: 200px;
+            height: auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .profile-header {
+            background: linear-gradient(135deg, #00d9ff 0%, #4285f4 100%);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            color: #4285f4;
+        }
+        
+        .profile-name {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .profile-email {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            color: #0a0e27;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #4285f4;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            color: #0a0e27;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            color: #0a0e27;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #00d9ff;
+            padding-bottom: 10px;
+        }
+        
+        .interests-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .interest-tag {
+            background: #e8f5ff;
+            color: #4285f4;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .groups-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .group-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #4285f4;
+        }
+        
+        .group-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #0a0e27;
+            margin-bottom: 10px;
+        }
+        
+        .group-meta {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .group-description {
+            color: #333;
+            line-height: 1.4;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #4285f4;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #357ae8;
+            transform: translateY(-2px);
+        }
+        
+        .edit-form {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-header">
+        <img src="{% static 'grupos/images/agoralogo.jpg' %}" alt="ÁgoraUN Logo">
+    </div>
+    
+    <div class="container">
+        <!-- Header del perfil -->
+        <div class="profile-header">
+            <div class="profile-avatar">
+                {{ usuario.nombre_usuario|first }}{{ usuario.apellido|first }}
             </div>
+            <h1 class="profile-name">{{ usuario.nombre_usuario }} {{ usuario.apellido }}</h1>
+            <p class="profile-email">{{ usuario.correo_usuario }}</p>
+            <p>Miembro desde: {{ usuario.fecha_registro|date:"d/m/Y" }}</p>
+        </div>
+        <div style="margin-top: 20px;">
+            <a href="{% url 'editar_perfil' usuario.id_usuario %}" class="btn">
+                ✏️ Editar Perfil
+            </a>
+        </div>
 
-            <!-- Tarjeta de Intereses (basado en sus grupos) -->
-            <div class="card shadow-sm mt-3">
-                <div class="card-header bg-light">
-                    <h6 class="mb-0">
-                        <i class="bi bi-tags"></i> Áreas de Interés
-                    </h6>
-                </div>
-                <div class="card-body">
-                    {% if areas_interes %}
-                        {% for interes in areas_interes %}
-                            <span class="badge bg-primary mb-2 fs-6 p-2">
-                                {{ interes }}
-                            </span>
-                        {% endfor %}
-                    {% else %}
-                        <p class="text-muted mb-0">
-                            <i class="bi bi-info-circle"></i> 
-                            Únete a grupos para mostrar tus intereses
-                        </p>
-                    {% endif %}
-                </div>
+        <!-- Estadísticas -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">{{ stats.total_grupos }}</div>
+                <div class="stat-label">Grupos</div>
             </div>
-
-            <!-- Estadísticas -->
-            <div class="card shadow-sm mt-3">
-                <div class="card-header bg-light">
-                    <h6 class="mb-0">
-                        <i class="bi bi-graph-up"></i> Estadísticas
-                    </h6>
-                </div>
-                <div class="card-body">
-                    <div class="row text-center">
-                        <div class="col-4">
-                            <h5 class="text-primary mb-0">{{ stats.total_grupos }}</h5>
-                            <small class="text-muted">Grupos</small>
-                        </div>
-                        <div class="col-4">
-                            <h5 class="text-success mb-0">{{ stats.total_eventos }}</h5>
-                            <small class="text-muted">Eventos</small>
-                        </div>
-                        <div class="col-4">
-                            <h5 class="text-info mb-0">{{ stats.eventos_confirmados }}</h5>
-                            <small class="text-muted">Confirmados</small>
-                        </div>
-                    </div>
-                </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ stats.total_eventos }}</div>
+                <div class="stat-label">Eventos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ stats.eventos_confirmados }}</div>
+                <div class="stat-label">Confirmados</div>
             </div>
         </div>
 
-        <!-- Columna derecha - Actividad -->
-        <div class="col-md-8">
-            <!-- Grupos del usuario -->
-            <div class="card shadow-sm">
-                <div class="card-header bg-light">
-                    <h5 class="mb-0">
-                        <i class="bi bi-people"></i> Mis Grupos
-                    </h5>
-                </div>
-                <div class="card-body">
-                    {% if grupos_usuario %}
-                        <div class="row">
-                            {% for ug in grupos_usuario %}
-                                <div class="col-md-6 mb-3">
-                                    <div class="card h-100 border-0">
-                                        <div class="card-body">
-                                            <div class="d-flex align-items-start">
-                                                {% if ug.grupo.logo %}
-                                                    <img src="{{ ug.grupo.logo.url }}" 
-                                                         class="rounded me-3" 
-                                                         width="50" height="50"
-                                                         alt="{{ ug.grupo.nombre_grupo }}">
-                                                {% else %}
-                                                    <div class="bg-secondary rounded d-flex align-items-center justify-content-center me-3"
-                                                         style="width: 50px; height: 50px;">
-                                                        <i class="bi bi-people text-white"></i>
-                                                    </div>
-                                                {% endif %}
-                                                <div class="flex-grow-1">
-                                                    <h6 class="card-title mb-1">
-                                                        {{ ug.grupo.nombre_grupo }}
-                                                    </h6>
-                                                    <p class="card-text text-muted small mb-1">
-                                                        {{ ug.grupo.area_interes }}
-                                                    </p>
-                                                    <div class="d-flex justify-content-between align-items-center">
-                                                        <span class="badge bg-{% if ug.rol_en_grupo == 'ADMIN' %}warning{% else %}secondary{% endif %}">
-                                                            {{ ug.rol_en_grupo }}
-                                                        </span>
-                                                        <small class="text-muted">
-                                                            {{ ug.fecha_union|timesince }}
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        <div class="text-center py-4">
-                            <i class="bi bi-people display-1 text-muted"></i>
-                            <p class="text-muted mt-3">No perteneces a ningún grupo todavía</p>
-                            <a href="{% url 'explorar_grupos' %}" class="btn btn-primary">
-                                Explorar Grupos
-                            </a>
-                        </div>
-                    {% endif %}
-                </div>
+        <!-- Áreas de interés -->
+        <div class="section">
+            <h2 class="section-title">Áreas de Interés</h2>
+            <div class="interests-grid">
+                {% for area in areas_interes %}
+                    <span class="interest-tag">{{ area }}</span>
+                {% empty %}
+                    <p>No hay áreas de interés registradas.</p>
+                {% endfor %}
             </div>
+        </div>
 
-            <!-- Eventos recientes -->
-            <div class="card shadow-sm mt-4">
-                <div class="card-header bg-light">
-                    <h5 class="mb-0">
-                        <i class="bi bi-calendar-event"></i> Participación en Eventos
-                    </h5>
-                </div>
-                <div class="card-body">
-                    {% if participaciones %}
-                        {% for participacion in participaciones %}
-                            <div class="border-bottom pb-2 mb-2">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <h6 class="mb-1">{{ participacion.participacion.evento.nombre_evento }}</h6>
-                                        <p class="mb-1 text-muted small">
-                                            <i class="bi bi-people"></i> 
-                                            {{ participacion.participacion.evento.grupo.nombre_grupo }}
-                                        </p>
-                                        <p class="mb-1 small">
-                                            <i class="bi bi-calendar"></i> 
-                                            {{ participacion.participacion.evento.fecha_inicio|date:"d M Y, H:i" }}
-                                        </p>
-                                    </div>
-                                    <span class="badge 
-                                        {% if participacion.participacion.estado_participacion == 'CONFIRMADO' %}bg-success
-                                        {% elif participacion.participacion.estado_participacion == 'PENDIENTE' %}bg-warning
-                                        {% else %}bg-danger{% endif %}">
-                                        {{ participacion.participacion.get_estado_participacion_display }}
-                                    </span>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    {% else %}
-                        <div class="text-center py-3">
-                            <i class="bi bi-calendar-x display-1 text-muted"></i>
-                            <p class="text-muted mt-3">No has participado en eventos aún</p>
+        <!-- Grupos del usuario -->
+        <div class="section">
+            <h2 class="section-title">Mis Grupos ({{ grupos_usuario|length }})</h2>
+            <div class="groups-grid">
+                {% for ug in grupos_usuario %}
+                    <div class="group-card">
+                        <div class="group-name">{{ ug.grupo.nombre_grupo }}</div>
+                        <div class="group-meta">
+                            <strong>Área:</strong> {{ ug.grupo.area_interes }} | 
+                            <strong>Rol:</strong> {{ ug.rol_en_grupo }} |
+                            <strong>Unión:</strong> {{ ug.fecha_union|date:"d/m/Y" }}
                         </div>
-                    {% endif %}
-                </div>
+                        <div class="group-description">
+                            {{ ug.grupo.descripcion|truncatewords:20 }}
+                        </div>
+                    </div>
+                {% empty %}
+                    <p>No perteneces a ningún grupo todavía.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Participaciones en eventos -->
+        <div class="section">
+            <h2 class="section-title">Mis Participaciones en Eventos</h2>
+            <div class="groups-grid">
+                {% for participacion in participaciones %}
+                    <div class="group-card">
+                        <div class="group-name">{{ participacion.evento.nombre_evento }}</div>
+                        <div class="group-meta">
+                            <strong>Grupo:</strong> {{ participacion.evento.grupo.nombre_grupo }} |
+                            <strong>Estado:</strong> {{ participacion.estado_participacion }} |
+                            <strong>Fecha:</strong> {{ participacion.fecha_registro|date:"d/m/Y" }}
+                        </div>
+                        {% if participacion.comentario %}
+                            <div class="group-description">
+                                <strong>Mi comentario:</strong> {{ participacion.comentario }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% empty %}
+                    <p>No has participado en eventos todavía.</p>
+                {% endfor %}
             </div>
         </div>
     </div>
-</div>
-{% endblock %}
+
+    <script>
+        function toggleEditForm() {
+            const form = document.getElementById('editForm');
+            form.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

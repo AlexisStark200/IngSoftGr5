@@ -1,5 +1,8 @@
 # backend/grupos/views.py
 
+from django.shortcuts import redirect
+from django.contrib import messages
+from django.db.models import Count
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django.db import transaction
 from django.http import JsonResponse
@@ -17,7 +20,7 @@ from project.singleton import config_manager
 from .singletons import grupo_cache
 
 from .models import (
-    ParticipacionUsuario, Usuario, Grupo, Evento,
+    Participacion, ParticipacionUsuario, Usuario, Grupo, Evento,
     Comentario, Notificacion,
     UsuarioGrupo
 )
@@ -513,7 +516,7 @@ def explorar_intereses(request):
     grupos_por_interes = Grupo.objects.values(
         'area_interes'
     ).annotate(
-        total_grupos=Count('id_grupo')
+        total_grupos= Count('id_grupo')
     ).order_by('area_interes')
     
     # Grupos populares por interés
@@ -531,4 +534,45 @@ def explorar_intereses(request):
     
     return render(request, 'perfil/explorar_intereses.html', {
         'intereses_populares': intereses_populares
+    })
+
+def editar_perfil(request, usuario_id):
+    """Vista para editar el perfil del usuario"""
+    usuario = get_object_or_404(Usuario, id_usuario=usuario_id)
+    
+    if request.method == 'POST':
+        # Procesar el formulario de edición
+        nombre = request.POST.get('nombre_usuario')
+        apellido = request.POST.get('apellido')
+        correo = request.POST.get('correo_usuario')
+        
+        # Validaciones básicas
+        if nombre and apellido and correo:
+            usuario.nombre_usuario = nombre
+            usuario.apellido = apellido
+            usuario.correo_usuario = correo
+            usuario.save()
+            
+            messages.success(request, 'Perfil actualizado correctamente!')
+            return redirect('perfil_usuario', usuario_id=usuario.id_usuario)
+        else:
+            messages.error(request, 'Por favor completa todos los campos obligatorios')
+    
+    # Si es GET, mostrar el formulario de edición
+    return render(request, 'perfil/editar.html', {
+        'usuario': usuario
+    })
+
+def actualizar_intereses(request, usuario_id):
+    """Vista para actualizar intereses del usuario"""
+    usuario = get_object_or_404(Usuario, id_usuario=usuario_id)
+    
+    if request.method == 'POST':
+        # Aquí puedes agregar lógica para gestionar intereses personalizados
+        # Por ahora, redirigimos de vuelta al perfil
+        messages.success(request, 'Intereses actualizados correctamente!')
+        return redirect('perfil_usuario', usuario_id=usuario.id_usuario)
+    
+    return render(request, 'perfil/editar_intereses.html', {
+        'usuario': usuario
     })

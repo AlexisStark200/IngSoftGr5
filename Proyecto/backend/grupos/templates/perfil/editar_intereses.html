@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Intereses - ÁgoraUN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0a0e27;
+            min-height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+
+        .logo-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-header img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            color: #0a0e27;
+        }
+
+        .page-title {
+            font-size: 2em;
+            color: #0a0e27;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #4285f4;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background: #357ae8;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #666;
+        }
+
+        .btn-secondary:hover {
+            background: #555;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .interest-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .interest-item:hover {
+            border-color: #4285f4;
+            background: #e8f5ff;
+        }
+
+        .interest-item.selected {
+            background: #4285f4;
+            color: white;
+            border-color: #4285f4;
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-header">
+        <img src="{% static 'grupos/images/agoralogo.jpg' %}" alt="ÁgoraUN Logo">
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h1 class="page-title">Gestionar Intereses</h1>
+
+            <p class="description">
+                Selecciona tus áreas de interés para recibir recomendaciones personalizadas
+            </p>
+
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="interests-grid">
+                    <div class="interest-item" onclick="toggleInterest(this)">Tecnología</div>
+                    <div class="interest-item" onclick="toggleInterest(this)">Deportes</div>
+                    <div class="interest-item" onclick="toggleInterest(this)">Arte</div>
+                    <div class="interest-item" onclick="toggleInterest(this)">Música</div>
+                    <div class="interest-item" onclick="toggleInterest(this)">Ciencia</div>
+                    <div class="interest-item" onclick="toggleInterest(this)">Literatura</div>
+                    <div class="interest-item" onclick="toggleInterest(this)">Programación</div>
+                    <div class="interest-item" onclick="toggleInterest(this)">Diseño</div>
+                </div>
+
+                <div class="button-group">
+                    <a href="{% url 'perfil_usuario' usuario.id_usuario %}" class="btn btn-secondary">
+                        Cancelar
+                    </a>
+                    <button type="submit" class="btn">Guardar Intereses</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleInterest(element) {
+            element.classList.toggle('selected');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Aquí podrías cargar los intereses actuales del usuario desde el backend
+        });
+    </script>
+</body>
+</html>

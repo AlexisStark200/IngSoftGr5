@@ -1,0 +1,267 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorar por Intereses - ÁgoraUN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            min-height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+        
+        .logo-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo-header img {
+            max-width: 200px;
+            height: auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, #00d9ff 0%, #4285f4 100%);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .page-title {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .interest-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            color: #0a0e27;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .interest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+        
+        .interest-header {
+            background: linear-gradient(135deg, #00d9ff 0%, #4285f4 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .interest-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .interest-count {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .interest-content {
+            padding: 25px;
+        }
+        
+        .groups-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .group-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .group-item:last-child {
+            border-bottom: none;
+        }
+        
+        .group-link {
+            color: #4285f4;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .group-link:hover {
+            text-decoration: underline;
+        }
+        
+        .group-meta {
+            font-size: 0.85em;
+            color: #666;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #4285f4;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background: #357ae8;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .search-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            color: #0a0e27;
+        }
+        
+        .search-form {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 1em;
+        }
+        
+        .search-btn {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-header">
+        <img src="{% static 'grupos/images/agoralogo.jpg' %}" alt="ÁgoraUN Logo">
+    </div>
+    
+    <div class="container">
+        <!-- Header de la página -->
+        <div class="page-header">
+            <h1 class="page-title">Explorar por Intereses</h1>
+            <p class="page-subtitle">Descubre grupos estudiantiles por áreas de interés</p>
+        </div>
+
+        <!-- Búsqueda -->
+        <div class="search-section">
+            <form class="search-form" method="get" action="#">
+                <input type="text" class="search-input" placeholder="Buscar grupos por interés, nombre o descripción...">
+                <button type="submit" class="search-btn">Buscar</button>
+            </form>
+        </div>
+
+        <!-- Grid de intereses -->
+        <div class="interests-grid">
+            {% for interes in intereses_populares %}
+                <div class="interest-card">
+                    <div class="interest-header">
+                        <div class="interest-name">{{ interes.area }}</div>
+                        <div class="interest-count">{{ interes.total_grupos }} grupo{{ interes.total_grupos|pluralize }}</div>
+                    </div>
+                    
+                    <div class="interest-content">
+                        <h3>Grupos destacados:</h3>
+                        <ul class="groups-list">
+                            {% for grupo in interes.grupos_destacados %}
+                                <li class="group-item">
+                                    <a href="#" class="group-link">{{ grupo.nombre_grupo }}</a>
+                                    <div class="group-meta">
+                                        {{ grupo.tipo_grupo }} • {{ grupo.fecha_creacion|date:"Y" }}
+                                    </div>
+                                </li>
+                            {% empty %}
+                                <li class="empty-state">No hay grupos en esta categoría</li>
+                            {% endfor %}
+                        </ul>
+                        
+                        <a href="#" class="btn">
+                            Ver todos los grupos de {{ interes.area }}
+                        </a>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="empty-state">
+                    No hay intereses disponibles en este momento.
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        // Búsqueda en tiempo real
+        document.querySelector('.search-input').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const interestCards = document.querySelectorAll('.interest-card');
+            
+            interestCards.forEach(card => {
+                const interestName = card.querySelector('.interest-name').textContent.toLowerCase();
+                const groupNames = card.querySelectorAll('.group-link');
+                let hasMatch = interestName.includes(searchTerm);
+                
+                if (!hasMatch) {
+                    groupNames.forEach(group => {
+                        if (group.textContent.toLowerCase().includes(searchTerm)) {
+                            hasMatch = true;
+                        }
+                    });
+                }
+                
+                card.style.display = hasMatch ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -18,6 +18,8 @@ from .views import (
     NotificacionViewSet,
     perfil_usuario,
     explorar_intereses,
+    editar_perfil,
+    actualizar_intereses,
     # GrupoDetailView,  # si usas vistas de detalle clásicas
     # ConfigView,
 )
@@ -30,10 +32,10 @@ router.register(r"comentarios", ComentarioViewSet, basename="comentario")
 router.register(r"notificaciones", NotificacionViewSet, basename="notificacion")
 
 urlpatterns = [
-    # path("grupo/<int:grupo_id>/", GrupoDetailView.as_view(), name="grupo_detail"),  # opcional
-    # path("config/", ConfigView.as_view(), name="config"),  # opcional
     path('perfil/<int:usuario_id>/', perfil_usuario, name='perfil_usuario'),
+    path('perfil/<int:usuario_id>/editar/', editar_perfil, name='editar_perfil'),
+    path('perfil/<int:usuario_id>/intereses/', actualizar_intereses, name='actualizar_intereses'),
     path('intereses/', explorar_intereses, name='explorar_intereses'),
-    path("", include(router.urls)),  # ← ¡esto es lo que faltaba!
+    path("", include(router.urls)),
 ]
 
