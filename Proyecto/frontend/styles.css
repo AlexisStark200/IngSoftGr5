@@ -75,3 +75,23 @@ footer{padding:1.5rem;text-align:center;color:#64748b;background:#f8fafc;border-
 .modal-content input,.modal-content textarea{width:100%;margin:0.35rem 0;padding:0.6rem;border:1px solid #e2e8f0;border-radius:8px}
 .modal-content button{padding:0.6rem;border-radius:8px;border:none;background:#667eea;color:#fff;cursor:pointer}
 .modal-content button[type="button"]{background:#6b7280}
+header{background:#111;color:#fff;padding:12px 16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+h1{font-size:20px;margin:0}
+header .env,header .auth{display:flex;gap:8px;align-items:center}
+input,select,button{padding:8px 10px;border-radius:8px;border:1px solid #ccc}
+button{cursor:pointer;background:#1663f1;color:#fff;border:none}
+button.secondary{background:#999}
+button:hover{opacity:.95}
+.filters{display:flex;gap:8px;padding:10px 16px;background:#fff;border-bottom:1px solid #eee}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;padding:16px}
+.card{background:#fff;border:1px solid #ddd;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:6px}
+.card h3{margin:4px 0 0}
+.card .actions{display:flex;gap:8px;margin-top:8px}
+.error{color:#b00020}
+.hidden{display:none}
+footer{padding:12px 16px;color:#555}
+.two-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;padding:16px}
+.panel{background:#fff;border:1px solid #ddd;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.panel h2{margin:0 0 4px}
+.panel button{align-self:flex-start}
+.tag{display:inline-block;padding:2px 6px;border-radius:6px;font-size:12px;background:#eef}

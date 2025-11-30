@@ -298,3 +298,8 @@ django.core.exceptions.ValidationError: ['El usuario no es miembro del grupo']
 "POST /api/grupos/2/agregar_miembro/ HTTP/1.1" 201 155
 Bad Request: /api/grupos/2/agregar_miembro/
 "POST /api/grupos/2/agregar_miembro/ HTTP/1.1" 400 50
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
+/code/grupos/models.py changed, reloading.
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
