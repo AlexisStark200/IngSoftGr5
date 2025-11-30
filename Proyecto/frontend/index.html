@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ÁgoraUN — Catálogo de Grupos</title>
   <link rel="stylesheet" href="./styles.css" />
+  <script>
+    // Evita recargas forzadas de live-reload (puerto 5500) que causan parpadeo.
+    if (location.host.includes("127.0.0.1:5500") || location.host.includes("localhost:5500")) {
+      window.location.reload = () => console.debug("Auto-reload bloqueado");
+    }
+  </script>
   <style>
     /* Estilos para autenticación */
     .auth-panel {

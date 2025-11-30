@@ -14,7 +14,7 @@ from .models import (
     Usuario, Grupo, Evento, Participacion,
     Comentario, Notificacion, Rol,
     UsuarioGrupo, ParticipacionUsuario,
-    UsuarioNotificacion
+    UsuarioNotificacion, UsuarioRol
 )
 
 
@@ -49,7 +49,6 @@ class UsuarioSerializer(serializers.ModelSerializer):
 class GrupoSerializer(serializers.ModelSerializer):
     """Serializer para Grupo"""
 
-    # Campos calculados (no están en BD)
     total_miembros = serializers.SerializerMethodField()
     total_eventos = serializers.SerializerMethodField()
     estado_grupo = serializers.CharField(read_only=True)
@@ -129,6 +128,16 @@ class GrupoDetalleSerializer(serializers.ModelSerializer):
             estado_evento='PROGRAMADO'
         ).order_by('fecha_inicio')[:5]
         return EventoSerializer(eventos, many=True).data
+
+    def get_solicitante_nombre(self, obj):
+        if obj.solicitante:
+            return f"{obj.solicitante.nombre_usuario} {obj.solicitante.apellido}"
+        return None
+
+    def get_aprobado_por_nombre(self, obj):
+        if obj.aprobado_por:
+            return f"{obj.aprobado_por.nombre_usuario} {obj.aprobado_por.apellido}"
+        return None
 
 
 class EventoSerializer(serializers.ModelSerializer):
@@ -348,6 +357,16 @@ class ParticipacionUsuarioSerializer(serializers.ModelSerializer):
             'participacion',
             'participacion_info'
         ]
+
+
+class UsuarioRolSerializer(serializers.ModelSerializer):
+    """Serializer para relación Usuario-Rol"""
+
+    rol_nombre = serializers.CharField(source='rol.nombre_rol', read_only=True)
+
+    class Meta:
+        model = UsuarioRol
+        fields = ['usuario', 'rol', 'rol_nombre']
 
 
 # ===========================================================================

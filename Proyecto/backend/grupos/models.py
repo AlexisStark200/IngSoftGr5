@@ -67,6 +67,7 @@ class Usuario(models.Model):
 
 class Rol(models.Model):
     """Modelo de Roles del sistema"""
+
     id_rol = models.AutoField(primary_key=True)
     nombre_rol = models.CharField(
         max_length=20,
@@ -81,6 +82,7 @@ class Rol(models.Model):
         ],
         default='ESTUDIANTE',
     )
+    descripcion = models.TextField(blank=True)
 
     class Meta:
         db_table = 'ROL'
@@ -93,6 +95,13 @@ class Rol(models.Model):
 
 class Grupo(models.Model):
     """Modelo de Grupo/Club estudiantil"""
+
+    ESTADOS_VALIDACION = [
+        ('PENDIENTE', 'Pendiente de aprobación'),
+        ('APROBADO', 'Aprobado'),
+        ('RECHAZADO', 'Rechazado'),
+    ]
+
     id_grupo = models.AutoField(primary_key=True)
     nombre_grupo = models.CharField(max_length=60)
     area_interes = models.CharField(max_length=40)
