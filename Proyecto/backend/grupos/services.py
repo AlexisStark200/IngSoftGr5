@@ -17,8 +17,7 @@ from .models import (
     Usuario, Grupo, Evento, Participacion,
     Comentario, Notificacion,
     UsuarioGrupo, ParticipacionUsuario,
-    UsuarioComentario, UsuarioNotificacion,
-    Rol, UsuarioRol
+    UsuarioComentario, UsuarioNotificacion
 )
 
 
@@ -51,8 +50,6 @@ class GrupoService:
                 queryset = queryset.filter(
                     nombre_grupo__icontains=filtros['busqueda']
                 )
-            if 'estado_grupo' in filtros:
-                queryset = queryset.filter(estado_grupo=filtros['estado_grupo'])
 
         return queryset.order_by('-fecha_creacion')
 
@@ -108,19 +105,14 @@ class GrupoService:
             )
 
         # Crear grupo
-        grupo = Grupo.objects.create(
-            **datos_grupo,
-            creado_por=usuario_creador if usuario_creador and getattr(usuario_creador, "is_authenticated", False) else None,
-            estado_grupo='PENDIENTE',
-        )
+        grupo = Grupo.objects.create(**datos_grupo)
 
         # Regla de negocio: Asignar creador como admin
-        if isinstance(usuario_creador, Usuario):
-            UsuarioGrupo.objects.create(
-                usuario=usuario_creador,
-                grupo=grupo,
-                rol_en_grupo='ADMIN'
-            )
+        UsuarioGrupo.objects.create(
+            usuario=usuario_creador,
+            grupo=grupo,
+            rol_en_grupo='ADMIN'
+        )
 
         return grupo
 
@@ -160,50 +152,6 @@ class GrupoService:
         grupo = Grupo.objects.get(id_grupo=id_grupo)
         grupo.delete()
         return True
-
-    @staticmethod
-    @transaction.atomic
-    def aprobar_grupo(id_grupo, id_admin=None, comentario=""):
-        """Aprobar la creación de un grupo."""
-        grupo = Grupo.objects.get(id_grupo=id_grupo)
-        grupo.estado_validacion = 'APROBADO'
-        grupo.comentario_revision = comentario
-        if id_admin:
-            try:
-                grupo.aprobado_por = Usuario.objects.get(id_usuario=id_admin)
-            except Usuario.DoesNotExist:
-                grupo.aprobado_por = None
-        grupo.save()
-
-        if grupo.solicitante:
-            NotificacionService.enviar_notificacion(
-                [grupo.solicitante.id_usuario],
-                'APROBACION_GRUPO',
-                f"Tu solicitud para crear '{grupo.nombre_grupo}' fue aprobada."
-            )
-        return grupo
-
-    @staticmethod
-    @transaction.atomic
-    def rechazar_grupo(id_grupo, id_admin=None, motivo=""):
-        """Rechazar la creación de un grupo indicando motivo."""
-        grupo = Grupo.objects.get(id_grupo=id_grupo)
-        grupo.estado_validacion = 'RECHAZADO'
-        grupo.comentario_revision = motivo
-        if id_admin:
-            try:
-                grupo.aprobado_por = Usuario.objects.get(id_usuario=id_admin)
-            except Usuario.DoesNotExist:
-                grupo.aprobado_por = None
-        grupo.save()
-
-        if grupo.solicitante:
-            NotificacionService.enviar_notificacion(
-                [grupo.solicitante.id_usuario],
-                'RECHAZO_GRUPO',
-                f"Tu solicitud para crear '{grupo.nombre_grupo}' fue rechazada: {motivo}"
-            )
-        return grupo
 
     @staticmethod
     def agregar_miembro(id_grupo, id_usuario, rol='MIEMBRO'):
@@ -273,45 +221,6 @@ class GrupoService:
             raise ValidationError("El usuario no es miembro del grupo")
 
         return True
-
-    @staticmethod
-    @transaction.atomic
-    def aprobar_grupo(id_grupo):
-        """
-        Aprobar una solicitud de grupo (RF_14).
-        """
-        grupo = Grupo.objects.get(id_grupo=id_grupo)
-        grupo.estado_grupo = 'APROBADO'
-        grupo.motivo_rechazo = ''
-        grupo.save(update_fields=['estado_grupo', 'motivo_rechazo'])
-        # Notificar creador si existe
-        if grupo.creado_por:
-            NotificacionService.enviar_notificacion(
-                [grupo.creado_por.id_usuario],
-                tipo='GRUPO_APROBADO',
-                mensaje=f"Tu grupo '{grupo.nombre_grupo}' ha sido aprobado.",
-            )
-        return grupo
-
-    @staticmethod
-    @transaction.atomic
-    def rechazar_grupo(id_grupo, motivo):
-        """
-        Rechazar una solicitud de grupo con motivo (RF_14).
-        """
-        if not motivo:
-            raise ValidationError("Debes indicar un motivo de rechazo")
-        grupo = Grupo.objects.get(id_grupo=id_grupo)
-        grupo.estado_grupo = 'RECHAZADO'
-        grupo.motivo_rechazo = motivo
-        grupo.save(update_fields=['estado_grupo', 'motivo_rechazo'])
-        if grupo.creado_por:
-            NotificacionService.enviar_notificacion(
-                [grupo.creado_por.id_usuario],
-                tipo='GRUPO_RECHAZADO',
-                mensaje=f"Tu grupo '{grupo.nombre_grupo}' fue rechazado. Motivo: {motivo}",
-            )
-        return grupo
 
 
 # ===========================================================================
@@ -487,19 +396,6 @@ class UsuarioService:
         return UsuarioGrupo.objects.filter(
             usuario_id=id_usuario
         ).select_related('grupo')
-
-    @staticmethod
-    def asignar_rol(id_usuario, id_rol):
-        """Asociar un rol a un usuario si no existe."""
-        usuario = Usuario.objects.get(id_usuario=id_usuario)
-        rol = Rol.objects.get(id_rol=id_rol)
-        relacion, _ = UsuarioRol.objects.get_or_create(usuario=usuario, rol=rol)
-        return relacion
-
-    @staticmethod
-    def obtener_roles_usuario(id_usuario):
-        """Listar roles asociados a un usuario."""
-        return UsuarioRol.objects.filter(usuario_id=id_usuario).select_related('rol')
 
 
 # ===========================================================================

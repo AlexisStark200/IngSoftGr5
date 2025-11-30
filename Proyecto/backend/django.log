@@ -298,5 +298,37 @@ django.core.exceptions.ValidationError: ['El usuario no es miembro del grupo']
 "POST /api/grupos/2/agregar_miembro/ HTTP/1.1" 201 155
 Bad Request: /api/grupos/2/agregar_miembro/
 "POST /api/grupos/2/agregar_miembro/ HTTP/1.1" 400 50
+GrupoCacheManager Singleton creado
 Watching for file changes with StatReloader
 GrupoCacheManager Singleton creado
+GrupoCacheManager Singleton creado
+"OPTIONS /api/grupos/ HTTP/1.1" 200 0
+"GET /api/grupos/ HTTP/1.1" 200 331
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+"POST /api/auth/login/ HTTP/1.1" 200 194
+"GET /api/grupos/ HTTP/1.1" 200 331
+"GET /api/grupos/ HTTP/1.1" 200 331
+"POST /api/auth/login/ HTTP/1.1" 200 194
+"GET /api/grupos/ HTTP/1.1" 200 331
+"POST /api/grupos/ HTTP/1.1" 201 282
+"GET /api/grupos/ HTTP/1.1" 200 614
+"GET /api/grupos/ HTTP/1.1" 200 614
+"OPTIONS /api/grupos/2/eventos/ HTTP/1.1" 200 0
+"GET /api/grupos/2/eventos/ HTTP/1.1" 200 2
+"OPTIONS /api/grupos/1/eventos/ HTTP/1.1" 200 0
+"GET /api/grupos/1/eventos/ HTTP/1.1" 200 2
+"OPTIONS /api/grupos/?search=yomasa HTTP/1.1" 200 0
+"GET /api/grupos/?search=yomasa HTTP/1.1" 200 334
+"OPTIONS /api/grupos/?search=yomasa&area=arte HTTP/1.1" 200 0
+"GET /api/grupos/?search=yomasa&area=arte HTTP/1.1" 200 52
+"POST /api/auth/login/ HTTP/1.1" 200 194
+"GET /api/grupos/?search=yomasa HTTP/1.1" 200 334
+"GET /api/grupos/ HTTP/1.1" 200 614
+"GET /api/grupos/ HTTP/1.1" 200 614
+"GET /api/grupos/ HTTP/1.1" 200 614
+"OPTIONS /api/grupos/ HTTP/1.1" 200 0
+"GET /api/grupos/ HTTP/1.1" 200 614
+"GET /api/grupos/ HTTP/1.1" 200 614
+"GET /api/grupos/ HTTP/1.1" 200 614
+"OPTIONS /api/grupos/ HTTP/1.1" 200 0
+"GET /api/grupos/ HTTP/1.1" 200 614

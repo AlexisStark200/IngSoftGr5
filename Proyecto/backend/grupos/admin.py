@@ -61,11 +61,10 @@ class GrupoAdmin(admin.ModelAdmin):
         "tipo_grupo",
         "area_interes",
         "correo_grupo",
-        "estado_grupo",
         "fecha_creacion",
         "total_miembros",
     ]
-    list_filter = ["tipo_grupo", "area_interes", "fecha_creacion", "estado_grupo"]
+    list_filter = ["tipo_grupo", "area_interes", "fecha_creacion"]
     search_fields = ["nombre_grupo", "correo_grupo", "descripcion"]
     ordering = ["-fecha_creacion"]
     readonly_fields = ["id_grupo", "fecha_creacion", "total_miembros"]
@@ -75,9 +74,6 @@ class GrupoAdmin(admin.ModelAdmin):
         }),
         ("Contacto", {
             "fields": ("correo_grupo", "link_whatsapp")
-        }),
-        ("Validación", {
-            "fields": ("estado_grupo", "motivo_rechazo", "creado_por")
         }),
         ("Multimedia", {
             "fields": ("logo",)

@@ -5,12 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ÁgoraUN — Catálogo de Grupos</title>
   <link rel="stylesheet" href="./styles.css" />
-  <script>
-    // Evita recargas forzadas de live-reload (puerto 5500) que causan parpadeo.
-    if (location.host.includes("127.0.0.1:5500") || location.host.includes("localhost:5500")) {
-      window.location.reload = () => console.debug("Auto-reload bloqueado");
-    }
-  </script>
   <style>
     /* Estilos para autenticación */
     .auth-panel {
@@ -149,12 +143,6 @@
       <input id="apiBase" value="http://localhost:8000/api" />
       <button id="saveBase">Usar</button>
     </div>
-    <div class="auth">
-      <label>Token (opcional):</label>
-      <input id="apiToken" placeholder="Token DRF (si lo tienes)" />
-      <button id="saveToken">Guardar</button>
-    </div>
-    <a href="./bandejas.html" class="secondary bandejas-link">Bandejas / Roles</a>
   </header>
 
   <section class="filters">
@@ -199,7 +187,13 @@
       <h3>Crear Grupo</h3>
       <form id="create-group-form">
         <input type="text" id="g-nombre" placeholder="Nombre del grupo" required />
-        <input type="text" id="g-area" placeholder="Área de interés" required />
+        <select id="g-area" required>
+          <option value="">Área (todas)</option>
+          <option value="arte">Arte</option>
+          <option value="deportes">Deportes</option>
+          <option value="ciencia">Ciencia</option>
+          <option value="tecnologia">Tecnología</option>
+        </select>
         <input type="text" id="g-tipo" placeholder="Tipo de grupo (ej. Estudiantil)" required />
         <input type="email" id="g-correo" placeholder="Correo del grupo (ej. grupo@unal.edu.co)" required />
         <input type="text" id="g-whatsapp" placeholder="Link WhatsApp (opcional)" />
