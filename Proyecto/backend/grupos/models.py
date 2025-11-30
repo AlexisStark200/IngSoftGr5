@@ -8,6 +8,7 @@ Incluye todos los modelos del sistema:
 """
 
 from django.db import models
+from django.contrib.auth.hashers import make_password, check_password
 
 
 class Usuario(models.Model):
@@ -16,6 +17,8 @@ class Usuario(models.Model):
     nombre_usuario = models.CharField(max_length=60)
     apellido = models.CharField(max_length=60)
     correo_usuario = models.EmailField(max_length=128, unique=True)
+    # Nuevo campo para almacenar hash de contraseña. Nullable para compatibilidad con datos existentes.
+    password_hash = models.CharField(max_length=128, blank=True, null=True)
     estado_usuario = models.CharField(
         max_length=20,
         choices=[
@@ -34,6 +37,32 @@ class Usuario(models.Model):
 
     def __str__(self):
         return f"{self.nombre_usuario} {self.apellido}"
+
+    # --- helpers de contraseña (usando el framework de hashers de Django) ---
+    def set_password(self, raw_password):
+        """
+        Hashea y guarda la contraseña.
+        """
+        self.password_hash = make_password(raw_password)
+
+    def check_password(self, raw_password):
+        """
+        Verifica la contraseña contra el hash almacenado.
+        """
+        if not self.password_hash:
+            return False
+        return check_password(raw_password, self.password_hash)
+
+    # Propiedades útiles para compatibilidad con código que espera `request.user.id` y `is_authenticated`.
+    @property
+    def id(self):
+        # esto hace que `request.user.id` retorne el id primario del modelo (id_usuario)
+        return self.id_usuario
+
+    @property
+    def is_authenticated(self):
+        # usado por DRF/Django para chequear si el objeto es considerado autenticado
+        return True
 
 
 class Rol(models.Model):
@@ -68,7 +97,7 @@ class Grupo(models.Model):
     nombre_grupo = models.CharField(max_length=60)
     area_interes = models.CharField(max_length=40)
     # DateField para evitar problemas de timezone con columnas DATE en MySQL
-    fecha_creacion = models.DateField(auto_now_add=True)
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
     tipo_grupo = models.CharField(max_length=40)
     logo = models.ImageField(upload_to='logos/', blank=True, null=True)
     correo_grupo = models.EmailField(max_length=128)

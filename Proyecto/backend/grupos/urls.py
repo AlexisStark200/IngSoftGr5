@@ -16,6 +16,7 @@ from .views import (
     UsuarioViewSet,
     ComentarioViewSet,
     NotificacionViewSet,
+    AuthView,
     # GrupoDetailView,  # si usas vistas de detalle clásicas
     # ConfigView,
 )
@@ -30,6 +31,9 @@ router.register(r"notificaciones", NotificacionViewSet, basename="notificacion")
 urlpatterns = [
     # path("grupo/<int:grupo_id>/", GrupoDetailView.as_view(), name="grupo_detail"),  # opcional
     # path("config/", ConfigView.as_view(), name="config"),  # opcional
-    path("", include(router.urls)),  # ← ¡esto es lo que faltaba!
+    path("", include(router.urls)),  # ← endpoints CRUD
+    # Auth minimal endpoints:
+    path("auth/register/", AuthView.as_view({"post": "register"}), name="auth-register"),
+    path("auth/login/",    AuthView.as_view({"post": "login"}),    name="auth-login"),
+    path("auth/logout/",   AuthView.as_view({"post": "logout"}),   name="auth-logout"),
 ]
-

@@ -150,6 +150,7 @@ REST_FRAMEWORK = {
 
     # Autenticación
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'grupos.auth.UsuarioTokenAuthentication',            # <-- nuestra clase
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ],
@@ -242,3 +243,7 @@ LOGGING = {
 # ===========================================================================
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Configuración CORS para desarrollo
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
