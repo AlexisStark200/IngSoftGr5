@@ -1,0 +1,187 @@
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <!-- Columna izquierda - Información personal -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center" 
+                             style="width: 120px; height: 120px;">
+                            <span class="text-white fw-bold fs-4">
+                                {{ usuario.nombre_usuario|first|upper }}{{ usuario.apellido|first|upper }}
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <h4 class="card-title">{{ usuario.nombre_usuario }} {{ usuario.apellido }}</h4>
+                    <p class="text-muted">
+                        <i class="bi bi-envelope"></i> {{ usuario.correo_usuario }}
+                    </p>
+                    
+                    <div class="d-grid gap-2">
+                        <span class="badge bg-success fs-6">
+                            <i class="bi bi-person-check"></i> {{ usuario.get_estado_usuario_display }}
+                        </span>
+                        <small class="text-muted">
+                            Miembro desde {{ usuario.fecha_registro|date:"M Y" }}
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Intereses (basado en sus grupos) -->
+            <div class="card shadow-sm mt-3">
+                <div class="card-header bg-light">
+                    <h6 class="mb-0">
+                        <i class="bi bi-tags"></i> Áreas de Interés
+                    </h6>
+                </div>
+                <div class="card-body">
+                    {% if areas_interes %}
+                        {% for interes in areas_interes %}
+                            <span class="badge bg-primary mb-2 fs-6 p-2">
+                                {{ interes }}
+                            </span>
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-muted mb-0">
+                            <i class="bi bi-info-circle"></i> 
+                            Únete a grupos para mostrar tus intereses
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Estadísticas -->
+            <div class="card shadow-sm mt-3">
+                <div class="card-header bg-light">
+                    <h6 class="mb-0">
+                        <i class="bi bi-graph-up"></i> Estadísticas
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-4">
+                            <h5 class="text-primary mb-0">{{ stats.total_grupos }}</h5>
+                            <small class="text-muted">Grupos</small>
+                        </div>
+                        <div class="col-4">
+                            <h5 class="text-success mb-0">{{ stats.total_eventos }}</h5>
+                            <small class="text-muted">Eventos</small>
+                        </div>
+                        <div class="col-4">
+                            <h5 class="text-info mb-0">{{ stats.eventos_confirmados }}</h5>
+                            <small class="text-muted">Confirmados</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna derecha - Actividad -->
+        <div class="col-md-8">
+            <!-- Grupos del usuario -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">
+                        <i class="bi bi-people"></i> Mis Grupos
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% if grupos_usuario %}
+                        <div class="row">
+                            {% for ug in grupos_usuario %}
+                                <div class="col-md-6 mb-3">
+                                    <div class="card h-100 border-0">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-start">
+                                                {% if ug.grupo.logo %}
+                                                    <img src="{{ ug.grupo.logo.url }}" 
+                                                         class="rounded me-3" 
+                                                         width="50" height="50"
+                                                         alt="{{ ug.grupo.nombre_grupo }}">
+                                                {% else %}
+                                                    <div class="bg-secondary rounded d-flex align-items-center justify-content-center me-3"
+                                                         style="width: 50px; height: 50px;">
+                                                        <i class="bi bi-people text-white"></i>
+                                                    </div>
+                                                {% endif %}
+                                                <div class="flex-grow-1">
+                                                    <h6 class="card-title mb-1">
+                                                        {{ ug.grupo.nombre_grupo }}
+                                                    </h6>
+                                                    <p class="card-text text-muted small mb-1">
+                                                        {{ ug.grupo.area_interes }}
+                                                    </p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="badge bg-{% if ug.rol_en_grupo == 'ADMIN' %}warning{% else %}secondary{% endif %}">
+                                                            {{ ug.rol_en_grupo }}
+                                                        </span>
+                                                        <small class="text-muted">
+                                                            {{ ug.fecha_union|timesince }}
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="text-center py-4">
+                            <i class="bi bi-people display-1 text-muted"></i>
+                            <p class="text-muted mt-3">No perteneces a ningún grupo todavía</p>
+                            <a href="{% url 'explorar_grupos' %}" class="btn btn-primary">
+                                Explorar Grupos
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Eventos recientes -->
+            <div class="card shadow-sm mt-4">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">
+                        <i class="bi bi-calendar-event"></i> Participación en Eventos
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% if participaciones %}
+                        {% for participacion in participaciones %}
+                            <div class="border-bottom pb-2 mb-2">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="mb-1">{{ participacion.participacion.evento.nombre_evento }}</h6>
+                                        <p class="mb-1 text-muted small">
+                                            <i class="bi bi-people"></i> 
+                                            {{ participacion.participacion.evento.grupo.nombre_grupo }}
+                                        </p>
+                                        <p class="mb-1 small">
+                                            <i class="bi bi-calendar"></i> 
+                                            {{ participacion.participacion.evento.fecha_inicio|date:"d M Y, H:i" }}
+                                        </p>
+                                    </div>
+                                    <span class="badge 
+                                        {% if participacion.participacion.estado_participacion == 'CONFIRMADO' %}bg-success
+                                        {% elif participacion.participacion.estado_participacion == 'PENDIENTE' %}bg-warning
+                                        {% else %}bg-danger{% endif %}">
+                                        {{ participacion.participacion.get_estado_participacion_display }}
+                                    </span>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="text-center py-3">
+                            <i class="bi bi-calendar-x display-1 text-muted"></i>
+                            <p class="text-muted mt-3">No has participado en eventos aún</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

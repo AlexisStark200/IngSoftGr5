@@ -17,7 +17,7 @@ from project.singleton import config_manager
 from .singletons import grupo_cache
 
 from .models import (
-    Usuario, Grupo, Evento,
+    ParticipacionUsuario, Usuario, Grupo, Evento,
     Comentario, Notificacion,
     UsuarioGrupo
 )
@@ -467,3 +467,68 @@ class NotificacionViewSet(viewsets.ReadOnlyModelViewSet):
             return Response(NotificacionSerializer(notif).data, status=status.HTTP_201_CREATED)
         except (ValidationError, DRFValidationError) as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+def perfil_usuario(request, usuario_id):
+    """Página de perfil usando la estructura existente"""
+    usuario = get_object_or_404(Usuario, id_usuario=usuario_id)
+    
+    # Grupos del usuario
+    grupos_usuario = UsuarioGrupo.objects.filter(
+        usuario=usuario
+    ).select_related('grupo')
+    
+    # Extraer áreas de interés de los grupos
+    areas_interes = set()
+    for ug in grupos_usuario:
+        if ug.grupo.area_interes:
+            areas_interes.add(ug.grupo.area_interes)
+    
+    # Participaciones del usuario
+    participaciones_del_usuario = Participacion.objects.filter(
+        usuarios=usuario
+    ).select_related('evento__grupo')
+    
+    # Estadísticas del usuario
+    stats = {
+        'total_grupos': grupos_usuario.count(),
+        'total_eventos': participaciones_del_usuario.count(),
+        'eventos_confirmados': participaciones_del_usuario.filter(
+            estado_participacion='CONFIRMADO'
+        ).count(),
+    }
+    
+    context = {
+        'usuario': usuario,
+        'grupos_usuario': grupos_usuario,
+        'areas_interes': sorted(list(areas_interes)),
+        'participaciones': participaciones_del_usuario,
+        'stats': stats,
+    }
+    
+    return render(request, 'perfil/completo.html', context)
+
+def explorar_intereses(request):
+    """Página para explorar todas las áreas de interés disponibles"""
+    # Agrupar grupos por área de interés
+    grupos_por_interes = Grupo.objects.values(
+        'area_interes'
+    ).annotate(
+        total_grupos=Count('id_grupo')
+    ).order_by('area_interes')
+    
+    # Grupos populares por interés
+    intereses_populares = []
+    for interes in grupos_por_interes:
+        if interes['area_interes']:
+            grupos = Grupo.objects.filter(
+                area_interes=interes['area_interes']
+            )[:5]
+            intereses_populares.append({
+                'area': interes['area_interes'],
+                'total_grupos': interes['total_grupos'],
+                'grupos_destacados': grupos
+            })
+    
+    return render(request, 'perfil/explorar_intereses.html', {
+        'intereses_populares': intereses_populares
+    })
