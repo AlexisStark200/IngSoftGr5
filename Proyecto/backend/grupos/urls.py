@@ -1,15 +1,14 @@
 """
-URLs - ÁgoraUN
+URLs - AgoraUN
 Enrutamiento de la API REST
 
 Usa Django REST Framework Routers para generar automáticamente
 todos los endpoints CRUD.
-
-Documentación: http://localhost:8000/api/docs/
 """
-# grupos/urls.py
+
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
+
 from .views import (
     GrupoViewSet,
     EventoViewSet,
@@ -17,7 +16,13 @@ from .views import (
     ComentarioViewSet,
     NotificacionViewSet,
     AuthView,
-    # GrupoDetailView,  # si usas vistas de detalle clásicas
+    perfil_usuario,
+    explorar_intereses,
+    editar_perfil,
+    actualizar_intereses,
+    bandeja_entrada,
+    roles_overview,
+    # GrupoDetailView,  # opcional
     # ConfigView,
 )
 
@@ -29,10 +34,13 @@ router.register(r"comentarios", ComentarioViewSet, basename="comentario")
 router.register(r"notificaciones", NotificacionViewSet, basename="notificacion")
 
 urlpatterns = [
-    # path("grupo/<int:grupo_id>/", GrupoDetailView.as_view(), name="grupo_detail"),  # opcional
-    # path("config/", ConfigView.as_view(), name="config"),  # opcional
-    path("", include(router.urls)),  # ← endpoints CRUD
-    # Auth minimal endpoints:
+    path('perfil/<int:usuario_id>/', perfil_usuario, name='perfil_usuario'),
+    path('perfil/<int:usuario_id>/editar/', editar_perfil, name='editar_perfil'),
+    path('perfil/<int:usuario_id>/intereses/', actualizar_intereses, name='actualizar_intereses'),
+    path('intereses/', explorar_intereses, name='explorar_intereses'),
+    path("bandeja/<int:usuario_id>/", bandeja_entrada, name="bandeja_entrada"),
+    path("roles/", roles_overview, name="roles_overview"),
+    path("", include(router.urls)),
     path("auth/register/", AuthView.as_view({"post": "register"}), name="auth-register"),
     path("auth/login/",    AuthView.as_view({"post": "login"}),    name="auth-login"),
     path("auth/logout/",   AuthView.as_view({"post": "logout"}),   name="auth-logout"),

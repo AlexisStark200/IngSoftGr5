@@ -256,24 +256,43 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Usuario no autenticado");
         }
 
-        // Mostrar/ocultar botón de crear grupo
+        // Mostrar/ocultar botón de crear grupo y calendario
         try {
             const btn = document.getElementById('create-group-btn');
-            console.log('DEBUG: createGroupBtn (from DOM):', btn);
-            if (btn) console.log('DEBUG: clases actuales:', btn.className, 'style.display=', btn.style.display);
-
-            if (btn && currentUser && authToken) {
-                btn.classList.remove('hidden');
-                // Forzar estilos visibles
-                btn.style.display = 'inline-block';
-                btn.removeAttribute('aria-hidden');
-                console.log('DEBUG: botón mostrado (forced) — clases ahora:', btn.className, 'display=', getComputedStyle(btn).display);
-            } else if (btn) {
-                btn.classList.add('hidden');
-                console.log('DEBUG: botón ocultado — clases ahora:', btn.className);
+            const calBtn = document.getElementById('calendar-btn');
+            if (btn) {
+                if (currentUser && authToken) {
+                    btn.classList.remove('hidden');
+                    btn.style.display = 'inline-block';
+                    btn.removeAttribute('aria-hidden');
+                } else {
+                    btn.classList.add('hidden');
+                }
+            }
+            if (calBtn) {
+                if (currentUser && authToken) {
+                    calBtn.classList.remove('hidden');
+                    calBtn.style.display = 'inline-block';
+                    calBtn.removeAttribute('aria-hidden');
+                } else {
+                    calBtn.classList.add('hidden');
+                    calBtn.style.display = 'none';
+                }
+            }
+            // Mostrar/ocultar botón Mi Club
+            const clubBtn = document.getElementById('club-btn');
+            if (clubBtn) {
+                if (currentUser && authToken) {
+                    clubBtn.classList.remove('hidden');
+                    clubBtn.style.display = 'inline-block';
+                    clubBtn.removeAttribute('aria-hidden');
+                } else {
+                    clubBtn.classList.add('hidden');
+                    clubBtn.style.display = 'none';
+                }
             }
         } catch (dbgErr) {
-            console.warn('DEBUG: error mostrando/ocultando createGroupBtn', dbgErr);
+            console.warn('DEBUG: error mostrando/ocultando createGroupBtn/calBtn', dbgErr);
         }
     }
     
@@ -321,7 +340,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Fetching groups from:", url);
             const data = await fetchJSON(url);
             const items = Array.isArray(data) ? data : data?.results || [];
-            renderGroups(items);
+            await renderGroups(items);
         } catch (err) {
             console.error("Error fetchGroups:", err);
             groupsDiv.innerHTML = `<p class="error">${err.message}</p>`;
@@ -392,7 +411,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 tipo_grupo: tipo.trim(),
                 correo_grupo: correo.trim(),
                 descripcion: descripcion.trim(),
-                link_whatsapp: whatsapp.trim() || null
+                // Enviar cadena vacía en lugar de `null` para evitar errores
+                // si el campo en la base de datos no acepta NULL.
+                link_whatsapp: whatsapp.trim() || ""
             };
 
             try {
@@ -421,7 +442,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function renderGroups(items) {
+    // Cache para los ids de grupos del usuario
+    let _userGroupIdsCache = null;
+    async function getUserGroupIds() {
+        if (!currentUser) return [];
+        if (_userGroupIdsCache) return _userGroupIdsCache;
+        try {
+            const uid = currentUser.id_usuario || currentUser.id;
+            const res = await fetchJSON(`${API_BASE}/usuarios/${uid}/grupos/`);
+            const list = Array.isArray(res) ? res : res?.results || [];
+            // Los objetos pueden venir con la forma { grupo: <id> } o con id directo
+            _userGroupIdsCache = list.map(g => g.grupo || g.id_grupo || g.id || g.grupo_id).filter(x => x != null);
+            return _userGroupIdsCache;
+        } catch (err) {
+            console.warn('No se pudo obtener grupos del usuario:', err);
+            _userGroupIdsCache = [];
+            return _userGroupIdsCache;
+        }
+    }
+
+    async function renderGroups(items) {
         groupsDiv.innerHTML = "";
         if (!items.length) {
             groupsDiv.innerHTML = `
@@ -432,6 +472,9 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             return;
         }
+
+        // Obtener lista de grupos del usuario (para decidir botones)
+        const userGroupIds = currentUser ? await getUserGroupIds() : [];
 
         items.forEach((g) => {
             const id = g.id_grupo || g.id;
@@ -452,10 +495,36 @@ document.addEventListener('DOMContentLoaded', function() {
             nameEl.textContent = nombre;
             areaEl.textContent = area ? `Área: ${area}` : "";
 
-            // Mostrar/ocultar botones según autenticación
+            // Mostrar/ocultar botones según autenticación y pertenencia
             if (!currentUser) {
                 btnJoin.style.display = "none";
                 btnLeave.style.display = "none";
+            } else {
+                // Determinar si el usuario está en este grupo.
+                const uid = currentUser.id_usuario || currentUser.id;
+                const possibleFlags = [
+                    g.usuario_inscrito, g.esta_inscrito, g.is_member, g.en_miembros, g.miembro, g.user_is_member
+                ];
+                let isMember = false;
+                // Chequear banderas directas
+                for (const f of possibleFlags) if (f) { isMember = true; break; }
+                // Chequear lista de miembros incluida en el objeto
+                if (!isMember && Array.isArray(g.miembros)) {
+                    // miembros puede ser lista de ids o de objetos con id
+                    isMember = g.miembros.some(m => m === uid || m.id === uid || m.id_usuario === uid);
+                }
+                // Chequear cache de grupos del usuario
+                if (!isMember && userGroupIds && userGroupIds.length) {
+                    isMember = userGroupIds.includes(id);
+                }
+
+                if (isMember) {
+                    btnJoin.style.display = 'none';
+                    btnLeave.style.display = 'inline-block';
+                } else {
+                    btnJoin.style.display = 'inline-block';
+                    btnLeave.style.display = 'none';
+                }
             }
 
             // Ver detalles (eventos del grupo)
@@ -503,7 +572,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             id_usuario: currentUser.id_usuario || currentUser.id,
                         }),
                     });
+                    // Invalidate cache y refrescar listado
+                    _userGroupIdsCache = null;
                     alert("¡Te uniste al grupo!");
+                    fetchGroups();
                 } catch (err) {
                     console.error(err);
                     alert("Error al unirte: " + err.message);
@@ -521,7 +593,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     const userId = currentUser.id_usuario || currentUser.id;
                     const url = `${API_BASE}/grupos/${id}/eliminar_miembro/?id_usuario=${userId}`;
                     await fetchJSON(url, { method: "DELETE" });
+                    // Invalidate cache y refrescar listado
+                    _userGroupIdsCache = null;
                     alert("Has salido del grupo.");
+                    fetchGroups();
                 } catch (err) {
                     console.error(err);
                     alert("Error al salir: " + err.message);

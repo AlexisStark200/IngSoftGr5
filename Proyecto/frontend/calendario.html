@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Calendario de Eventos</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <!-- FullCalendar CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+  <style>
+    .calendar-panel{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.5rem;max-width:900px;margin:2rem auto;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+    .calendar-panel h2{margin-bottom:1rem;color:#0f172a;font-size:1.5rem;font-weight:700}
+    #calendar{margin-top:1.5rem;}
+    .fc-toolbar-title{font-size:1.25rem;font-weight:600;color:#1e293b}
+    .fc-event-title{font-weight:500;}
+    .fc-event-time{color:#2563eb;font-weight:500;}
+    .fc-daygrid-event-dot{background:#10b981!important;}
+    .fc-event{border-radius:6px!important;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mi Calendario de Eventos</h1>
+    <a href="./index.html" class="secondary" style="margin-top:1rem">Volver al catálogo</a>
+  </header>
+  <main>
+    <section class="calendar-panel">
+      <h2>Eventos de mis grupos</h2>
+      <div id="calendar"></div>
+      <div id="cal-message" class="message hidden"></div>
+    </section>
+  </main>
+  <!-- FullCalendar JS -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+  <script src="./calendario.js"></script>
+</body>
+</html>

@@ -9,7 +9,6 @@ Los tests anteriores se mantienen comentados como referencia.
 """
 """
 from django.test import TestCase
-<<<<<<< HEAD
 from grupos.models import Grupo
 """
 
@@ -17,7 +16,16 @@ from grupos.models import Grupo
 # PERSONA 1 - BACKEND/MODELOS (3 pruebas - RF_1)
 # ============================================================================
 
-"""
+
+from unittest import TestCase
+
+from Proyecto.backend.grupos.models import Grupo
+
+from .singletons import grupo_cache
+
+from project.singleton import config_manager
+
+
 class TestBackendRegistroGrupos(TestCase):
     """Tests implementados por Persona 1 - Gestión de grupos en backend"""
 
@@ -305,10 +313,8 @@ class TestValidacionIntegralGrupos(TestCase):
         self.assertIsNotNone(grupo_recuperado.correo_grupo)
         self.assertIsNotNone(grupo_recuperado.tipo_grupo)
         self.assertIsNotNone(grupo_recuperado.area_interes)
-"""
-=======
-from .singletons import grupo_cache
-from project.singleton import config_manager
+
+
 
 class SingletonTest(TestCase):
     def test_singleton_instances(self):
@@ -320,4 +326,3 @@ class SingletonTest(TestCase):
         config1 = config_manager
         config2 = config_manager
         self.assertIs(config1, config2)
->>>>>>> 9efb33cafdea510868ac1181abeba0dbbbe4c9c1

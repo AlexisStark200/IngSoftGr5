@@ -67,17 +67,22 @@ class Usuario(models.Model):
 
 class Rol(models.Model):
     """Modelo de Roles del sistema"""
+
     id_rol = models.AutoField(primary_key=True)
     nombre_rol = models.CharField(
         max_length=20,
         choices=[
-            ('ADMIN', 'Administrador'),
-            ('MODERADOR', 'Moderador'),
-            ('MIEMBRO', 'Miembro'),
-            ('INVITADO', 'Invitado'),
+            ('ADMIN_GENERAL', 'Administrador General'),
+            ('ADMIN_CLUB', 'Administrador de Club'),
+            ('ESTUDIANTE', 'Estudiante'),
+            ('ADMIN', 'Administrador (legacy)'),
+            ('MODERADOR', 'Moderador (legacy)'),
+            ('MIEMBRO', 'Miembro (legacy)'),
+            ('INVITADO', 'Invitado (legacy)'),
         ],
-        default='MIEMBRO',  # default necesario por el choices
+        default='ESTUDIANTE',
     )
+    descripcion = models.TextField(blank=True)
 
     class Meta:
         db_table = 'ROL'
@@ -90,6 +95,13 @@ class Rol(models.Model):
 
 class Grupo(models.Model):
     """Modelo de Grupo/Club estudiantil"""
+
+    ESTADOS_VALIDACION = [
+        ('PENDIENTE', 'Pendiente de aprobación'),
+        ('APROBADO', 'Aprobado'),
+        ('RECHAZADO', 'Rechazado'),
+    ]
+
     id_grupo = models.AutoField(primary_key=True)
     nombre_grupo = models.CharField(max_length=60)
     area_interes = models.CharField(max_length=40)
@@ -100,6 +112,45 @@ class Grupo(models.Model):
     correo_grupo = models.EmailField(max_length=128)
     descripcion = models.TextField()
     link_whatsapp = models.CharField(max_length=128, blank=True, null=True)
+    estado_grupo = models.CharField(
+        max_length=20,
+        choices=[
+            ('PENDIENTE', 'Pendiente'),
+            ('APROBADO', 'Aprobado'),
+            ('RECHAZADO', 'Rechazado'),
+        ],
+        default='PENDIENTE',
+    )
+    motivo_rechazo = models.TextField(blank=True, null=True)
+    # Campos de flujo de validación / solicitud
+    comentario_revision = models.TextField(blank=True, null=True)
+    estado_validacion = models.CharField(
+        max_length=20,
+        choices=ESTADOS_VALIDACION,
+        default='PENDIENTE',
+    )
+    aprobado_por = models.ForeignKey(
+        'Usuario',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='grupos_aprobados',
+    )
+    solicitante = models.ForeignKey(
+        'Usuario',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='grupos_solicitados',
+    )
+
+    creado_por = models.ForeignKey(
+        'Usuario',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='grupos_creados',
+    )
 
     # Relaciones Many-to-Many
     miembros = models.ManyToManyField(

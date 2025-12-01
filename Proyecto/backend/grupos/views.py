@@ -1,5 +1,8 @@
 # backend/grupos/views.py
 
+from django.shortcuts import redirect
+from django.contrib import messages
+from django.db.models import Count
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django.db import transaction
 from django.http import JsonResponse
@@ -19,9 +22,9 @@ from project.singleton import config_manager
 from .singletons import grupo_cache
 
 from .models import (
-    Usuario, Grupo, Evento,
+    Participacion, ParticipacionUsuario, Usuario, Grupo, Evento,
     Comentario, Notificacion,
-    UsuarioGrupo
+    UsuarioGrupo, UsuarioRol, Rol
 )
 from .serializers import (
     UsuarioSerializer,
@@ -31,8 +34,10 @@ from .serializers import (
     ComentarioSerializer,
     NotificacionSerializer,
     UsuarioGrupoSerializer,
+    UsuarioRolSerializer,
     AgregarMiembroSerializer,
-    EnviarNotificacionSerializer
+    EnviarNotificacionSerializer,
+    RechazarGrupoSerializer
 )
 from .services import (
     GrupoService,
@@ -51,6 +56,63 @@ def grupo_detail(request, pk=1):
     """Ejemplo de vista HTML simple usando templates."""
     grupo = get_object_or_404(Grupo, pk=pk)
     return render(request, "grupos/grupo_detail.html", {"grupo": grupo})
+
+
+def bandeja_entrada(request, usuario_id):
+    """Bandeja de entrada básica con notificaciones y tareas según rol."""
+    usuario = get_object_or_404(Usuario, pk=usuario_id)
+    roles_usuario = UsuarioRol.objects.filter(usuario=usuario).select_related('rol')
+    notificaciones = NotificacionService.obtener_notificaciones_usuario(usuario.id_usuario)
+    pendientes = []
+    if roles_usuario.filter(rol__nombre_rol='ADMIN_GENERAL').exists():
+        pendientes = Grupo.objects.filter(estado_validacion='PENDIENTE')
+
+    context = {
+        "usuario": usuario,
+        "roles": roles_usuario,
+        "notificaciones": notificaciones,
+        "pendientes": pendientes,
+    }
+    return render(request, "grupos/bandeja_entrada.html", context)
+
+
+def roles_overview(request):
+    """Página simple con los roles predefinidos y sus permisos base."""
+    roles = Rol.objects.all()
+    if not roles.exists():
+        # Fallback por si la migración aún no pobló los roles
+        roles = [
+            Rol(nombre_rol="ADMIN_GENERAL", descripcion="Aprueba clubes y gestiona usuarios"),
+            Rol(nombre_rol="ADMIN_CLUB", descripcion="Administra eventos y miembros del club"),
+            Rol(nombre_rol="ESTUDIANTE", descripcion="Se inscribe a eventos y recibe notificaciones"),
+        ]
+
+    permisos = {
+        'ADMIN_GENERAL': [
+            'Aprobar o rechazar solicitudes de clubes',
+            'Asignar roles a otros usuarios',
+            'Consultar todos los eventos creados',
+        ],
+        'ADMIN_CLUB': [
+            'Crear y editar eventos de su club',
+            'Aceptar miembros en el club',
+            'Enviar notificaciones a sus integrantes',
+        ],
+        'ESTUDIANTE': [
+            'Registrarse a eventos',
+            'Recibir notificaciones de nuevos eventos',
+        ]
+    }
+
+    roles_data = [
+        {
+            "rol": rol,
+            "permisos": permisos.get(rol.nombre_rol, [])
+        }
+        for rol in roles
+    ]
+
+    return render(request, "grupos/roles.html", {"roles_data": roles_data})
 
 
 class GrupoDetailView(View):
@@ -166,9 +228,27 @@ class GrupoViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         qs = super().get_queryset()
         area = self.request.query_params.get("area")
+        estado = self.request.query_params.get("estado")
         if area:
             qs = qs.filter(area_interes__iexact=area)
+        if estado:
+            qs = qs.filter(estado_grupo=estado)
         return qs
+
+    def _resolve_admin_id(self, request):
+        """Obtener el id del administrador autenticado o del payload."""
+        if getattr(request.user, "id_usuario", None):
+            return request.user.id_usuario
+        return request.data.get("id_admin")
+
+    def _is_admin_general(self, admin_id):
+        """Validar que el usuario tenga rol de ADMIN_GENERAL."""
+        if not admin_id:
+            return False
+        return UsuarioRol.objects.filter(
+            usuario_id=admin_id,
+            rol__nombre_rol="ADMIN_GENERAL",
+        ).exists()
 
     # ----------------------- CRUD con services -----------------------------
 
@@ -181,6 +261,11 @@ class GrupoViewSet(viewsets.ModelViewSet):
             return Response(GrupoSerializer(grupo).data, status=status.HTTP_201_CREATED)
         except (ValidationError, DRFValidationError) as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            # Dev helper: devolver traza completa para depuración local
+            import traceback
+            tb = traceback.format_exc()
+            return Response({"error": str(e), "trace": tb}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     @transaction.atomic
     def update(self, request, *args, **kwargs):
@@ -203,6 +288,44 @@ class GrupoViewSet(viewsets.ModelViewSet):
             ser.is_valid(raise_exception=True)
             actualizado = GrupoService.actualizar_grupo(grupo.id_grupo, ser.validated_data)
             return Response(GrupoSerializer(actualizado).data)
+        except ObjectDoesNotExist:
+            return Response({"error": "Grupo no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+        except (ValidationError, DRFValidationError) as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+    @action(detail=True, methods=['post'])
+    def aprobar(self, request, pk=None):
+        """Permite a un administrador aprobar un grupo."""
+        comentario = request.data.get('comentario', '')
+        admin_id = self._resolve_admin_id(request)
+        if not self._is_admin_general(admin_id):
+            return Response(
+                {"error": "Solo un administrador general puede aprobar grupos"},
+                status=status.HTTP_403_FORBIDDEN,
+            )
+        try:
+            grupo = GrupoService.aprobar_grupo(pk, admin_id, comentario)
+            return Response(GrupoSerializer(grupo).data)
+        except ObjectDoesNotExist:
+            return Response({"error": "Grupo no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+        except (ValidationError, DRFValidationError) as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+    @action(detail=True, methods=['post'])
+    def rechazar(self, request, pk=None):
+        """Permite a un administrador rechazar un grupo con motivo."""
+        motivo = request.data.get('motivo', '')
+        admin_id = self._resolve_admin_id(request)
+        if not self._is_admin_general(admin_id):
+            return Response(
+                {"error": "Solo un administrador general puede rechazar grupos"},
+                status=status.HTTP_403_FORBIDDEN,
+            )
+        try:
+            resultado = GrupoService.rechazar_grupo(pk, admin_id, motivo)
+            if resultado is True:
+                return Response(status=status.HTTP_204_NO_CONTENT)
+            return Response(GrupoSerializer(resultado).data)
         except ObjectDoesNotExist:
             return Response({"error": "Grupo no encontrado"}, status=status.HTTP_404_NOT_FOUND)
         except (ValidationError, DRFValidationError) as e:
@@ -259,6 +382,30 @@ class GrupoViewSet(viewsets.ModelViewSet):
             return Response(status=status.HTTP_204_NO_CONTENT)
         except ObjectDoesNotExist:
             return Response({"error": "Relación no encontrada"}, status=status.HTTP_404_NOT_FOUND)
+
+    @action(detail=True, methods=["post"], permission_classes=[AllowAny])
+    def aprobar(self, request, pk=None):
+        """POST /grupos/{id}/aprobar/ -> cambia estado a APROBADO (RF_14)."""
+        try:
+            grupo = GrupoService.aprobar_grupo(pk)
+            return Response(GrupoSerializer(grupo).data, status=status.HTTP_200_OK)
+        except ObjectDoesNotExist:
+            return Response({"error": "Grupo no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+
+    @action(detail=True, methods=["post"], permission_classes=[AllowAny])
+    def rechazar(self, request, pk=None):
+        """POST /grupos/{id}/rechazar/ Body: {"motivo": "Falta correo institucional"} (RF_14)."""
+        try:
+            payload = RechazarGrupoSerializer(data=request.data)
+            payload.is_valid(raise_exception=True)
+            resultado = GrupoService.rechazar_grupo(pk, payload.validated_data["motivo"])
+            if resultado is True:
+                return Response(status=status.HTTP_204_NO_CONTENT)
+            return Response(GrupoSerializer(resultado).data, status=status.HTTP_200_OK)
+        except ObjectDoesNotExist:
+            return Response({"error": "Grupo no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+        except (ValidationError, DRFValidationError) as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
     @action(detail=True, methods=["get"])
     def eventos(self, request, pk=None):
@@ -408,6 +555,28 @@ class UsuarioViewSet(viewsets.ModelViewSet):
         except ObjectDoesNotExist:
             return Response({"error": "Usuario no encontrado"}, status=status.HTTP_404_NOT_FOUND)
 
+    @action(detail=True, methods=['get'])
+    def roles(self, request, pk=None):
+        """GET /usuarios/{id}/roles/ → roles del usuario."""
+        try:
+            usuario = self.get_object()
+            roles = UsuarioService.obtener_roles_usuario(usuario.id_usuario)
+            return Response(UsuarioRolSerializer(roles, many=True).data)
+        except ObjectDoesNotExist:
+            return Response({"error": "Usuario no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+
+    @action(detail=True, methods=['post'])
+    def asignar_rol(self, request, pk=None):
+        """POST /usuarios/{id}/asignar_rol/ → asigna rol especificado."""
+        id_rol = request.data.get('id_rol')
+        try:
+            relacion = UsuarioService.asignar_rol(pk, id_rol)
+            return Response(UsuarioRolSerializer(relacion).data, status=status.HTTP_201_CREATED)
+        except ObjectDoesNotExist:
+            return Response({"error": "Usuario o rol no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+        except (ValidationError, DRFValidationError) as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
 # -------------------------------------------------------------------
 # COMENTARIOS
 # -------------------------------------------------------------------
@@ -442,18 +611,40 @@ class NotificacionViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = NotificacionSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
+    # NUEVO: filtrar por usuario=? usando tu modelo Usuario
+    def get_queryset(self):
+        qs = super().get_queryset().order_by('-fecha_envio')
+        usuario_id = self.request.query_params.get('usuario')
+        if usuario_id:
+            qs = qs.filter(usuarios__id_usuario=usuario_id)
+        return qs
+
+    # NUEVO: pasar id_usuario al serializer para calcular "leida"
+    def get_serializer_context(self):
+        context = super().get_serializer_context()
+        usuario_id = self.request.query_params.get('usuario')
+        if usuario_id:
+            context['id_usuario'] = usuario_id
+        return context
+
     @action(detail=True, methods=['post'])
     def marcar_leida(self, request, pk=None):
         """POST /notificaciones/{id}/marcar-leida/"""
         try:
             notificacion = self.get_object()
-            NotificacionService.marcar_como_leida(request.user.id, notificacion.id_notificacion)
-            return Response({"message": "Notificación marcada como leída"}, status=status.HTTP_200_OK)
+            NotificacionService.marcar_como_leida(
+                request.user.id,  # esto lo revisamos luego si queremos mapear User→Usuario
+                notificacion.id_notificacion
+            )
+            return Response({"message": "Notificación marcada como leída"},
+                            status=status.HTTP_200_OK)
         except ObjectDoesNotExist:
-            return Response({"error": "Notificación no encontrada"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"error": "Notificación no encontrada"},
+                            status=status.HTTP_404_NOT_FOUND)
 
     @action(detail=False, methods=['post'])
     def enviar_masiva(self, request):
+
         """
         POST /notificaciones/enviar-masiva/
         Body: {"ids_usuarios":[1,2,3], "tipo_notificacion":"EVENTO_CREADO", "mensaje":"Se creó un nuevo evento"}
@@ -577,3 +768,93 @@ class AuthView(viewsets.ViewSet):
             except Exception:
                 pass
         return Response({'message': 'Logged out'}, status=status.HTTP_200_OK)
+
+
+# -------------------------------------------------------------------
+# PERFIL (HTML)
+# -------------------------------------------------------------------
+
+def perfil_usuario(request, usuario_id):
+    """Página de perfil usando la estructura existente."""
+    usuario = get_object_or_404(Usuario, id_usuario=usuario_id)
+
+    grupos_usuario = UsuarioGrupo.objects.filter(usuario=usuario).select_related('grupo')
+    areas_interes = {ug.grupo.area_interes for ug in grupos_usuario if ug.grupo.area_interes}
+
+    participaciones_del_usuario = Participacion.objects.filter(
+        usuarios=usuario
+    ).select_related('evento__grupo')
+
+    stats = {
+        'total_grupos': grupos_usuario.count(),
+        'total_eventos': participaciones_del_usuario.count(),
+        'eventos_confirmados': participaciones_del_usuario.filter(
+            estado_participacion='CONFIRMADO'
+        ).count(),
+    }
+
+    context = {
+        'usuario': usuario,
+        'grupos_usuario': grupos_usuario,
+        'areas_interes': sorted(list(areas_interes)),
+        'participaciones': participaciones_del_usuario,
+        'stats': stats,
+    }
+
+    return render(request, 'perfil/completo.html', context)
+
+
+def explorar_intereses(request):
+    """Página para explorar todas las áreas de interés disponibles."""
+    grupos_por_interes = (
+        Grupo.objects.values('area_interes')
+        .annotate(total_grupos=Count('id_grupo'))
+        .order_by('area_interes')
+    )
+
+    intereses_populares = []
+    for interes in grupos_por_interes:
+        if interes['area_interes']:
+            grupos = Grupo.objects.filter(area_interes=interes['area_interes'])[:5]
+            intereses_populares.append({
+                'area': interes['area_interes'],
+                'total_grupos': interes['total_grupos'],
+                'grupos_destacados': grupos
+            })
+
+    return render(request, 'perfil/explorar_intereses.html', {
+        'intereses_populares': intereses_populares
+    })
+
+
+def editar_perfil(request, usuario_id):
+    """Vista para editar el perfil del usuario."""
+    usuario = get_object_or_404(Usuario, id_usuario=usuario_id)
+
+    if request.method == 'POST':
+        nombre = request.POST.get('nombre_usuario')
+        apellido = request.POST.get('apellido')
+        correo = request.POST.get('correo_usuario')
+
+        if nombre and apellido and correo:
+            usuario.nombre_usuario = nombre
+            usuario.apellido = apellido
+            usuario.correo_usuario = correo
+            usuario.save()
+
+            messages.success(request, 'Perfil actualizado correctamente!')
+            return redirect('perfil_usuario', usuario_id=usuario.id_usuario)
+        messages.error(request, 'Por favor completa todos los campos obligatorios')
+
+    return render(request, 'perfil/editar.html', {'usuario': usuario})
+
+
+def actualizar_intereses(request, usuario_id):
+    """Vista para actualizar intereses del usuario."""
+    usuario = get_object_or_404(Usuario, id_usuario=usuario_id)
+
+    if request.method == 'POST':
+        messages.success(request, 'Intereses actualizados correctamente!')
+        return redirect('perfil_usuario', usuario_id=usuario.id_usuario)
+
+    return render(request, 'perfil/editar_intereses.html', {'usuario': usuario})

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bandeja de {{ usuario.nombre_usuario }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f6fb; margin: 0; padding: 20px; }
+        h1 { color: #1f3b73; }
+        section { background: white; border: 1px solid #d9e3f0; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+        .pill { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 12px; background: #e8f0fe; color: #1f3b73; margin-right: 6px; }
+        .notificacion { border-bottom: 1px solid #eef1f6; padding: 8px 0; }
+        .pendiente { padding: 12px; background: #fff8e1; border: 1px solid #ffe082; border-radius: 6px; margin-bottom: 10px; }
+        form { margin-top: 8px; }
+        textarea { width: 100%; min-height: 60px; margin-top: 4px; }
+        button { background: #1f3b73; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; margin-right: 8px; }
+        button.secondary { background: #c62828; }
+    </style>
+</head>
+<body>
+    <h1>Bandeja de entrada</h1>
+    <p><strong>Usuario:</strong> {{ usuario.nombre_usuario }} {{ usuario.apellido }}</p>
+    <p>
+        {% for rol in roles %}
+            <span class="pill">{{ rol.rol.get_nombre_rol_display|default:rol.rol.nombre_rol }}</span>
+        {% empty %}
+            <span class="pill">Sin rol asignado</span>
+        {% endfor %}
+    </p>
+
+    <section>
+        <h2>Notificaciones recientes</h2>
+        {% for item in notificaciones %}
+            <div class="notificacion">
+                <strong>{{ item.notificacion.tipo_notificacion }}</strong>
+                <div>{{ item.notificacion.mensaje }}</div>
+                <small>Enviada: {{ item.notificacion.fecha_envio }}</small>
+                {% if item.leida %}
+                    <span class="pill">Leída</span>
+                {% else %}
+                    <span class="pill">Pendiente</span>
+                {% endif %}
+            </div>
+        {% empty %}
+            <p>No hay notificaciones.</p>
+        {% endfor %}
+    </section>
+
+    <section>
+        <h2>Solicitudes de clubes pendientes</h2>
+        {% if pendientes %}
+            {% for grupo in pendientes %}
+                <div class="pendiente">
+                    <strong>{{ grupo.nombre_grupo }}</strong> — {{ grupo.area_interes }}
+                    <div><em>Solicitante:</em> {% if grupo.solicitante %}{{ grupo.solicitante.nombre_usuario }} {{ grupo.solicitante.apellido }}{% else %}No registrado{% endif %}</div>
+                    <form method="post" action="/api/grupos/{{ grupo.id_grupo }}/aprobar/">
+                        {% csrf_token %}
+                        <input type="hidden" name="id_admin" value="{{ usuario.id_usuario }}">
+                        <textarea name="comentario" placeholder="Comentario de aprobación opcional"></textarea>
+                        <button type="submit">Aprobar</button>
+                    </form>
+                    <form method="post" action="/api/grupos/{{ grupo.id_grupo }}/rechazar/">
+                        {% csrf_token %}
+                        <input type="hidden" name="id_admin" value="{{ usuario.id_usuario }}">
+                        <textarea name="motivo" placeholder="Motivo de rechazo"></textarea>
+                        <button type="submit" class="secondary">Rechazar</button>
+                    </form>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No hay solicitudes pendientes para revisar.</p>
+        {% endif %}
+    </section>
+</body>
+</html>

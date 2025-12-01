@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgoraUN - Bandejas de entrada</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script>
+    // Evita recargas forzadas de live-reload cuando se sirve con 5500.
+    if (location.host.includes("127.0.0.1:5500") || location.host.includes("localhost:5500")) {
+      window.location.reload = () => console.debug("Auto-reload bloqueado");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Bandejas de entrada (roles)</h1>
+      <small>Notificaciones</small>
+    </div>
+    <div class="env">
+      <label>API base:</label>
+      <input id="apiBase" value="http://localhost:8000/api" />
+      <button id="saveBase">Usar</button>
+    </div>
+    <div class="auth">
+      <label>Token (opcional):</label>
+      <input id="apiToken" placeholder="Token DRF (si lo tienes)" />
+      <button id="saveToken">Guardar</button>
+    </div>
+    <div class="auth">
+      <label>Usuario ID:</label>
+      <input id="userId" placeholder="1" style="width:80px" />
+      <label>Rol:</label>
+      <select id="userRole">
+        <option value="ADMIN_GENERAL">Admin General</option>
+        <option value="ADMIN_CLUB">Admin de Club</option>
+        <option value="ESTUDIANTE" selected>Estudiante</option>
+      </select>
+      <button id="saveUser">Aplicar</button>
+    </div>
+    <a href="./index.html" class="secondary" style="color:#fff;">Volver al catálogo</a>
+  </header>
+
+  <main class="two-cols">
+    <section class="panel">
+      <h2>Solicitudes de grupos (Admin General)</h2>
+      <p>Obtiene grupos con estado <code>PENDIENTE</code> y permite aprobar/rechazar.</p>
+      <button id="reloadSolicitudes">Recargar solicitudes</button>
+      <div id="solicitudes"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Bandeja de notificaciones</h2>
+      <p>Lista notificaciones dirigidas al usuario.</p>
+      <button id="reloadNotifs">Recargar notificaciones</button>
+      <div id="notifs"></div>
+      <h3>Nuevos eventos</h3>
+      <p>Listado rápido de eventos recientes (ordenados por fecha más cercana).</p>
+      <div class="filters" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.5rem;margin:.5rem 0 1rem;">
+        <div>
+          <label for="f-fecha" style="font-size:.9rem;font-weight:600;">Desde fecha</label>
+          <input id="f-fecha" type="date" />
+        </div>
+        <div>
+          <label for="f-area" style="font-size:.9rem;font-weight:600;">Área</label>
+          <select id="f-area">
+            <option value="">Todas</option>
+            <option value="arte">Arte</option>
+            <option value="deportes">Deportes</option>
+            <option value="ciencia">Ciencia</option>
+            <option value="tecnologia">Tecnología</option>
+          </select>
+        </div>
+        <div>
+          <label for="f-club" style="font-size:.9rem;font-weight:600;">Club</label>
+          <select id="f-club">
+            <option value="">Todos</option>
+          </select>
+        </div>
+        <div>
+          <label for="f-tipo" style="font-size:.9rem;font-weight:600;">Tipo</label>
+          <select id="f-tipo">
+            <option value="">Todos</option>
+            <option value="TALLER">Taller</option>
+            <option value="CONFERENCIA">Conferencia</option>
+            <option value="REUNION">Reunión</option>
+            <option value="OTRO">Otro</option>
+          </select>
+        </div>
+        <div style="grid-column:1/-1;display:flex;align-items:flex-end;gap:.5rem;flex-wrap:wrap">
+          <button id="applyFilters" class="btn-secondary btn-inline">Filtrar</button>
+          <button id="clearFilters" class="btn-secondary btn-inline">Limpiar filtros</button>
+          <button id="reloadEventos" class="btn-secondary btn-inline">Recargar eventos</button>
+        </div>
+      </div>
+      <div id="eventos"></div>
+    </section>
+  </main>
+
+  <script src="./bandejas.js"></script>
+</body>
+</html>

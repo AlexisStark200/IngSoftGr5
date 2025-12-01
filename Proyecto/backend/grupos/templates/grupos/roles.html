@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Roles del sistema</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f9fbff; padding: 24px; }
+        h1 { color: #1f3b73; }
+        .rol { background: white; border: 1px solid #e0e7f1; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+        ul { margin: 8px 0 0 20px; }
+        .tag { display: inline-block; background: #e8f0fe; color: #1f3b73; padding: 4px 8px; border-radius: 12px; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <h1>Roles predefinidos</h1>
+    <p>Esta página resume los roles solicitados en RF_13 y las acciones clave asociadas.</p>
+    {% for item in roles_data %}
+        <div class="rol">
+            <div class="tag">{{ item.rol.get_nombre_rol_display|default:item.rol.nombre_rol }}</div>
+            {% if item.rol.descripcion %}
+                <p>{{ item.rol.descripcion }}</p>
+            {% endif %}
+            <strong>Permisos principales</strong>
+            <ul>
+                {% for permiso in item.permisos %}
+                    <li>{{ permiso }}</li>
+                {% empty %}
+                    <li>Este rol aún no tiene permisos asignados.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% empty %}
+        <p>No hay roles configurados aún.</p>
+    {% endfor %}
+</body>
+</html>

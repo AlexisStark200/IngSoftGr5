@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ÁgoraUN — Catálogo de Grupos</title>
   <link rel="stylesheet" href="./styles.css" />
+  <script>
+    // Evita recargas forzadas de live-reload (puerto 5500) que causan parpadeo.
+    if (location.host.includes("127.0.0.1:5500") || location.host.includes("localhost:5500")) {
+      window.location.reload = () => console.debug("Auto-reload bloqueado");
+    }
+  </script>
   <style>
     /* Estilos para autenticación */
     .auth-panel {
@@ -131,10 +137,12 @@
       
       <div id="auth-logged-in" class="user-info hidden">
         <span>Bienvenido, <strong id="user-name"></strong></span>
-          <div style="display:flex;gap:0.5rem;align-items:center">
-            <button id="create-group-btn" class="btn-join btn-size-logout">Crear Grupo</button>
-            <button class="logout-btn" id="logout-btn">Cerrar Sesión</button>
-          </div>
+        <div style="display:flex;gap:0.5rem;align-items:center">
+          <button id="create-group-btn" class="btn-join btn-size-logout">Crear Grupo</button>
+          <a href="./club.html" id="club-btn" class="secondary btn-size-logout" style="display:none;margin-left:8px">Mi club</a>
+          <a href="./calendario.html" id="calendar-btn" class="secondary btn-size-logout" style="display:none">Mi calendario</a>
+          <button class="logout-btn" id="logout-btn">Cerrar Sesión</button>
+        </div>
       </div>
     </div>
 
@@ -143,6 +151,12 @@
       <input id="apiBase" value="http://localhost:8000/api" />
       <button id="saveBase">Usar</button>
     </div>
+    <div class="auth">
+      <label>Token (opcional):</label>
+      <input id="apiToken" placeholder="Token DRF (si lo tienes)" />
+      <button id="saveToken">Guardar</button>
+    </div>
+    <a href="./bandejas.html" class="secondary bandejas-link">Bandejas / Roles</a>
   </header>
 
   <section class="filters">
@@ -181,13 +195,31 @@
   </footer>
 
   <script src="./app.js"></script>
+  <script>
+    // Mostrar el botón de calendario solo si el usuario está logueado
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarBtn = document.getElementById('calendar-btn');
+      var authLoggedIn = document.getElementById('auth-logged-in');
+      if (authLoggedIn && !authLoggedIn.classList.contains('hidden')) {
+        calendarBtn.style.display = '';
+      } else {
+        calendarBtn.style.display = 'none';
+      }
+    });
+  </script>
   <!-- Modal para crear grupo -->
   <div id="create-group-modal" class="modal hidden" role="dialog" aria-hidden="true">
     <div class="modal-content">
       <h3>Crear Grupo</h3>
       <form id="create-group-form">
         <input type="text" id="g-nombre" placeholder="Nombre del grupo" required />
-        <input type="text" id="g-area" placeholder="Área de interés" required />
+        <select id="g-area" required>
+          <option value="">Área (todas)</option>
+          <option value="arte">Arte</option>
+          <option value="deportes">Deportes</option>
+          <option value="ciencia">Ciencia</option>
+          <option value="tecnologia">Tecnología</option>
+        </select>
         <input type="text" id="g-tipo" placeholder="Tipo de grupo (ej. Estudiantil)" required />
         <input type="email" id="g-correo" placeholder="Correo del grupo (ej. grupo@unal.edu.co)" required />
         <input type="text" id="g-whatsapp" placeholder="Link WhatsApp (opcional)" />
