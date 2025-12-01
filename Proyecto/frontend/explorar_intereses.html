@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorar por Intereses - ÁgoraUN</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Explorar por Intereses</h1>
+        <div class="auth">
+            <a href="./index.html" class="secondary">Volver al catálogo</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Header de la página -->
+            <div class="page-header">
+                <h2 class="page-title">Explorar por Intereses</h2>
+                <p class="page-subtitle">Descubre grupos estudiantiles por áreas de interés</p>
+            </div>
+
+            <!-- Búsqueda -->
+            <div class="search-section">
+                <div class="search-form">
+                    <input type="text" class="search-input" placeholder="Buscar grupos por interés, nombre o descripción...">
+                    <button class="search-btn">Buscar</button>
+                </div>
+            </div>
+
+            <!-- Grid de intereses -->
+            <div class="interests-grid" id="interests-grid">
+                <div class="loading">Cargando intereses...</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="explorar_intereses.js"></script>
+</body>
+</html>
