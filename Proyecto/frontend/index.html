@@ -3,235 +3,225 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ÁgoraUN — Catálogo de Grupos</title>
+  <title>AgoraUN | Comunidad y clubes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
   <script>
-    // Evita recargas forzadas de live-reload (puerto 5500) que causan parpadeo.
     if (location.host.includes("127.0.0.1:5500") || location.host.includes("localhost:5500")) {
       window.location.reload = () => console.debug("Auto-reload bloqueado");
     }
   </script>
-  <style>
-    /* Estilos para autenticación */
-    .auth-panel {
-      background: #f8f9fa;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      border-left: 4px solid #667eea;
-    }
-    
-    .auth-tabs {
-      display: flex;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #ddd;
-    }
-    
-    .auth-tab {
-      padding: 0.5rem 1rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-    }
-    
-    .auth-tab.active {
-      border-bottom-color: #667eea;
-      color: #667eea;
-    }
-    
-    .auth-form {
-      display: none;
-    }
-    
-    .auth-form.active {
-      display: block;
-    }
-    
-    .auth-form input {
-      width: 100%;
-      margin: 0.25rem 0;
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    
-    .auth-form button {
-      width: 100%;
-      padding: 0.5rem;
-      background: #667eea;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-top: 0.5rem;
-    }
-    
-    .user-info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logout-btn {
-      background: #dc3545;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    
-    .message {
-      padding: 0.5rem;
-      margin-top: 0.5rem;
-      border-radius: 4px;
-    }
-    
-    .message.error {
-      background: #f8d7da;
-      color: #721c24;
-      border: 1px solid #f5c6cb;
-    }
-    
-    .message.success {
-      background: #d4edda;
-      color: #155724;
-      border: 1px solid #c3e6cb;
-    }
-    
-    .hidden {
-      display: none !important;
-    }
-  </style>
 </head>
 <body>
-  <header>
-    <h1>ÁgoraUN — Catálogo de Grupos</h1>
-    
-    <!-- Panel de Autenticación -->
-    <div class="auth-panel">
-      <div id="auth-logged-out">
+  <!-- Landing / acceso -->
+  <section id="landing" class="hero-wrapper">
+    <header class="hero-header">
+      <div class="hero-banner">
+        <img src="../logo Agora.jpg" alt="ÁgoraUN" class="hero-logo" />
+        <span class="hero-brand">ÁgoraUN</span>
+      </div>
+    </header>
+
+    <div class="hero-grid">
+      <div class="hero-left">
+        <h1>Descubre, Organiza y <span class="gradient-text">Vive la UNAL.</span></h1>
+        <p class="lede">La vida universitaria es mucho más que clases. En ÁgoraUN encuentras un espacio unificado donde clubes, semilleros, grupos de investigación y actividades extracurriculares cobran vida. Accede a toda la información en un solo lugar.</p>
+        <ul class="hero-list">
+          <li><span class="check-icon">✓</span> Explorar clubes, semilleros y grupos de investigación según tus intereses.</li>
+          <li><span class="check-icon">✓</span> Seguir tus grupos favoritos y recibir notificaciones de eventos y actualizaciones.</li>
+          <li><span class="check-icon">✓</span> Descubrir actividades culturales, deportivas, científicas y recreativas.</li>
+        </ul>
+      </div>
+
+      <div class="hero-card">
         <div class="auth-tabs">
-          <button class="auth-tab active" data-tab="login">Iniciar Sesión</button>
+          <button class="auth-tab active" data-tab="login">Iniciar sesión</button>
           <button class="auth-tab" data-tab="register">Registrarse</button>
         </div>
-        
-        <form id="login-form" class="auth-form active">
-          <input type="email" id="login-email" placeholder="usuario@unal.edu.co" required>
-          <input type="password" id="login-password" placeholder="Contraseña" required>
-          <button type="submit">Ingresar</button>
-        </form>
-        
-        <form id="register-form" class="auth-form">
-          <input type="text" id="register-nombre" placeholder="Nombre" required>
-          <input type="text" id="register-apellido" placeholder="Apellido" required>
-          <input type="email" id="register-email" placeholder="usuario@unal.edu.co" required>
-          <input type="password" id="register-password" placeholder="Contraseña (mín. 8 caracteres)" required minlength="8">
-          <input type="password" id="register-password-confirm" placeholder="Confirmar Contraseña" required>
-          <button type="submit">Registrarse</button>
-        </form>
-        
-        <div id="auth-message" class="message hidden"></div>
-      </div>
-      
-      <div id="auth-logged-in" class="user-info hidden">
-        <span>Bienvenido, <strong id="user-name"></strong></span>
-        <div style="display:flex;gap:0.5rem;align-items:center">
-          <button id="create-group-btn" class="btn-join btn-size-logout">Crear Grupo</button>
-          <a href="./club.html" id="club-btn" class="secondary btn-size-logout" style="display:none;margin-left:8px">Mi club</a>
-          <a href="./calendario.html" id="calendar-btn" class="secondary btn-size-logout" style="display:none">Mi calendario</a>
-          <button class="logout-btn" id="logout-btn">Cerrar Sesión</button>
+
+        <div id="auth-logged-out">
+          <form id="login-form" class="auth-form active" autocomplete="on">
+            <label for="login-email">Correo institucional</label>
+            <input type="email" id="login-email" placeholder="usuario@unal.edu.co" required />
+            <label for="login-password">Contraseña</label>
+            <div class="input-with-toggle">
+              <input type="password" id="login-password" placeholder="••••••••" required />
+              <button type="button" class="toggle-pass" id="login-pass-toggle" aria-label="Mostrar contraseña"></button>
+            </div>
+            <button type="submit" class="btn-primary">Ingresar</button>
+          </form>
+
+          <form id="register-form" class="auth-form" autocomplete="on">
+            <label for="register-nombre">Nombre</label>
+            <input type="text" id="register-nombre" placeholder="Nombre" required />
+            <label for="register-apellido">Apellido</label>
+            <input type="text" id="register-apellido" placeholder="Apellido" required />
+            <label for="register-email">Correo institucional</label>
+            <input type="email" id="register-email" placeholder="usuario@unal.edu.co" required />
+            <label for="register-password">Contraseña (min. 8 caracteres)</label>
+            <div class="input-with-toggle">
+              <input type="password" id="register-password" placeholder="Contraseña" required minlength="8" />
+              <button type="button" class="toggle-pass" id="register-pass-toggle" aria-label="Mostrar contraseña"></button>
+            </div>
+            <label for="register-password-confirm">Confirmar contraseña</label>
+            <div class="input-with-toggle">
+              <input type="password" id="register-password-confirm" placeholder="Confirmar contraseña" required />
+              <button type="button" class="toggle-pass" id="register-pass2-toggle" aria-label="Mostrar contraseña"></button>
+            </div>
+            <button type="submit" class="btn-primary">Crear cuenta</button>
+          </form>
+
+          <div id="auth-message" class="message hidden"></div>
         </div>
+
       </div>
     </div>
-
-    <div class="env">
-      <label>API base:</label>
-      <input id="apiBase" value="http://localhost:8000/api" />
-      <button id="saveBase">Usar</button>
-    </div>
-    <div class="auth">
-      <label>Token (opcional):</label>
-      <input id="apiToken" placeholder="Token DRF (si lo tienes)" />
-      <button id="saveToken">Guardar</button>
-    </div>
-    <a href="./bandejas.html" class="secondary bandejas-link">Bandejas / Roles</a>
-    <a href="./explorar_intereses.html" class="secondary">Explorar Intereses</a>
-  </header>
-
-  <section class="filters">
-    <input id="q" placeholder="Buscar por nombre" />
-    <select id="area">
-      <option value="">Área (todas)</option>
-      <option value="arte">Arte</option>
-      <option value="deportes">Deportes</option>
-      <option value="ciencia">Ciencia</option>
-      <option value="tecnologia">Tecnología</option>
-    </select>
-    <button id="searchBtn">Buscar</button>
   </section>
 
-  <main>
-    <div id="groups" class="grid"></div>
-    <template id="cardTpl">
-      <article class="card">
-        <h3 class="g-name"></h3>
-        <p class="g-area"></p>
-        <div class="actions">
-          <button class="btn-view">Ver detalles</button>
-          <button class="btn-join">Unirme</button>
-          <button class="btn-leave secondary">Salir</button>
+  <!-- Dashboard por rol -->
+  <main id="dashboard" class="hidden">
+    <section class="topbar" id="auth-logged-in">
+      <div class="topbar-left">
+        <div class="user-badge">
+          <div class="logo-circle small">A</div>
+          <div>
+            <p class="eyebrow">Sesion activa</p>
+            <p class="username">Hola, <span id="user-name"></span></p>
+          </div>
         </div>
-        <div class="detail hidden">
-          <h4>Eventos</h4>
-          <ul class="events"></ul>
+        <div id="role-pill" class="pill">Rol: estudiante</div>
+      </div>
+      <div class="topbar-actions">
+        <div class="inline-inputs">
+          <label>API</label>
+          <input id="apiBase" value="http://localhost:8000/api" />
+          <button id="saveBase">Guardar</button>
         </div>
+        <div class="inline-inputs">
+          <label>Token</label>
+          <input id="apiToken" placeholder="Token DRF (opcional)" />
+          <button id="saveToken">Guardar</button>
+        </div>
+        <button class="logout-btn" id="logout-btn">Cerrar sesion</button>
+      </div>
+    </section>
+
+    <section class="grid-panels">
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Mis espacios</p>
+            <h2>Clubes y grupos donde participo</h2>
+          </div>
+          <div class="panel-actions">
+            <button id="create-group-btn" class="btn-join">Crear grupo</button>
+            <a href="./club.html" id="club-btn" class="secondary">Ver mi club</a>
+            <a href="./calendario.html" id="calendar-btn" class="secondary">Calendario personal</a>
+          </div>
+        </div>
+        <div id="my-groups" class="stack"></div>
       </article>
-    </template>
+
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Agenda</p>
+            <h2>Calendario global de actividades</h2>
+          </div>
+          <a class="secondary" href="./calendario.html">Abrir calendario completo</a>
+        </div>
+        <div id="calendar-list" class="stack"></div>
+      </article>
+    </section>
+
+    <section class="panel" id="catalog-panel">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Explora</p>
+          <h2>Catalogo de grupos, clubes y semilleros</h2>
+        </div>
+        <div class="filters compact">
+          <input id="q" placeholder="Buscar por nombre" />
+          <select id="area">
+            <option value="">Area (todas)</option>
+            <option value="arte">Arte</option>
+            <option value="deportes">Deportes</option>
+            <option value="ciencia">Ciencia</option>
+            <option value="tecnologia">Tecnologia</option>
+          </select>
+          <button id="searchBtn">Buscar</button>
+        </div>
+      </div>
+      <div id="groups" class="grid"></div>
+      <template id="cardTpl">
+        <article class="card club-card">
+          <div class="card-hero-img placeholder" data-letter="">
+            <span class="card-hero-letter"></span>
+          </div>
+          <div class="card-body">
+            <div class="badge g-area"></div>
+            <h3 class="g-name"></h3>
+            <p class="g-desc"></p>
+            <div class="card-meta">
+              <span class="meta-item meta-members"></span>
+              <span class="meta-item meta-events"></span>
+            </div>
+            <div class="actions">
+              <button class="btn-view">Ver detalles</button>
+              <button class="btn-join">Unirme</button>
+              <button class="btn-leave secondary">Salir</button>
+            </div>
+            <div class="detail hidden">
+              <h4>Eventos</h4>
+              <ul class="events"></ul>
+            </div>
+          </div>
+        </article>
+      </template>
+    </section>
+
+    <section class="panel admin-only hidden" id="admin-requests">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Admin general</p>
+          <h2>Solicitudes de creacion de grupos</h2>
+        </div>
+        <button id="reloadRequests" class="secondary">Recargar</button>
+      </div>
+      <div id="requests-list" class="stack"></div>
+    </section>
   </main>
 
-  <footer>
-    <small>ÁgoraUN - Sistema de Grupos Estudiantiles UNAL</small>
-  </footer>
-
-  <script src="./app.js"></script>
-  <script>
-    // Mostrar el botón de calendario solo si el usuario está logueado
-    document.addEventListener('DOMContentLoaded', function() {
-      var calendarBtn = document.getElementById('calendar-btn');
-      var authLoggedIn = document.getElementById('auth-logged-in');
-      if (authLoggedIn && !authLoggedIn.classList.contains('hidden')) {
-        calendarBtn.style.display = '';
-      } else {
-        calendarBtn.style.display = 'none';
-      }
-    });
-  </script>
   <!-- Modal para crear grupo -->
   <div id="create-group-modal" class="modal hidden" role="dialog" aria-hidden="true">
     <div class="modal-content">
-      <h3>Crear Grupo</h3>
+      <h3>Crear grupo</h3>
       <form id="create-group-form">
         <input type="text" id="g-nombre" placeholder="Nombre del grupo" required />
         <select id="g-area" required>
-          <option value="">Área (todas)</option>
+          <option value="">Area (todas)</option>
           <option value="arte">Arte</option>
           <option value="deportes">Deportes</option>
           <option value="ciencia">Ciencia</option>
-          <option value="tecnologia">Tecnología</option>
+          <option value="tecnologia">Tecnologia</option>
         </select>
         <input type="text" id="g-tipo" placeholder="Tipo de grupo (ej. Estudiantil)" required />
         <input type="email" id="g-correo" placeholder="Correo del grupo (ej. grupo@unal.edu.co)" required />
         <input type="text" id="g-whatsapp" placeholder="Link WhatsApp (opcional)" />
-        <textarea id="g-descripcion" placeholder="Descripción" rows="4" required></textarea>
-        <div style="display:flex;gap:0.5rem;margin-top:0.5rem">
-          <button type="submit" style="flex:1">Crear</button>
-          <button type="button" id="g-cancel" style="flex:1;background:#6b7280;color:#fff">Cancelar</button>
+        <label class="file-label" for="g-logo">Logo del club (imagen)</label>
+        <input type="file" id="g-logo" accept="image/*" />
+        <textarea id="g-descripcion" placeholder="Descripcion" rows="4" required></textarea>
+        <div class="form-actions">
+          <button type="submit" class="btn-join">Crear</button>
+          <button type="button" id="g-cancel" class="secondary">Cancelar</button>
         </div>
-        <div id="g-message" class="message hidden" style="margin-top:0.5rem"></div>
+        <div id="g-message" class="message hidden"></div>
       </form>
     </div>
   </div>
+
+  <script src="./app.js"></script>
 </body>
 </html>

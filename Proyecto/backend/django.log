@@ -1163,3 +1163,4346 @@ Not Found: /api/solicitudes/
 "GET /api/grupos/3/ HTTP/1.1" 200 796
 "PATCH /api/grupos/3/ HTTP/1.1" 200 303
 "GET /api/grupos/3/ HTTP/1.1" 200 794
+GrupoCacheManager Singleton creado
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
+"OPTIONS /api/grupos/ HTTP/1.1" 200 0
+"GET /api/grupos/ HTTP/1.1" 200 809
+"OPTIONS /api/usuarios/2/grupos/ HTTP/1.1" 200 0
+"GET /api/usuarios/2/grupos/ HTTP/1.1" 200 325
+"OPTIONS /api/grupos/2/eventos/ HTTP/1.1" 200 0
+"GET /api/grupos/2/eventos/ HTTP/1.1" 200 2
+"OPTIONS /api/grupos/1/eventos/ HTTP/1.1" 200 0
+"GET /api/grupos/1/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 35
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 35
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 35
+"GET /admin/grupos/grupo/add/ HTTP/1.1" 200 21289
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/forms.css HTTP/1.1" 304 0
+"GET /static/admin/js/collapse.js HTTP/1.1" 304 0
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+"GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2582
+"GET /admin/grupos/usuario/ HTTP/1.1" 200 16261
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/img/search.svg HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 35
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 35
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 35
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 35
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 35
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 35
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 35
+"OPTIONS /api/auth/register/ HTTP/1.1" 200 0
+"POST /api/auth/register/ HTTP/1.1" 201 200
+"OPTIONS /api/usuarios/3/roles/ HTTP/1.1" 200 0
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"OPTIONS /api/usuarios/3/grupos/ HTTP/1.1" 200 0
+"OPTIONS /api/eventos/ HTTP/1.1" 200 0
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 809
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /admin/grupos/grupo/ HTTP/1.1" 200 17268
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /admin/grupos/grupo/add/ HTTP/1.1" 200 21336
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"POST /admin/grupos/grupo/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/grupo/add/ HTTP/1.1" 200 21602
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+"POST /admin/grupos/grupo/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/grupo/ HTTP/1.1" 200 18833
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 52
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 1854
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"OPTIONS /api/grupos/3/eventos/ HTTP/1.1" 200 0
+"GET /api/grupos/3/eventos/ HTTP/1.1" 200 2
+"OPTIONS /api/grupos/4/eventos/ HTTP/1.1" 200 0
+"GET /api/grupos/4/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/1/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/2/eventos/ HTTP/1.1" 200 2
+"GET /admin/grupos/grupo/add/ HTTP/1.1" 200 21336
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"POST /admin/grupos/grupo/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/grupo/add/ HTTP/1.1" 200 21597
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /admin/grupos/usuario/ HTTP/1.1" 200 16743
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /admin/grupos/usuario/add/ HTTP/1.1" 200 15870
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"POST /admin/grupos/usuario/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/usuario/add/ HTTP/1.1" 200 16124
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"POST /admin/grupos/usuario/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/usuario/add/ HTTP/1.1" 200 16122
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"POST /admin/grupos/usuario/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/usuario/add/ HTTP/1.1" 200 16127
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"POST /admin/grupos/usuario/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/usuario/add/ HTTP/1.1" 200 16123
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"POST /admin/grupos/usuario/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/usuario/add/ HTTP/1.1" 200 16124
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"POST /admin/grupos/usuario/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/usuario/ HTTP/1.1" 200 19764
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /admin/grupos/evento/ HTTP/1.1" 200 14157
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /admin/grupos/evento/add/ HTTP/1.1" 200 19687
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /static/admin/js/calendar.js HTTP/1.1" 200 8466
+"GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+"GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+"GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+"GET /admin/grupos/grupo/ HTTP/1.1" 200 19229
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /admin/grupos/grupo/add/ HTTP/1.1" 200 21609
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"POST /admin/grupos/grupo/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/grupo/add/ HTTP/1.1" 200 21875
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"POST /admin/grupos/grupo/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/grupo/ HTTP/1.1" 200 20777
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /admin/grupos/evento/add/ HTTP/1.1" 200 19815
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /static/admin/img/calendar-icons.svg HTTP/1.1" 200 1094
+"POST /admin/grupos/evento/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/evento/add/ HTTP/1.1" 200 20131
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"POST /admin/grupos/evento/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/evento/add/ HTTP/1.1" 200 20135
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"POST /admin/grupos/evento/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/evento/add/ HTTP/1.1" 200 20118
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 3303
+"GET /api/eventos/ HTTP/1.1" 200 1710
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"POST /admin/grupos/evento/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/evento/add/ HTTP/1.1" 200 20133
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"POST /admin/grupos/evento/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/evento/add/ HTTP/1.1" 200 20134
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"POST /admin/grupos/evento/add/ HTTP/1.1" 302 0
+"GET /admin/grupos/evento/ HTTP/1.1" 200 20873
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3303
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 2
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"OPTIONS /api/grupos/6/agregar_miembro/ HTTP/1.1" 200 0
+"POST /api/grupos/6/agregar_miembro/ HTTP/1.1" 201 177
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 179
+"GET /api/grupos/ HTTP/1.1" 200 3303
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 179
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"OPTIONS /api/grupos/5/agregar_miembro/ HTTP/1.1" 200 0
+"POST /api/grupos/5/agregar_miembro/ HTTP/1.1" 201 172
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 352
+"GET /api/grupos/ HTTP/1.1" 200 3303
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 352
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"OPTIONS /api/grupos/4/agregar_miembro/ HTTP/1.1" 200 0
+"POST /api/grupos/4/agregar_miembro/ HTTP/1.1" 201 186
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3303
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3303
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"OPTIONS /api/grupos/?area=tecnologia HTTP/1.1" 200 0
+"GET /api/grupos/?area=tecnologia HTTP/1.1" 200 1469
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"OPTIONS /api/grupos/?area=ciencia HTTP/1.1" 200 0
+"GET /api/grupos/?area=ciencia HTTP/1.1" 200 52
+"GET /admin/grupos/grupo/ HTTP/1.1" 200 20551
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /admin/grupos/grupo/6/change/ HTTP/1.1" 200 22416
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"POST /admin/grupos/grupo/6/change/ HTTP/1.1" 302 0
+"GET /admin/grupos/grupo/ HTTP/1.1" 200 20748
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /admin/grupos/grupo/5/change/ HTTP/1.1" 200 22389
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"POST /admin/grupos/grupo/5/change/ HTTP/1.1" 302 0
+"GET /admin/grupos/grupo/ HTTP/1.1" 200 20731
+"GET /admin/jsi18n/ HTTP/1.1" 200 8006
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3290
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"OPTIONS /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 0
+"OPTIONS /api/eventos/?desde=2025-12-01 HTTP/1.1" 200 0
+"GET /api/eventos/?desde=2025-12-01 HTTP/1.1" 200 3446
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 2532
+"OPTIONS /api/grupos/6/aprobar/ HTTP/1.1" 200 0
+"POST /api/grupos/6/aprobar/ HTTP/1.1" 200 461
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 2048
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"OPTIONS /api/grupos/4/ HTTP/1.1" 200 0
+"GET /api/grupos/4/ HTTP/1.1" 200 1279
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"POST /api/auth/login/ HTTP/1.1" 200 190
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"POST /api/auth/login/ HTTP/1.1" 200 190
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 35
+"POST /api/auth/login/ HTTP/1.1" 200 190
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"OPTIONS /api/grupos/ HTTP/1.1" 200 0
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/debate.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/astrononmia.jpg
+"GET /media/logos/debate.jpg HTTP/1.1" 404 2615
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+"GET /media/logos/astrononmia.jpg HTTP/1.1" 404 2630
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/prog_compe.jpg
+"GET /media/logos/baloncesto_fem.jpg HTTP/1.1" 404 2639
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+Not Found: /media/logos/astrononmia.jpg
+Not Found: /media/logos/baloncesto_fem.jpg
+Not Found: /media/logos/debate.jpg
+Not Found: /media/logos/prog_compe.jpg
+Not Found: /media/logos/ciencia_de_datos.jpg
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /media/logos/prog_compe.jpg HTTP/1.1" 404 2627
+"GET /media/logos/ciencia_de_datos.jpg HTTP/1.1" 404 2645
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/usuarios/3/grupos/ HTTP/1.1" 200 539
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/eventos/ HTTP/1.1" 200 3446
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 3289
+"GET /api/usuarios/3/roles/ HTTP/1.1" 200 2

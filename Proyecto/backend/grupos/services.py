@@ -459,6 +459,16 @@ class EventoService:
 
         return evento
 
+    @staticmethod
+    @transaction.atomic
+    def eliminar_evento(id_evento):
+        """
+        Eliminar un evento existente.
+        """
+        evento = Evento.objects.get(id_evento=id_evento)
+        evento.delete()
+        return True
+
 
 # ===========================================================================
 # SERVICIOS DE USUARIO
