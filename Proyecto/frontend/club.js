@@ -158,27 +158,29 @@ cancelEditBtn.addEventListener('click', () => {
 
 sendEditBtn.addEventListener('click', async () => {
   if (!currentGroupId) return;
-  const payload = {
-    tipo_solicitud: 'editar_club',
-    grupo: currentGroupId,
-    creador: currentUser ? (currentUser.id_usuario || currentUser.id) : null,
-    cambios: {
-      nombre_grupo: editName.value || '',
-      descripcion: editDesc.value || '',
-      correo_grupo: editEmail.value || '',
-      link_whatsapp: editWhatsapp.value || ''
-    }
+
+  const updatePayload = {
+    nombre_grupo: editName.value || '',
+    descripcion: editDesc.value || '',
+    correo_grupo: editEmail.value || '',
+    link_whatsapp: editWhatsapp.value || ''
   };
+
   try {
-    const res = await fetch(`${API_BASE}/solicitudes/`, {
-      method: 'POST',
+    // Enviar al endpoint real de grupos para actualizar datos del club (evita 404 de /solicitudes/)
+    const res = await fetch(`${API_BASE}/grupos/${currentGroupId}/`, {
+      method: 'PATCH',
       headers: headers(),
-      body: JSON.stringify(payload)
+      body: JSON.stringify(updatePayload)
     });
-    if (!res.ok) throw new Error(await res.text());
-    editMsg.textContent = 'Solicitud enviada al administrador.';
+
+    const text = await res.text();
+    if (!res.ok) throw new Error(text || res.statusText);
+
+    editMsg.textContent = 'Cambios enviados correctamente.';
     editMsg.classList.remove('hidden');
     setTimeout(()=>{ editModal.classList.add('hidden'); editMsg.classList.add('hidden'); },2000);
+    await showGroup(currentGroupId); // refresca datos visibles
   } catch (err) {
     console.error(err);
     editMsg.textContent = 'Error enviando la solicitud: ' + err.message;

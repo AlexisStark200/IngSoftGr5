@@ -1150,3 +1150,16 @@ Bad Request: /api/eventos/
 "GET /api/notificaciones/?usuario=1 HTTP/1.1" 200 603
 "GET /api/grupos/ HTTP/1.1" 200 1655
 "GET /api/usuarios/1/grupos/ HTTP/1.1" 200 466
+"GET /api/grupos/ HTTP/1.1" 200 1655
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 466
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 466
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 466
+"GET /api/grupos/3/ HTTP/1.1" 200 796
+Not Found: /api/solicitudes/
+"POST /api/solicitudes/ HTTP/1.1" 404 17208
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 466
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 466
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 466
+"GET /api/grupos/3/ HTTP/1.1" 200 796
+"PATCH /api/grupos/3/ HTTP/1.1" 200 303
+"GET /api/grupos/3/ HTTP/1.1" 200 794
