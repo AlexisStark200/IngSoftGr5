@@ -73,6 +73,19 @@ reloadNotifsBtn.onclick = () => loadNotificaciones();
 reloadEventosBtn.onclick = () => loadEventos();
 
 async function loadSolicitudes() {
+  // Mostrar u ocultar toda la sección de solicitudes según el rol
+  const solicitudesPanel = solicitudesDiv.closest('section') || solicitudesDiv.parentElement;
+  const twoCols = document.querySelector('.two-cols');
+  if (USER_ROLE !== 'ADMIN_GENERAL') {
+    // Ocultar la sección completamente para usuarios no-admin
+    if (solicitudesPanel) solicitudesPanel.style.display = 'none';
+    // Aplicar layout centrado cuando sólo quede la bandeja de notificaciones
+    if (twoCols) twoCols.classList.add('single-column');
+    return;
+  }
+  // Si es admin general, asegurarnos de que la sección esté visible
+  if (solicitudesPanel) solicitudesPanel.style.display = '';
+  if (twoCols) twoCols.classList.remove('single-column');
   solicitudesDiv.innerHTML = "<p>Cargando solicitudes...</p>";
   try {
     const data = await fetchJSON(`${API_BASE}/grupos/?estado=PENDIENTE`);

@@ -298,37 +298,679 @@ django.core.exceptions.ValidationError: ['El usuario no es miembro del grupo']
 "POST /api/grupos/2/agregar_miembro/ HTTP/1.1" 201 155
 Bad Request: /api/grupos/2/agregar_miembro/
 "POST /api/grupos/2/agregar_miembro/ HTTP/1.1" 400 50
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
 GrupoCacheManager Singleton creado
 Watching for file changes with StatReloader
 GrupoCacheManager Singleton creado
 GrupoCacheManager Singleton creado
+"GET /api/grupos/ HTTP/1.1" 200 712
+"GET /api/grupos/ HTTP/1.1" 200 712
+"GET /api/grupos/ HTTP/1.1" 200 712
+"GET /api/grupos/ HTTP/1.1" 200 712
+"GET /api/grupos/ HTTP/1.1" 200 712
+"GET /api/grupos/ HTTP/1.1" 200 712
+"GET /api/grupos/ HTTP/1.1" 200 712
+"POST /api/auth/login/ HTTP/1.1" 200 194
+"GET /api/grupos/ HTTP/1.1" 200 712
+"OPTIONS /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 0
+"OPTIONS /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 0
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 712
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 712
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 712
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 712
+"OPTIONS /api/grupos/1/aprobar/ HTTP/1.1" 200 0
+"POST /api/grupos/1/aprobar/ HTTP/1.1" 200 325
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 383
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 383
+"OPTIONS /api/grupos/2/aprobar/ HTTP/1.1" 200 0
+"POST /api/grupos/2/aprobar/ HTTP/1.1" 200 328
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
 "OPTIONS /api/grupos/ HTTP/1.1" 200 0
-"GET /api/grupos/ HTTP/1.1" 200 331
-"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+"GET /api/grupos/ HTTP/1.1" 200 706
+Internal Server Error: /api/grupos/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1364, "Field 'estado_validacion' doesn't have a default value")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/code/grupos/views.py", line 260, in create
+    grupo = GrupoService.crear_grupo(ser.validated_data, request.user)
+  File "/usr/local/lib/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/code/grupos/services.py", line 111, in crear_grupo
+    grupo = Grupo.objects.create(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1364, "Field 'estado_validacion' doesn't have a default value")
+"POST /api/grupos/ HTTP/1.1" 500 259500
+"OPTIONS /api/grupos/ HTTP/1.1" 200 0
+"GET /api/grupos/ HTTP/1.1" 200 706
+Internal Server Error: /api/grupos/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1364, "Field 'estado_validacion' doesn't have a default value")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/code/grupos/views.py", line 260, in create
+    grupo = GrupoService.crear_grupo(ser.validated_data, request.user)
+  File "/usr/local/lib/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/code/grupos/services.py", line 111, in crear_grupo
+    grupo = Grupo.objects.create(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1364, "Field 'estado_validacion' doesn't have a default value")
+"POST /api/grupos/ HTTP/1.1" 500 259434
+"GET /api/grupos/ HTTP/1.1" 200 706
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+/code/grupos/services.py changed, reloading.
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
+"GET /api/grupos/ HTTP/1.1" 200 706
+Internal Server Error: /api/grupos/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1364, "Field 'estado_validacion' doesn't have a default value")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/code/grupos/views.py", line 260, in create
+    grupo = GrupoService.crear_grupo(ser.validated_data, request.user)
+  File "/usr/local/lib/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/code/grupos/services.py", line 111, in crear_grupo
+    grupo = Grupo.objects.create(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1364, "Field 'estado_validacion' doesn't have a default value")
+"POST /api/grupos/ HTTP/1.1" 500 259580
+"OPTIONS /api/grupos/ HTTP/1.1" 200 0
+"GET /api/grupos/ HTTP/1.1" 200 706
+"GET /api/grupos/ HTTP/1.1" 200 706
+"OPTIONS /api/grupos/?area=deportes HTTP/1.1" 200 0
+"GET /api/grupos/?area=deportes HTTP/1.1" 200 52
+"GET /api/grupos/ HTTP/1.1" 200 706
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
 "POST /api/auth/login/ HTTP/1.1" 200 194
-"GET /api/grupos/ HTTP/1.1" 200 331
-"GET /api/grupos/ HTTP/1.1" 200 331
+"GET /api/grupos/ HTTP/1.1" 200 706
+"GET /api/grupos/ HTTP/1.1" 200 706
+"GET /api/grupos/ HTTP/1.1" 200 706
+"OPTIONS /api/auth/register/ HTTP/1.1" 200 0
+"POST /api/auth/register/ HTTP/1.1" 201 198
+"GET /api/grupos/ HTTP/1.1" 200 706
+"GET /api/grupos/ HTTP/1.1" 200 706
 "POST /api/auth/login/ HTTP/1.1" 200 194
-"GET /api/grupos/ HTTP/1.1" 200 331
-"POST /api/grupos/ HTTP/1.1" 201 282
-"GET /api/grupos/ HTTP/1.1" 200 614
-"GET /api/grupos/ HTTP/1.1" 200 614
+"GET /api/grupos/ HTTP/1.1" 200 706
+Internal Server Error: /api/grupos/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1364, "Field 'estado_validacion' doesn't have a default value")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/code/grupos/views.py", line 260, in create
+    grupo = GrupoService.crear_grupo(ser.validated_data, request.user)
+  File "/usr/local/lib/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/code/grupos/services.py", line 111, in crear_grupo
+    grupo = Grupo.objects.create(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+  File "/usr/local/lib/python3.9/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.9/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1364, "Field 'estado_validacion' doesn't have a default value")
+"POST /api/grupos/ HTTP/1.1" 500 259492
+/code/grupos/views.py changed, reloading.
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
+"OPTIONS /api/grupos/ HTTP/1.1" 200 0
+"GET /api/grupos/ HTTP/1.1" 200 706
+Internal Server Error: /api/grupos/
+"POST /api/grupos/ HTTP/1.1" 500 5601
+/code/grupos/models.py changed, reloading.
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
+"OPTIONS /api/grupos/ HTTP/1.1" 200 0
+"GET /api/grupos/ HTTP/1.1" 200 706
+"POST /api/grupos/ HTTP/1.1" 201 308
+"GET /api/grupos/ HTTP/1.1" 200 1015
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 360
+"OPTIONS /api/grupos/3/aprobar/ HTTP/1.1" 200 0
+"POST /api/grupos/3/aprobar/ HTTP/1.1" 200 305
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+/code/grupos/services.py changed, reloading.
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
+/code/grupos/models.py changed, reloading.
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
+/code/grupos/serializers.py changed, reloading.
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
+/code/grupos/services.py changed, reloading.
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
+/code/grupos/views.py changed, reloading.
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
+/code/grupos/views.py changed, reloading.
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
+"GET /api/grupos/ HTTP/1.1" 200 1012
+"POST /api/grupos/ HTTP/1.1" 201 316
+"GET /api/grupos/ HTTP/1.1" 200 1329
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 368
+"OPTIONS /api/grupos/4/rechazar/ HTTP/1.1" 200 0
+"POST /api/grupos/4/rechazar/ HTTP/1.1" 200 322
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"GET /api/grupos/ HTTP/1.1" 200 1335
+/code/grupos/services.py changed, reloading.
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
+/code/grupos/services.py changed, reloading.
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
+/code/grupos/views.py changed, reloading.
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
+/code/grupos/views.py changed, reloading.
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"POST /api/grupos/ HTTP/1.1" 201 319
+"GET /api/grupos/ HTTP/1.1" 200 1655
+"OPTIONS /api/grupos/?area=ciencia HTTP/1.1" 200 0
+"GET /api/grupos/?area=ciencia HTTP/1.1" 200 371
+"GET /api/grupos/ HTTP/1.1" 200 1655
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 371
+"OPTIONS /api/grupos/5/rechazar/ HTTP/1.1" 200 0
+"POST /api/grupos/5/rechazar/ HTTP/1.1" 204 0
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/grupos/ HTTP/1.1" 200 1335
+/code/grupos/views.py changed, reloading.
+Watching for file changes with StatReloader
+GrupoCacheManager Singleton creado
+"GET /api/grupos/ HTTP/1.1" 200 1335
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 35
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 35
+"POST /api/auth/login/ HTTP/1.1" 200 194
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"OPTIONS /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 0
+"OPTIONS /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 0
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"OPTIONS /api/notificaciones/?usuario=1 HTTP/1.1" 200 0
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/notificaciones/?usuario=1 HTTP/1.1" 200 603
+"GET /api/eventos/?desde=2025-11-30 HTTP/1.1" 200 52
+"GET /api/notificaciones/?usuario=1 HTTP/1.1" 200 603
+"OPTIONS /api/eventos/?desde=2025-12-01 HTTP/1.1" 200 0
+"GET /api/eventos/?desde=2025-12-01 HTTP/1.1" 200 52
+"GET /api/notificaciones/?usuario=1 HTTP/1.1" 200 603
+"GET /api/eventos/?desde=2025-12-01 HTTP/1.1" 200 52
+"GET /api/notificaciones/?usuario=1 HTTP/1.1" 200 603
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-12-01 HTTP/1.1" 200 52
+"GET /api/notificaciones/?usuario=1 HTTP/1.1" 200 603
+"GET /api/eventos/?desde=2025-12-01 HTTP/1.1" 200 52
+"GET /api/notificaciones/?usuario=1 HTTP/1.1" 200 603
+"GET /api/eventos/?desde=2025-12-01 HTTP/1.1" 200 52
+"GET /api/notificaciones/?usuario=1 HTTP/1.1" 200 603
+"GET /api/eventos/?desde=2025-12-01 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/notificaciones/?usuario=1 HTTP/1.1" 200 603
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"GET /api/eventos/?desde=2025-12-01 HTTP/1.1" 200 52
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/notificaciones/?usuario=1 HTTP/1.1" 200 603
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"OPTIONS /api/usuarios/1/grupos/ HTTP/1.1" 200 0
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 307
 "OPTIONS /api/grupos/2/eventos/ HTTP/1.1" 200 0
 "GET /api/grupos/2/eventos/ HTTP/1.1" 200 2
-"OPTIONS /api/grupos/1/eventos/ HTTP/1.1" 200 0
-"GET /api/grupos/1/eventos/ HTTP/1.1" 200 2
-"OPTIONS /api/grupos/?search=yomasa HTTP/1.1" 200 0
-"GET /api/grupos/?search=yomasa HTTP/1.1" 200 334
-"OPTIONS /api/grupos/?search=yomasa&area=arte HTTP/1.1" 200 0
-"GET /api/grupos/?search=yomasa&area=arte HTTP/1.1" 200 52
+"OPTIONS /api/grupos/3/eventos/ HTTP/1.1" 200 0
+"GET /api/grupos/3/eventos/ HTTP/1.1" 200 2
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 307
+"GET /api/grupos/2/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/3/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 307
+"GET /api/grupos/2/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/3/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 307
+"GET /api/grupos/2/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/3/eventos/ HTTP/1.1" 200 2
+"OPTIONS /api/usuarios/1/grupos/ HTTP/1.1" 200 0
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 307
+"GET /api/grupos/2/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/3/eventos/ HTTP/1.1" 200 2
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 307
+"GET /api/grupos/2/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/3/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"OPTIONS /api/grupos/ HTTP/1.1" 200 0
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
 "POST /api/auth/login/ HTTP/1.1" 200 194
-"GET /api/grupos/?search=yomasa HTTP/1.1" 200 334
-"GET /api/grupos/ HTTP/1.1" 200 614
-"GET /api/grupos/ HTTP/1.1" 200 614
-"GET /api/grupos/ HTTP/1.1" 200 614
-"OPTIONS /api/grupos/ HTTP/1.1" 200 0
-"GET /api/grupos/ HTTP/1.1" 200 614
-"GET /api/grupos/ HTTP/1.1" 200 614
-"GET /api/grupos/ HTTP/1.1" 200 614
-"OPTIONS /api/grupos/ HTTP/1.1" 200 0
-"GET /api/grupos/ HTTP/1.1" 200 614
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-12-01 HTTP/1.1" 200 52
+"GET /api/notificaciones/?usuario=1 HTTP/1.1" 200 603
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"POST /api/auth/login/ HTTP/1.1" 200 194
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 307
+"GET /api/grupos/2/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/3/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"GET /api/grupos/?estado=PENDIENTE HTTP/1.1" 200 52
+"GET /api/eventos/?desde=2025-12-01 HTTP/1.1" 200 52
+"GET /api/notificaciones/?usuario=1 HTTP/1.1" 200 603
+"GET /api/grupos/ HTTP/1.1" 200 1335
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 307
+"GET /api/grupos/2/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/3/eventos/ HTTP/1.1" 200 2
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 307
+"GET /api/grupos/2/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/3/eventos/ HTTP/1.1" 200 2
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 307
+"GET /api/grupos/2/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/3/eventos/ HTTP/1.1" 200 2
+"GET /api/usuarios/1/grupos/ HTTP/1.1" 200 307
+"GET /api/grupos/2/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/3/eventos/ HTTP/1.1" 200 2
+"GET /api/grupos/ HTTP/1.1" 200 1335

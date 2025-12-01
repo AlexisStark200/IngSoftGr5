@@ -256,24 +256,31 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Usuario no autenticado");
         }
 
-        // Mostrar/ocultar botón de crear grupo
+        // Mostrar/ocultar botón de crear grupo y calendario
         try {
             const btn = document.getElementById('create-group-btn');
-            console.log('DEBUG: createGroupBtn (from DOM):', btn);
-            if (btn) console.log('DEBUG: clases actuales:', btn.className, 'style.display=', btn.style.display);
-
-            if (btn && currentUser && authToken) {
-                btn.classList.remove('hidden');
-                // Forzar estilos visibles
-                btn.style.display = 'inline-block';
-                btn.removeAttribute('aria-hidden');
-                console.log('DEBUG: botón mostrado (forced) — clases ahora:', btn.className, 'display=', getComputedStyle(btn).display);
-            } else if (btn) {
-                btn.classList.add('hidden');
-                console.log('DEBUG: botón ocultado — clases ahora:', btn.className);
+            const calBtn = document.getElementById('calendar-btn');
+            if (btn) {
+                if (currentUser && authToken) {
+                    btn.classList.remove('hidden');
+                    btn.style.display = 'inline-block';
+                    btn.removeAttribute('aria-hidden');
+                } else {
+                    btn.classList.add('hidden');
+                }
+            }
+            if (calBtn) {
+                if (currentUser && authToken) {
+                    calBtn.classList.remove('hidden');
+                    calBtn.style.display = 'inline-block';
+                    calBtn.removeAttribute('aria-hidden');
+                } else {
+                    calBtn.classList.add('hidden');
+                    calBtn.style.display = 'none';
+                }
             }
         } catch (dbgErr) {
-            console.warn('DEBUG: error mostrando/ocultando createGroupBtn', dbgErr);
+            console.warn('DEBUG: error mostrando/ocultando createGroupBtn/calBtn', dbgErr);
         }
     }
     
@@ -392,7 +399,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 tipo_grupo: tipo.trim(),
                 correo_grupo: correo.trim(),
                 descripcion: descripcion.trim(),
-                link_whatsapp: whatsapp.trim() || null
+                // Enviar cadena vacía en lugar de `null` para evitar errores
+                // si el campo en la base de datos no acepta NULL.
+                link_whatsapp: whatsapp.trim() || ""
             };
 
             try {

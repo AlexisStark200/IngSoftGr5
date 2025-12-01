@@ -14,7 +14,7 @@ from .models import (
     Usuario, Grupo, Evento, Participacion,
     Comentario, Notificacion, Rol,
     UsuarioGrupo, ParticipacionUsuario,
-    UsuarioNotificacion
+    UsuarioNotificacion, UsuarioRol
 )
 
 
@@ -49,9 +49,10 @@ class UsuarioSerializer(serializers.ModelSerializer):
 class GrupoSerializer(serializers.ModelSerializer):
     """Serializer para Grupo"""
 
-    # Campos calculados (no están en BD)
     total_miembros = serializers.SerializerMethodField()
     total_eventos = serializers.SerializerMethodField()
+    estado_grupo = serializers.CharField(read_only=True)
+    motivo_rechazo = serializers.CharField(read_only=True)
 
     class Meta:
         model = Grupo
@@ -65,10 +66,12 @@ class GrupoSerializer(serializers.ModelSerializer):
             'correo_grupo',
             'descripcion',
             'link_whatsapp',
+            'estado_grupo',
+            'motivo_rechazo',
             'total_miembros',
             'total_eventos'
         ]
-    read_only_fields = ['id_grupo', 'fecha_creacion']
+        read_only_fields = ['id_grupo', 'fecha_creacion', 'estado_grupo', 'motivo_rechazo']
 
     def get_total_miembros(self, obj):
         """Contar miembros del grupo"""
@@ -92,6 +95,8 @@ class GrupoDetalleSerializer(serializers.ModelSerializer):
 
     miembros = serializers.SerializerMethodField()
     eventos_proximos = serializers.SerializerMethodField()
+    estado_grupo = serializers.CharField(read_only=True)
+    motivo_rechazo = serializers.CharField(read_only=True)
 
     class Meta:
         model = Grupo
@@ -105,6 +110,8 @@ class GrupoDetalleSerializer(serializers.ModelSerializer):
             'correo_grupo',
             'descripcion',
             'link_whatsapp',
+            'estado_grupo',
+            'motivo_rechazo',
             'miembros',
             'eventos_proximos'
         ]
@@ -121,6 +128,16 @@ class GrupoDetalleSerializer(serializers.ModelSerializer):
             estado_evento='PROGRAMADO'
         ).order_by('fecha_inicio')[:5]
         return EventoSerializer(eventos, many=True).data
+
+    def get_solicitante_nombre(self, obj):
+        if obj.solicitante:
+            return f"{obj.solicitante.nombre_usuario} {obj.solicitante.apellido}"
+        return None
+
+    def get_aprobado_por_nombre(self, obj):
+        if obj.aprobado_por:
+            return f"{obj.aprobado_por.nombre_usuario} {obj.aprobado_por.apellido}"
+        return None
 
 
 class EventoSerializer(serializers.ModelSerializer):
@@ -270,15 +287,20 @@ class NotificacionSerializer(serializers.ModelSerializer):
         read_only_fields = ['id_notificacion', 'fecha_envio']
 
     def get_leida(self, obj):
-        """Verificar si fue leída por el usuario actual"""
-        request = self.context.get('request')
-        if request and hasattr(request, 'user'):
-            return UsuarioNotificacion.objects.filter(
-                usuario=request.user,
-                notificacion=obj,
-                leida=True
-            ).exists()
-        return False
+        """
+        Verificar si fue leída por el usuario indicado en el contexto.
+        Si no se pasa usuario, se asume no leída.
+        """
+        id_usuario = self.context.get('id_usuario')
+        if not id_usuario:
+            return False
+
+        return UsuarioNotificacion.objects.filter(
+            usuario_id=id_usuario,   # ← usamos el id de Usuario, no request.user
+            notificacion=obj,
+            leida=True
+        ).exists()
+
 
 
 class RolSerializer(serializers.ModelSerializer):
@@ -337,6 +359,16 @@ class ParticipacionUsuarioSerializer(serializers.ModelSerializer):
         ]
 
 
+class UsuarioRolSerializer(serializers.ModelSerializer):
+    """Serializer para relación Usuario-Rol"""
+
+    rol_nombre = serializers.CharField(source='rol.nombre_rol', read_only=True)
+
+    class Meta:
+        model = UsuarioRol
+        fields = ['usuario', 'rol', 'rol_nombre']
+
+
 # ===========================================================================
 # OTROS SERIALIZERS ESPECIALES
 # ===========================================================================
@@ -379,3 +411,9 @@ class EnviarNotificacionSerializer(serializers.Serializer):
                 "Algunos usuarios no existen"
             )
         return value
+
+
+class RechazarGrupoSerializer(serializers.Serializer):
+    """Serializer para rechazo de grupo (RF_14)"""
+
+    motivo = serializers.CharField(allow_blank=False, allow_null=False)
