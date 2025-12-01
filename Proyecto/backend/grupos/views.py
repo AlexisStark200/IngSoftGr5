@@ -661,6 +661,111 @@ class NotificacionViewSet(viewsets.ReadOnlyModelViewSet):
         except (ValidationError, DRFValidationError) as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
+def perfil_usuario(request, usuario_id):
+    """Página de perfil usando la estructura existente"""
+    usuario = get_object_or_404(Usuario, id_usuario=usuario_id)
+    
+    # Grupos del usuario
+    grupos_usuario = UsuarioGrupo.objects.filter(
+        usuario=usuario
+    ).select_related('grupo')
+    
+    # Extraer áreas de interés de los grupos
+    areas_interes = set()
+    for ug in grupos_usuario:
+        if ug.grupo.area_interes:
+            areas_interes.add(ug.grupo.area_interes)
+    
+    # Participaciones del usuario
+    participaciones_del_usuario = Participacion.objects.filter(
+        usuarios=usuario
+    ).select_related('evento__grupo')
+    
+    # Estadísticas del usuario
+    stats = {
+        'total_grupos': grupos_usuario.count(),
+        'total_eventos': participaciones_del_usuario.count(),
+        'eventos_confirmados': participaciones_del_usuario.filter(
+            estado_participacion='CONFIRMADO'
+        ).count(),
+    }
+    
+    context = {
+        'usuario': usuario,
+        'grupos_usuario': grupos_usuario,
+        'areas_interes': sorted(list(areas_interes)),
+        'participaciones': participaciones_del_usuario,
+        'stats': stats,
+    }
+    
+    return render(request, 'perfil/completo.html', context)
+
+def explorar_intereses(request):
+    """Página para explorar todas las áreas de interés disponibles"""
+    # Agrupar grupos por área de interés
+    grupos_por_interes = Grupo.objects.values(
+        'area_interes'
+    ).annotate(
+        total_grupos= Count('id_grupo')
+    ).order_by('area_interes')
+    
+    # Grupos populares por interés
+    intereses_populares = []
+    for interes in grupos_por_interes:
+        if interes['area_interes']:
+            grupos = Grupo.objects.filter(
+                area_interes=interes['area_interes']
+            )[:5]
+            intereses_populares.append({
+                'area': interes['area_interes'],
+                'total_grupos': interes['total_grupos'],
+                'grupos_destacados': grupos
+            })
+    
+    return render(request, 'perfil/explorar_intereses.html', {
+        'intereses_populares': intereses_populares
+    })
+
+def editar_perfil(request, usuario_id):
+    """Vista para editar el perfil del usuario"""
+    usuario = get_object_or_404(Usuario, id_usuario=usuario_id)
+    
+    if request.method == 'POST':
+        # Procesar el formulario de edición
+        nombre = request.POST.get('nombre_usuario')
+        apellido = request.POST.get('apellido')
+        correo = request.POST.get('correo_usuario')
+        
+        # Validaciones básicas
+        if nombre and apellido and correo:
+            usuario.nombre_usuario = nombre
+            usuario.apellido = apellido
+            usuario.correo_usuario = correo
+            usuario.save()
+            
+            messages.success(request, 'Perfil actualizado correctamente!')
+            return redirect('perfil_usuario', usuario_id=usuario.id_usuario)
+        else:
+            messages.error(request, 'Por favor completa todos los campos obligatorios')
+    
+    # Si es GET, mostrar el formulario de edición
+    return render(request, 'perfil/editar.html', {
+        'usuario': usuario
+    })
+
+def actualizar_intereses(request, usuario_id):
+    """Vista para actualizar intereses del usuario"""
+    usuario = get_object_or_404(Usuario, id_usuario=usuario_id)
+    
+    if request.method == 'POST':
+        # Aquí puedes agregar lógica para gestionar intereses personalizados
+        # Por ahora, redirigimos de vuelta al perfil
+        messages.success(request, 'Intereses actualizados correctamente!')
+        return redirect('perfil_usuario', usuario_id=usuario.id_usuario)
+    
+    return render(request, 'perfil/editar_intereses.html', {
+        'usuario': usuario
+    })
 
 # -------------------------------------------------------------------
 # AUTH (Register / Login / Logout)

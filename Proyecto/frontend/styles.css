@@ -27,11 +27,12 @@ body{
     margin:0;
 }
 
-/* Utility */
+/* Utilities */
 .hidden{display:none!important}
 .tag{display:inline-block;padding:2px 6px;border-radius:6px;font-size:12px;background:#eef}
+.error{color:#b00020}
 
-/* Header */
+/* Header & typography */
 header{
     background:linear-gradient(135deg,var(--primary-800) 0%,var(--primary-700) 100%);
     color:#fff;
@@ -40,11 +41,9 @@ header{
     flex-direction:column;
     gap:1rem;
 }
-
-/* Typography */
 h1{font-size:1.5rem;margin:0;font-weight:600}
 
-/* Panels & cards (single definition) */
+/* Generic panels/cards */
 .panel,.card,.auth-panel{
     background:var(--card-bg);
     border:1px solid var(--surface);
@@ -58,27 +57,25 @@ h1{font-size:1.5rem;margin:0;font-weight:600}
 .auth-panel{border-left:4px solid var(--accent-600)}
 .modal-content{max-width:560px}
 
-/* Forms & controls (consistent base) */
+/* Form controls */
 input,select,textarea,button{
     font-family:inherit;
     font-size:0.95rem;
     border-radius:8px;
     transition:box-shadow var(--transition),border-color var(--transition),transform var(--transition);
 }
-
 input,select,textarea{
     border:1px solid var(--surface);
     padding:0.6rem;
     background:#fff;
 }
-
 input:focus,select:focus,textarea:focus{
     outline:none;
     border-color:var(--accent-600);
     box-shadow:0 0 0 4px rgba(102,126,234,0.06);
 }
 
-/* Buttons: base + variants */
+/* Buttons */
 .btn,button{
     display:inline-flex;
     align-items:center;
@@ -92,13 +89,13 @@ input:focus,select:focus,textarea:focus{
     font-weight:600;
     transition:transform var(--transition),box-shadow var(--transition),opacity var(--transition);
 }
-
 .btn:hover,button:hover{transform:translateY(-2px);opacity:0.95}
-.btn.secondary, .secondary, .modal-content button[type="button"]{background:#6b7280}
+.btn.secondary,.secondary,.modal-content button[type="button"]{background:#6b7280}
 .btn-full{width:100%}
-
-/* Specific button where different styles used */
-#searchBtn{background:linear-gradient(135deg,var(--accent-600) 0%,var(--accent-700) 100%);padding:0.75rem 1.5rem;border-radius:8px}
+#searchBtn{
+    background:linear-gradient(135deg,var(--accent-600) 0%,var(--accent-700) 100%);
+    padding:0.75rem 1.5rem;border-radius:8px;border:none;color:#fff;font-weight:600;
+}
 #searchBtn:hover{transform:translateY(-2px)}
 
 /* Auth tabs */
@@ -126,7 +123,10 @@ input:focus,select:focus,textarea:focus{
 .message.success{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0}
 
 /* Env / Auth inline groups */
-.env,.auth{display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;background:rgba(255,255,255,0.08);padding:0.35rem;border-radius:8px}
+.env,.auth{
+    display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;
+    background:rgba(255,255,255,0.08);padding:0.35rem;border-radius:8px;
+}
 .env label,.auth label{font-weight:500;color:#e2e8f0}
 .env input,.auth input{flex:1;min-width:200px;padding:0.5rem;border:1px solid #cbd5e0;border-radius:6px;background:#fff}
 .env button,.auth button{background:var(--success);color:#fff;padding:0.5rem 1rem;border-radius:6px}
@@ -134,7 +134,7 @@ input:focus,select:focus,textarea:focus{
 /* Filters bar */
 .filters{
     display:flex;gap:0.75rem;padding:1.25rem 1.5rem;background:#fff;border-bottom:1px solid var(--surface);
-    box-shadow:0 1px 3px rgba(0,0,0,0.1);flex-wrap:wrap;align-items:center
+    box-shadow:0 1px 3px rgba(0,0,0,0.1);flex-wrap:wrap;align-items:center;
 }
 .filters input,.filters select{padding:0.75rem;border:2px solid var(--surface);border-radius:8px;min-width:200px}
 .filters input:focus,.filters select:focus{border-color:var(--accent-600)}
@@ -170,7 +170,7 @@ input:focus,select:focus,textarea:focus{
 /* No results / Empty states */
 .no-results{text-align:center;padding:3rem 1rem;color:#64748b;grid-column:1/-1}
 .no-results h3{font-size:1.5rem;margin-bottom:0.5rem;color:#475569}
-.empty-state, .loading{grid-column:1/-1;text-align:center;padding:40px;color:#666}
+.empty-state,.loading{grid-column:1/-1;text-align:center;padding:40px;color:#666}
 .loading{font-size:1.2em}
 
 /* Footer */
@@ -179,12 +179,20 @@ footer{padding:1.5rem;text-align:center;color:#64748b;background:#f8fafc;border-
 /* Modal */
 .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);z-index:60}
 .modal.hidden{display:none}
-.modal-content{background:#fff;padding:1.25rem;border-radius:12px;max-width:560px;width:100%;box-shadow:0 10px 30px rgba(2,6,23,0.2)}
+.modal-content{
+    background:#fff;padding:1.25rem;border-radius:12px;max-width:560px;width:100%;
+    box-shadow:0 10px 30px rgba(2,6,23,0.2);
+}
 .modal-content h3{margin:0 0 0.75rem 0}
 .modal-content input,.modal-content textarea,.modal-content select{
-    width:100%;margin:0.35rem 0;padding:0.75rem;border:1px solid var(--surface);border-radius:8px;font-size:0.95rem;font-family:inherit;color:#374151;line-height:1.4;min-height:44px;background:#fff;appearance:none;
+    width:100%;margin:0.35rem 0;padding:0.75rem;border:1px solid var(--surface);border-radius:8px;font-size:0.95rem;
+    font-family:inherit;color:#374151;line-height:1.4;min-height:44px;background:#fff;appearance:none;
+}
+.modal-content input:focus,.modal-content textarea:focus,.modal-content select:focus{
+    outline:none;border-color:var(--accent-600);box-shadow:0 0 0 3px rgba(102,126,234,0.06);
 }
 .modal-content button{padding:0.6rem;border-radius:8px;border:none;background:var(--accent-600);color:#fff;cursor:pointer}
+.modal-content button[type="button"]{background:#6b7280}
 
 /* Two-column admin layout */
 .two-cols{display:grid;grid-template-columns:1fr 380px;gap:1.5rem;padding:1.5rem;max-width:var(--container-max);margin:0 auto}
@@ -192,7 +200,10 @@ footer{padding:1.5rem;text-align:center;color:#64748b;background:#f8fafc;border-
 .panel p{color:#64748b;margin-bottom:0.75rem}
 
 /* Solicitudes */
-#solicitudes .card{display:flex;flex-direction:column;gap:0.5rem;padding:1rem;margin-bottom:0.75rem;border-radius:10px;border:1px solid #e6f0ff;background:linear-gradient(180deg,#ffffff,#fbfdff);box-shadow:0 4px 10px rgba(15,23,42,0.04)}
+#solicitudes .card{
+    display:flex;flex-direction:column;gap:0.5rem;padding:1rem;margin-bottom:0.75rem;border-radius:10px;
+    border:1px solid #e6f0ff;background:linear-gradient(180deg,#ffffff,#fbfdff);box-shadow:0 4px 10px rgba(15,23,42,0.04)
+}
 #solicitudes .card h3{font-size:1rem;margin:0;color:#0f172a;font-weight:600}
 #solicitudes .card p{color:#475569;margin:0}
 #solicitudes .card .tag{display:inline-block;background:#eef2ff;color:#1e3a8a;padding:0.25rem 0.5rem;border-radius:999px;font-weight:600;font-size:0.75rem}

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Club</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    .club-panel{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.5rem;max-width:1000px;margin:2rem auto;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+    .club-panel h2{margin-bottom:1rem;color:#0f172a;font-size:1.5rem;font-weight:700}
+    .club-row{display:flex;gap:1rem;align-items:flex-start}
+    .club-col{flex:1}
+    .club-actions{margin-top:1rem;display:flex;gap:.5rem}
+    .hidden{display:none}
+    .form-field{display:flex;flex-direction:column;margin-bottom:.75rem}
+    .form-field label{font-weight:600;margin-bottom:.35rem}
+    .form-field input,.form-field textarea{padding:.5rem;border:1px solid #e5e7eb;border-radius:6px}
+    .btn-primary{background:#10b981;color:#fff;padding:.5rem 1rem;border-radius:6px;border:none}
+    .btn-secondary{background:#6b7280;color:#fff;padding:.5rem 1rem;border-radius:6px;border:none}
+    .small{font-size:.9rem}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mi Club</h1>
+    <a href="./index.html" class="secondary" style="margin-top:1rem">Volver al catálogo</a>
+  </header>
+  <main>
+    <section class="club-panel">
+      <h2>Selecciona tu club</h2>
+      <div>
+        <select id="club-select">
+          <option value="">-- Selecciona un club --</option>
+        </select>
+      </div>
+      <div id="club-info" class="club-row" style="margin-top:1rem">
+        <div class="club-col">
+          <h3 id="club-name">Nombre del club</h3>
+          <p id="club-area" class="small"></p>
+          <p id="club-desc"></p>
+          <p id="club-email" class="small"></p>
+          <p id="club-whatsapp" class="small"></p>
+          <div class="club-actions">
+            <button id="edit-club-btn" class="btn-primary" disabled>Solicitar edición</button>
+            <button id="refresh-club-btn" class="btn-secondary">Refrescar</button>
+          </div>
+          <div id="club-msg" class="message hidden" style="margin-top:.75rem"></div>
+        </div>
+        <div class="club-col">
+          <h3>Crear evento (solicitud)</h3>
+          <div id="event-msg" class="message hidden"></div>
+          <div class="form-field">
+            <label for="e-name">Título</label>
+            <input id="e-name" disabled />
+          </div>
+          <div class="form-field">
+            <label for="e-start">Fecha inicio</label>
+            <input id="e-start" type="datetime-local" disabled />
+          </div>
+          <div class="form-field">
+            <label for="e-tipo">Tipo de evento</label>
+            <select id="e-tipo" disabled>
+              <option value="">-- Selecciona tipo --</option>
+              <option value="TALLER">Taller</option>
+              <option value="CONFERENCIA">Conferencia</option>
+              <option value="REUNION">Reunión</option>
+              <option value="OTRO">Otro</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="e-cupo">Cupo</label>
+            <input id="e-cupo" type="number" min="1" disabled />
+          </div>
+          <div class="form-field">
+            <label for="e-end">Fecha fin</label>
+            <input id="e-end" type="datetime-local" disabled />
+          </div>
+          <div class="form-field">
+            <label for="e-place">Lugar</label>
+            <input id="e-place" disabled />
+          </div>
+          <div class="form-field">
+            <label for="e-desc">Descripción</label>
+            <textarea id="e-desc" rows="4" disabled></textarea>
+          </div>
+          <div class="club-actions">
+            <button id="create-event-btn" class="btn-primary" disabled>Crear evento (solicitud)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal simple para editar info (envía solicitud) -->
+      <div id="edit-modal" class="hidden" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.4)">
+        <div style="background:#fff;padding:1rem;border-radius:8px;max-width:600px;width:100%;">
+          <h3>Editar información del club</h3>
+          <div class="form-field">
+            <label for="edit-name">Nombre</label>
+            <input id="edit-name" />
+          </div>
+          <div class="form-field">
+            <label for="edit-desc">Descripción</label>
+            <textarea id="edit-desc" rows="4"></textarea>
+          </div>
+          <div class="form-field">
+            <label for="edit-email">Correo</label>
+            <input id="edit-email" />
+          </div>
+          <div class="form-field">
+            <label for="edit-whatsapp">WhatsApp</label>
+            <input id="edit-whatsapp" />
+          </div>
+          <div style="display:flex;gap:.5rem;justify-content:flex-end">
+            <button id="send-edit-btn" class="btn-primary">Enviar solicitud</button>
+            <button id="cancel-edit-btn" class="btn-secondary">Cancelar</button>
+          </div>
+          <div id="edit-msg" class="message hidden" style="margin-top:.6rem"></div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="./club.js"></script>
+</body>
+</html>
