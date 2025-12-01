@@ -1207,8 +1207,8 @@ a.secondary {
     right: 0.65rem;
     top: 50%;
     transform: translateY(-50%);
-    width: 18px;
-    height: 18px;
+    width: 0;
+    height: 0;
     border: none;
     padding: 0;
     display: flex;
