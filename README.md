@@ -34,6 +34,8 @@ Sabemos que muchos clubes y actividades existen, pero la información suele esta
 📧 jtorrescr@unal.edu.co  
 
 
+https://www.canva.com/design/DAGz6xfuMO4/DE_1w7dnZfNAAy-X5IofNg/edit?utm_content=DAGz6xfuMO4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
   
 
 
